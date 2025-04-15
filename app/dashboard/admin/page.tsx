@@ -63,11 +63,11 @@ const documentData = [
 
 // Mock data for recent activities
 const recentActivities = [
-  { id: 1, user: "John Doe", action: "Created a new lesson plan", timestamp: "2023-07-10 09:30" },
-  { id: 2, user: "Jane Smith", action: "Generated monthly report", timestamp: "2023-07-09 14:45" },
-  { id: 3, user: "Mike Johnson", action: "Added new student records", timestamp: "2023-07-08 11:20" },
-  { id: 4, user: "Sarah Williams", action: "Updated school information", timestamp: "2023-07-07 16:15" },
-  { id: 5, user: "David Brown", action: "Submitted assessment results", timestamp: "2023-07-06 10:05" },
+  { id: 1, user: "John Doe", action: "Membuat rencana pelajaran baru", timestamp: "2023-07-10 09:30" },
+  { id: 2, user: "Jane Smith", action: "Menghasilkan laporan bulanan", timestamp: "2023-07-09 14:45" },
+  { id: 3, user: "Mike Johnson", action: "Menambahkan catatan siswa baru", timestamp: "2023-07-08 11:20" },
+  { id: 4, user: "Sarah Williams", action: "Memperbarui informasi sekolah", timestamp: "2023-07-07 16:15" },
+  { id: 5, user: "David Brown", action: "Mengirimkan hasil penilaian", timestamp: "2023-07-06 10:05" },
 ]
 
 export default function AdminDashboardPage() {
