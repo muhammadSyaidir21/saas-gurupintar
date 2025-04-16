@@ -381,21 +381,21 @@ export default function UsersPage() {
       <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
         <div>
           <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
-            User Management
+            Manajemen Pengguna
           </h1>
-          <p className="text-muted-foreground">Manage user accounts, permissions, and access.</p>
+          <p className="text-muted-foreground">Kelola akun pengguna, izin, dan akses.</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-2">
           <Button className="gap-2 rounded-full bg-gradient-to-r from-primary to-primary-light text-white">
             <UserPlus className="h-4 w-4" />
-            <span className="hidden sm:inline">Add User</span>
+            <span className="hidden sm:inline">Tambah Pengguna</span>
           </Button>
           <Button
             variant="outline"
             className="gap-2 rounded-full border-primary/20 hover:bg-primary/5 hover:text-primary"
           >
             <Download className="h-4 w-4" />
-            <span className="hidden sm:inline">Export</span>
+            <span className="hidden sm:inline">Ekspor</span>
           </Button>
         </div>
       </div>
