@@ -41,27 +41,24 @@ import {
 } from "lucide-react"
 import { DashboardCard } from "@/components/DashboardCard"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-
-// Mock data for charts
+// Data contoh untuk grafik
 const userActivityData = [
-  { month: "Jan", teachers: 65, students: 400, admins: 20 },
-  { month: "Feb", teachers: 70, students: 420, admins: 22 },
-  { month: "Mar", teachers: 75, students: 450, admins: 23 },
-  { month: "Apr", teachers: 72, students: 445, admins: 24 },
-  { month: "May", teachers: 78, students: 460, admins: 25 },
-  { month: "Jun", teachers: 82, students: 480, admins: 26 },
+  { bulan: "Jan", guru: 65, siswa: 400, admin: 20 },
+  { bulan: "Feb", guru: 70, siswa: 420, admin: 22 },
+  { bulan: "Mar", guru: 75, siswa: 450, admin: 23 },
+  { bulan: "Apr", guru: 72, siswa: 445, admin: 24 },
+  { bulan: "Mei", guru: 78, siswa: 460, admin: 25 },
+  { bulan: "Jun", guru: 82, siswa: 480, admin: 26 },
 ]
-
 const documentData = [
-  { month: "Jan", lesson_plans: 120, reports: 30, assessments: 80 },
-  { month: "Feb", lesson_plans: 140, reports: 35, assessments: 90 },
-  { month: "Mar", lesson_plans: 160, reports: 40, assessments: 100 },
-  { month: "Apr", lesson_plans: 150, reports: 38, assessments: 95 },
-  { month: "May", lesson_plans: 170, reports: 42, assessments: 110 },
-  { month: "Jun", lesson_plans: 180, reports: 45, assessments: 120 },
+  { bulan: "Jan", rencana_pembelajaran: 120, laporan: 30, penilaian: 80 },
+  { bulan: "Feb", rencana_pembelajaran: 140, laporan: 35, penilaian: 90 },
+  { bulan: "Mar", rencana_pembelajaran: 160, laporan: 40, penilaian: 100 },
+  { bulan: "Apr", rencana_pembelajaran: 150, laporan: 38, penilaian: 95 },
+  { bulan: "Mei", rencana_pembelajaran: 170, laporan: 42, penilaian: 110 },
+  { bulan: "Jun", rencana_pembelajaran: 180, laporan: 45, penilaian: 120 },
 ]
-
-// Mock data for recent activities
+// Data contoh untuk aktivitas terbaru
 const recentActivities = [
   { id: 1, user: "John Doe", action: "Membuat rencana pembelajaran baru", timestamp: "2023-07-10 09:30" },
   { id: 2, user: "Jane Smith", action: "Menghasilkan laporan bulanan", timestamp: "2023-07-09 14:45" },
@@ -69,7 +66,6 @@ const recentActivities = [
   { id: 4, user: "Sarah Williams", action: "Memperbarui informasi sekolah", timestamp: "2023-07-07 16:15" },
   { id: 5, user: "David Brown", action: "Mengirimkan hasil penilaian", timestamp: "2023-07-06 10:05" },
 ]
-
 export default function AdminDashboardPage() {
   const [searchTerm, setSearchTerm] = useState("")
 

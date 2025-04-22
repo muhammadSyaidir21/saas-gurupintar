@@ -227,7 +227,7 @@ export default function UsersPage() {
                   <AvatarFallback className="bg-primary/10 text-primary text-xl">
                     {user.name
                       .split(" ")
-                      .map((n) => n[0])
+                      .map((n: string) => n[0])
                       .join("")}
                   </AvatarFallback>
                 </Avatar>
@@ -407,25 +407,25 @@ export default function UsersPage() {
               value="all"
               className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-white"
             >
-              All Users
+              Semua Pengguna
             </TabsTrigger>
             <TabsTrigger
               value="active"
               className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-white"
             >
-              Active
+              Aktif
             </TabsTrigger>
             <TabsTrigger
               value="inactive"
               className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-white"
             >
-              Inactive
+              Tidak Aktif
             </TabsTrigger>
             <TabsTrigger
-              value="pending"
+              value="tertunda"
               className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-white"
             >
-              Pending
+              Tertunda
             </TabsTrigger>
           </TabsList>
 
@@ -434,7 +434,7 @@ export default function UsersPage() {
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
                 type="text"
-                placeholder="Search users..."
+                placeholder="Cari pengguna..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="pl-9 w-full sm:w-[250px] rounded-full"
@@ -444,13 +444,13 @@ export default function UsersPage() {
             <div className="flex gap-2">
               <Select value={roleFilter} onValueChange={setRoleFilter}>
                 <SelectTrigger className="w-full sm:w-[150px] rounded-full">
-                  <SelectValue placeholder="Filter by role" />
+                  <SelectValue placeholder="Filter berdasarkan peran" />
                 </SelectTrigger>
                 <SelectContent className="rounded-xl">
-                  <SelectItem value="all">All Roles</SelectItem>
+                  <SelectItem value="all">Semua Peran</SelectItem>
                   <SelectItem value="admin">Admin</SelectItem>
                   <SelectItem value="operator">Operator</SelectItem>
-                  <SelectItem value="teacher">Teacher</SelectItem>
+                  <SelectItem value="teacher">Guru</SelectItem>
                 </SelectContent>
               </Select>
 
@@ -460,7 +460,6 @@ export default function UsersPage() {
             </div>
           </div>
         </div>
-
         <TabsContent value="all" className="m-0">
           <Card className="border-none shadow-md rounded-2xl overflow-hidden">
             <CardContent className="p-0">
@@ -468,18 +467,18 @@ export default function UsersPage() {
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-muted/50 hover:bg-muted/50">
-                      <TableHead className="w-[250px]">User</TableHead>
-                      <TableHead className="hidden md:table-cell">Role</TableHead>
+                      <TableHead className="w-[250px]">Pengguna</TableHead>
+                      <TableHead className="hidden md:table-cell">Peran</TableHead>
                       <TableHead className="hidden md:table-cell">Status</TableHead>
-                      <TableHead className="hidden lg:table-cell">Last Active</TableHead>
-                      <TableHead className="text-right">Actions</TableHead>
+                      <TableHead className="hidden lg:table-cell">Terakhir Aktif</TableHead>
+                      <TableHead className="text-right">Tindakan</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {filteredUsers.length === 0 ? (
                       <TableRow>
                         <TableCell colSpan={5} className="text-center py-8 text-muted-foreground">
-                          No users found matching your filters.
+                          Tidak ada pengguna yang sesuai dengan filter Anda.
                         </TableCell>
                       </TableRow>
                     ) : (
@@ -539,12 +538,12 @@ export default function UsersPage() {
                                   </Button>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent align="end" className="w-[180px] rounded-xl">
-                                  <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                                  <DropdownMenuLabel>Aksi</DropdownMenuLabel>
                                   <DropdownMenuSeparator />
                                   <UserDetailsDialog user={user}>
                                     <DropdownMenuItem className="rounded-lg cursor-pointer">
                                       <Edit className="mr-2 h-4 w-4" />
-                                      Edit User
+                                      Edit Pengguna
                                     </DropdownMenuItem>
                                   </UserDetailsDialog>
                                   <UserDetailsDialog user={user}>
@@ -553,13 +552,13 @@ export default function UsersPage() {
                                       className="rounded-lg cursor-pointer"
                                     >
                                       <Mail className="mr-2 h-4 w-4" />
-                                      Send Email
+                                      Kirim Email
                                     </DropdownMenuItem>
                                   </UserDetailsDialog>
                                   <DropdownMenuSeparator />
                                   <DropdownMenuItem className="text-destructive focus:text-destructive rounded-lg cursor-pointer">
                                     <Trash2 className="mr-2 h-4 w-4" />
-                                    Delete User
+                                    Hapus Pengguna
                                   </DropdownMenuItem>
                                 </DropdownMenuContent>
                               </DropdownMenu>
@@ -578,7 +577,7 @@ export default function UsersPage() {
         <TabsContent value="active" className="m-0">
           <Card className="border-none shadow-md rounded-2xl overflow-hidden">
             <CardContent className="p-6 text-center">
-              <p>Active users content will be displayed here.</p>
+              <p>Konten pengguna aktif akan ditampilkan di sini.</p>
             </CardContent>
           </Card>
         </TabsContent>
@@ -586,7 +585,7 @@ export default function UsersPage() {
         <TabsContent value="inactive" className="m-0">
           <Card className="border-none shadow-md rounded-2xl overflow-hidden">
             <CardContent className="p-6 text-center">
-              <p>Inactive users content will be displayed here.</p>
+              <p>Konten pengguna tidak aktif akan ditampilkan di sini.</p>
             </CardContent>
           </Card>
         </TabsContent>
@@ -594,7 +593,7 @@ export default function UsersPage() {
         <TabsContent value="pending" className="m-0">
           <Card className="border-none shadow-md rounded-2xl overflow-hidden">
             <CardContent className="p-6 text-center">
-              <p>Pending users content will be displayed here.</p>
+              <p>Konten pengguna tertunda akan ditampilkan di sini.</p>
             </CardContent>
           </Card>
         </TabsContent>
