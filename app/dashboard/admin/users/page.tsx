@@ -51,70 +51,70 @@ const users = [
     name: "John Doe",
     email: "john@example.com",
     role: "Operator",
-    status: "Active",
-    lastActive: "Today at 2:34 PM",
+    status: "Aktif",
+    lastActive: "Hari ini pukul 14:34",
     avatar: "/placeholder.svg",
     phone: "+62 812-3456-7890",
-    joinDate: "Jan 15, 2023",
+    joinDate: "15 Jan 2023",
     school: "SMA Negeri 1 Jakarta",
-    permissions: ["View Reports", "Edit Teachers", "Manage Classes"],
-    bio: "Experienced school operator with 5 years of administrative experience.",
+    permissions: ["Lihat Laporan", "Edit Guru", "Kelola Kelas"],
+    bio: "Operator sekolah berpengalaman dengan 5 tahun pengalaman administratif.",
   },
   {
     id: 2,
     name: "Jane Smith",
     email: "jane@example.com",
-    role: "Teacher",
-    status: "Active",
-    lastActive: "Yesterday at 10:15 AM",
+    role: "Guru",
+    status: "Aktif",
+    lastActive: "Kemarin pukul 10:15",
     avatar: "/placeholder.svg",
     phone: "+62 813-9876-5432",
-    joinDate: "Mar 22, 2023",
+    joinDate: "22 Mar 2023",
     school: "SMA Negeri 1 Jakarta",
-    permissions: ["Create Lessons", "View Students"],
-    bio: "Mathematics teacher specializing in algebra and calculus.",
+    permissions: ["Buat Pelajaran", "Lihat Siswa"],
+    bio: "Guru matematika yang mengkhususkan diri dalam aljabar dan kalkulus.",
   },
   {
     id: 3,
     name: "Bob Johnson",
     email: "bob@example.com",
     role: "Operator",
-    status: "Inactive",
-    lastActive: "3 days ago",
+    status: "Tidak Aktif",
+    lastActive: "3 hari yang lalu",
     avatar: "/placeholder.svg",
     phone: "+62 857-1234-5678",
-    joinDate: "Feb 10, 2023",
+    joinDate: "10 Feb 2023",
     school: "SMA Negeri 2 Surabaya",
-    permissions: ["View Reports", "Edit Teachers"],
-    bio: "School administrator handling daily operations and teacher coordination.",
+    permissions: ["Lihat Laporan", "Edit Guru"],
+    bio: "Administrator sekolah yang menangani operasional harian dan koordinasi guru.",
   },
   {
     id: 4,
     name: "Alice Williams",
     email: "alice@example.com",
     role: "Admin",
-    status: "Active",
-    lastActive: "Just now",
+    status: "Aktif",
+    lastActive: "Baru saja",
     avatar: "/placeholder.svg",
     phone: "+62 821-8765-4321",
-    joinDate: "Dec 5, 2022",
-    school: "System Admin",
-    permissions: ["Full Access", "System Configuration", "User Management"],
-    bio: "System administrator responsible for platform maintenance and user support.",
+    joinDate: "5 Des 2022",
+    school: "Admin Sistem",
+    permissions: ["Akses Penuh", "Konfigurasi Sistem", "Manajemen Pengguna"],
+    bio: "Administrator sistem yang bertanggung jawab atas pemeliharaan platform dan dukungan pengguna.",
   },
   {
     id: 5,
     name: "Charlie Brown",
     email: "charlie@example.com",
-    role: "Teacher",
-    status: "Pending",
-    lastActive: "1 week ago",
+    role: "Guru",
+    status: "Menunggu",
+    lastActive: "1 minggu yang lalu",
     avatar: "/placeholder.svg",
     phone: "+62 878-9876-5432",
-    joinDate: "Apr 18, 2023",
+    joinDate: "18 Apr 2023",
     school: "SMA Negeri 2 Surabaya",
-    permissions: ["Create Lessons", "View Students"],
-    bio: "Science teacher with expertise in biology and environmental science.",
+    permissions: ["Buat Pelajaran", "Lihat Siswa"],
+    bio: "Guru IPA dengan keahlian dalam biologi dan ilmu lingkungan.",
   },
 ]
 
@@ -202,20 +202,20 @@ export default function UsersPage() {
       <>
         {isDrawer ? (
           <DrawerHeader>
-            <DrawerTitle>User Details</DrawerTitle>
-            <DrawerDescription>View and manage user information</DrawerDescription>
+            <DrawerTitle>Detail Pengguna</DrawerTitle>
+            <DrawerDescription>Lihat dan kelola informasi pengguna</DrawerDescription>
           </DrawerHeader>
         ) : (
           <DialogHeader>
-            <DialogTitle>User Details</DialogTitle>
-            <DialogDescription>View and manage user information</DialogDescription>
+            <DialogTitle>Detail Pengguna</DialogTitle>
+            <DialogDescription>Lihat dan kelola informasi pengguna</DialogDescription>
           </DialogHeader>
         )}
 
         <Tabs defaultValue="details" className="w-full mt-4">
           <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="details">Details</TabsTrigger>
-            <TabsTrigger value="edit">Edit</TabsTrigger>
+            <TabsTrigger value="details">Detail</TabsTrigger>
+            <TabsTrigger value="edit">Ubah</TabsTrigger>
             <TabsTrigger value="email">Email</TabsTrigger>
           </TabsList>
 
@@ -250,15 +250,15 @@ export default function UsersPage() {
                   <p>{user.email}</p>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-sm font-medium text-muted-foreground">Phone</p>
+                  <p className="text-sm font-medium text-muted-foreground">Telepon</p>
                   <p>{user.phone}</p>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-sm font-medium text-muted-foreground">School</p>
+                  <p className="text-sm font-medium text-muted-foreground">Sekolah</p>
                   <p>{user.school}</p>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-sm font-medium text-muted-foreground">Join Date</p>
+                  <p className="text-sm font-medium text-muted-foreground">Tanggal Bergabung</p>
                   <p>{user.joinDate}</p>
                 </div>
                 <div className="space-y-1 md:col-span-2">
@@ -270,7 +270,7 @@ export default function UsersPage() {
               <Separator />
 
               <div className="space-y-2">
-                <p className="text-sm font-medium text-muted-foreground">Permissions</p>
+                <p className="text-sm font-medium text-muted-foreground">Izin Akses</p>
                 <div className="flex flex-wrap gap-2">
                   {user.permissions.map((permission: string) => (
                     <Badge key={permission} variant="outline" className="bg-primary/5">
@@ -281,15 +281,15 @@ export default function UsersPage() {
               </div>
 
               <div className="space-y-2">
-                <p className="text-sm font-medium text-muted-foreground">Activity</p>
-                <p className="text-sm">Last active: {user.lastActive}</p>
+                <p className="text-sm font-medium text-muted-foreground">Aktivitas</p>
+                <p className="text-sm">Terakhir aktif: {user.lastActive}</p>
               </div>
             </TabsContent>
 
             <TabsContent value="edit" className="space-y-4 mt-4 p-1">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="edit-name">Full Name</Label>
+                  <Label htmlFor="edit-name">Nama Lengkap</Label>
                   <Input id="edit-name" defaultValue={user.name} />
                 </div>
                 <div className="space-y-2">
@@ -297,19 +297,19 @@ export default function UsersPage() {
                   <Input id="edit-email" defaultValue={user.email} />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="edit-phone">Phone</Label>
+                  <Label htmlFor="edit-phone">Telepon</Label>
                   <Input id="edit-phone" defaultValue={user.phone} />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="edit-role">Role</Label>
+                  <Label htmlFor="edit-role">Peran</Label>
                   <Select defaultValue={user.role.toLowerCase()}>
                     <SelectTrigger id="edit-role">
-                      <SelectValue placeholder="Select role" />
+                      <SelectValue placeholder="Pilih peran" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="admin">Admin</SelectItem>
                       <SelectItem value="operator">Operator</SelectItem>
-                      <SelectItem value="teacher">Teacher</SelectItem>
+                      <SelectItem value="teacher">Guru</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -321,45 +321,45 @@ export default function UsersPage() {
                   <Label htmlFor="edit-status">Status</Label>
                   <Select defaultValue={user.status.toLowerCase()}>
                     <SelectTrigger id="edit-status">
-                      <SelectValue placeholder="Select status" />
+                      <SelectValue placeholder="Pilih status" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="active">Active</SelectItem>
-                      <SelectItem value="inactive">Inactive</SelectItem>
-                      <SelectItem value="pending">Pending</SelectItem>
+                      <SelectItem value="active">Aktif</SelectItem>
+                      <SelectItem value="inactive">Tidak Aktif</SelectItem>
+                      <SelectItem value="pending">Menunggu</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
               </div>
 
               <div className="flex justify-end gap-2 mt-4">
-                <Button variant="outline">Cancel</Button>
-                <Button>Save Changes</Button>
+                <Button variant="outline">Batal</Button>
+                <Button>Simpan Perubahan</Button>
               </div>
             </TabsContent>
 
             <TabsContent value="email" className="space-y-4 mt-4 p-1">
               <div className="space-y-2">
-                <Label htmlFor="email-to">To</Label>
+                <Label htmlFor="email-to">Kepada</Label>
                 <Input id="email-to" defaultValue={user.email} readOnly />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email-subject">Subject</Label>
-                <Input id="email-subject" placeholder="Enter email subject" />
+                <Label htmlFor="email-subject">Subjek</Label>
+                <Input id="email-subject" placeholder="Masukkan subjek email" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email-message">Message</Label>
+                <Label htmlFor="email-message">Pesan</Label>
                 <Textarea
                   id="email-message"
-                  placeholder="Write your message here..."
+                  placeholder="Tulis pesan Anda di sini..."
                   rows={8}
                   className="resize-none"
                 />
               </div>
 
               <div className="flex justify-end gap-2 mt-4">
-                <Button variant="outline">Cancel</Button>
-                <Button>Send Email</Button>
+                <Button variant="outline">Batal</Button>
+                <Button>Kirim Email</Button>
               </div>
             </TabsContent>
           </ScrollArea>
@@ -368,7 +368,7 @@ export default function UsersPage() {
         {isDrawer && (
           <DrawerFooter>
             <DrawerClose asChild>
-              <Button variant="outline">Close</Button>
+              <Button variant="outline">Tutup</Button>
             </DrawerClose>
           </DrawerFooter>
         )}
