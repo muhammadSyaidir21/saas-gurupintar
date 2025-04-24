@@ -24,80 +24,80 @@ import { Badge } from "@/components/ui/badge"
 const initialAddOns = [
   {
     id: "attendance",
-    name: "Attendance Tracking",
-    description: "Comprehensive attendance tracking system with reporting and analytics",
+    name: "Pelacakan Kehadiran",
+    description: "Sistem pelacakan kehadiran komprehensif dengan pelaporan dan analitik",
     monthlyPrice: 9.99,
     annualPrice: 99.99,
     features: [
-      "Daily attendance tracking",
-      "Absence reporting",
-      "Parent notifications",
-      "Attendance analytics",
-      "Export to CSV/PDF",
+      "Pelacakan kehadiran harian",
+      "Pelaporan ketidakhadiran",
+      "Notifikasi orang tua",
+      "Analitik kehadiran",
+      "Ekspor ke CSV/PDF",
     ],
     compatibleWith: ["elementary", "middle", "high"],
     isActive: true,
   },
   {
     id: "gradebook",
-    name: "Advanced Gradebook",
-    description: "Full-featured gradebook with customizable grading scales and report cards",
+    name: "Buku Nilai Lanjutan",
+    description: "Buku nilai lengkap dengan skala penilaian yang dapat disesuaikan dan rapor",
     monthlyPrice: 14.99,
     annualPrice: 149.99,
     features: [
-      "Custom grading scales",
-      "Weighted assignments",
-      "Report card generation",
-      "Grade analytics",
-      "Parent portal integration",
+      "Skala penilaian kustom",
+      "Tugas berbobot",
+      "Pembuatan rapor",
+      "Analitik nilai",
+      "Integrasi portal orang tua",
     ],
     compatibleWith: ["middle", "high"],
     isActive: true,
   },
   {
     id: "communication",
-    name: "Parent Communication",
-    description: "Tools for seamless communication between teachers and parents",
+    name: "Komunikasi Orang Tua",
+    description: "Alat untuk komunikasi lancar antara guru dan orang tua",
     monthlyPrice: 7.99,
     annualPrice: 79.99,
     features: [
-      "Direct messaging",
-      "Announcement broadcasts",
-      "Event scheduling",
-      "Document sharing",
-      "Translation services",
+      "Pesan langsung",
+      "Siaran pengumuman",
+      "Penjadwalan acara",
+      "Berbagi dokumen",
+      "Layanan terjemahan",
     ],
     compatibleWith: ["elementary", "middle", "high"],
     isActive: true,
   },
   {
     id: "assessment",
-    name: "Assessment Builder",
-    description: "Create, administer, and analyze assessments and quizzes",
+    name: "Pembuat Penilaian",
+    description: "Buat, kelola, dan analisis penilaian dan kuis",
     monthlyPrice: 12.99,
     annualPrice: 129.99,
     features: [
-      "Question bank",
-      "Auto-grading",
-      "Performance analytics",
-      "Custom assessment templates",
-      "Standards alignment",
+      "Bank soal",
+      "Penilaian otomatis",
+      "Analitik kinerja",
+      "Template penilaian kustom",
+      "Penyesuaian standar",
     ],
     compatibleWith: ["elementary", "middle", "high"],
     isActive: true,
   },
   {
     id: "curriculum",
-    name: "Curriculum Mapping",
-    description: "Tools for planning and mapping curriculum across grades and subjects",
+    name: "Pemetaan Kurikulum",
+    description: "Alat untuk merencanakan dan memetakan kurikulum lintas kelas dan mata pelajaran",
     monthlyPrice: 19.99,
     annualPrice: 199.99,
     features: [
-      "Standards alignment",
-      "Curriculum visualization",
-      "Resource integration",
-      "Cross-subject planning",
-      "Scope and sequence tools",
+      "Penyesuaian standar",
+      "Visualisasi kurikulum",
+      "Integrasi sumber daya",
+      "Perencanaan lintas mata pelajaran",
+      "Alat lingkup dan urutan",
     ],
     compatibleWith: ["elementary", "middle", "high"],
     isActive: true,
@@ -158,8 +158,8 @@ export function AddOns() {
     const newId = `addon-new-${Date.now()}`
     setEditingAddOn({
       id: newId,
-      name: "New Add-on Module",
-      description: "Description for the new add-on module",
+      name: "Modul Tambahan Baru",
+      description: "Deskripsi untuk modul tambahan baru",
       monthlyPrice: 0,
       annualPrice: 0,
       features: [],
@@ -228,7 +228,7 @@ export function AddOns() {
               <div className="space-y-4">
                 <div className="flex items-baseline">
                   <div className="text-2xl font-bold">${addOn.monthlyPrice}</div>
-                  <span className="text-sm font-normal text-muted-foreground ml-1">/month</span>
+                  <span className="text-sm font-normal text-muted-foreground ml-1">/bulan</span>
                 </div>
                 <div className="text-sm text-muted-foreground">${addOn.annualPrice}/tahun</div>
 
@@ -385,7 +385,7 @@ export function AddOns() {
                       </TableCell>
                       <TableCell>
                         <Button variant="outline" size="sm" onClick={handleAddFeature}>
-                          Add
+                          Tambah
                         </Button>
                       </TableCell>
                     </TableRow>
