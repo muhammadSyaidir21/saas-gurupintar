@@ -175,12 +175,12 @@ export default function AccountsPage() {
             <CardHeader>
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                  <CardTitle>Akun Guru</CardTitle>
-                  <CardDescription>Kelola akun dan izin guru</CardDescription>
+                  <CardTitle>Teacher Accounts</CardTitle>
+                  <CardDescription>Manage teacher accounts and permissions</CardDescription>
                 </div>
                 <Button>
                   <UserPlus className="h-4 w-4 mr-2" />
-                  Tambah Guru Baru
+                  Add New Teacher
                 </Button>
               </div>
             </CardHeader>
@@ -190,7 +190,7 @@ export default function AccountsPage() {
                   <Search className="text-muted-foreground" />
                   <Input
                     type="text"
-                    placeholder="Cari akun..."
+                    placeholder="Search accounts..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="max-w-sm"
