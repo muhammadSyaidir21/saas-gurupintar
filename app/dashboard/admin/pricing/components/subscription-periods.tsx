@@ -22,8 +22,8 @@ import { Textarea } from "@/components/ui/textarea"
 const initialPeriods = [
   {
     id: "monthly",
-    name: "Monthly",
-    description: "Billed every month",
+    name: "Bulanan",
+    description: "Ditagih setiap bulan",
     durationMonths: 1,
     discountPercentage: 0,
     isDefault: true,
@@ -31,8 +31,8 @@ const initialPeriods = [
   },
   {
     id: "quarterly",
-    name: "Quarterly",
-    description: "Billed every 3 months",
+    name: "Triwulan",
+    description: "Ditagih setiap 3 bulan",
     durationMonths: 3,
     discountPercentage: 5,
     isDefault: false,
@@ -40,8 +40,8 @@ const initialPeriods = [
   },
   {
     id: "semi-annual",
-    name: "Semi-Annual",
-    description: "Billed every 6 months",
+    name: "Semester",
+    description: "Ditagih setiap 6 bulan",
     durationMonths: 6,
     discountPercentage: 10,
     isDefault: false,
@@ -49,8 +49,8 @@ const initialPeriods = [
   },
   {
     id: "annual",
-    name: "Annual",
-    description: "Billed once a year",
+    name: "Tahunan",
+    description: "Ditagih sekali setahun",
     durationMonths: 12,
     discountPercentage: 16,
     isDefault: false,
@@ -58,8 +58,8 @@ const initialPeriods = [
   },
   {
     id: "biennial",
-    name: "Biennial",
-    description: "Billed every 2 years",
+    name: "Dua Tahunan",
+    description: "Ditagih setiap 2 tahun",
     durationMonths: 24,
     discountPercentage: 25,
     isDefault: false,
@@ -134,9 +134,9 @@ export function SubscriptionPeriods() {
   return (
     <>
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold">Subscription Periods</h2>
+        <h2 className="text-2xl font-bold">Periode Langganan</h2>
         <Button onClick={handleAddNewPeriod}>
-          <Plus className="mr-2 h-4 w-4" /> Add New Period
+          <Plus className="mr-2 h-4 w-4" /> Tambah Periode Baru
         </Button>
       </div>
 
@@ -145,7 +145,7 @@ export function SubscriptionPeriods() {
           <Card key={period.id} className={period.isDefault ? "border-primary" : ""}>
             {period.isDefault && (
               <div className="bg-primary text-primary-foreground text-center py-1 text-sm font-medium">
-                Default Period
+                Periode Default
               </div>
             )}
             <CardHeader>
@@ -172,13 +172,13 @@ export function SubscriptionPeriods() {
             <CardContent>
               <div className="space-y-4">
                 <div className="flex justify-between">
-                  <span className="text-sm text-muted-foreground">Duration:</span>
+                  <span className="text-sm text-muted-foreground">Durasi:</span>
                   <span className="font-medium">
-                    {period.durationMonths} {period.durationMonths === 1 ? "month" : "months"}
+                    {period.durationMonths} {period.durationMonths === 1 ? "bulan" : "bulan"}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-sm text-muted-foreground">Discount:</span>
+                  <span className="text-sm text-muted-foreground">Diskon:</span>
                   <span className="font-medium">{period.discountPercentage}%</span>
                 </div>
               </div>
@@ -196,11 +196,11 @@ export function SubscriptionPeriods() {
                   }}
                   disabled={period.isDefault}
                 />
-                <Label htmlFor={`active-${period.id}`}>Active</Label>
+                <Label htmlFor={`active-${period.id}`}>Aktif</Label>
               </div>
               {!period.isDefault && (
                 <Button variant="outline" size="sm" onClick={() => handleSetDefault(period.id)}>
-                  Set as Default
+                  Jadikan Default
                 </Button>
               )}
             </CardFooter>
@@ -212,17 +212,17 @@ export function SubscriptionPeriods() {
         <DialogContent>
           <DialogHeader>
             <DialogTitle>
-              {editingPeriod?.id.includes("new") ? "Add New Subscription Period" : "Edit Subscription Period"}
+              {editingPeriod?.id.includes("new") ? "Tambah Periode Langganan Baru" : "Edit Periode Langganan"}
             </DialogTitle>
             <DialogDescription>
-              Configure the details for this subscription period. Changes will be applied across the platform.
+              Konfigurasi detail untuk periode langganan ini. Perubahan akan diterapkan di seluruh platform.
             </DialogDescription>
           </DialogHeader>
 
           {editingPeriod && (
             <div className="grid gap-4 py-4">
               <div className="space-y-2">
-                <Label htmlFor="period-name">Period Name</Label>
+                <Label htmlFor="period-name">Nama Periode</Label>
                 <Input
                   id="period-name"
                   value={editingPeriod.name}
@@ -231,7 +231,7 @@ export function SubscriptionPeriods() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="period-description">Description</Label>
+                <Label htmlFor="period-description">Deskripsi</Label>
                 <Textarea
                   id="period-description"
                   value={editingPeriod.description}
@@ -241,7 +241,7 @@ export function SubscriptionPeriods() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="duration-months">Duration (months)</Label>
+                  <Label htmlFor="duration-months">Durasi (bulan)</Label>
                   <Input
                     id="duration-months"
                     type="number"
@@ -253,7 +253,7 @@ export function SubscriptionPeriods() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="discount-percentage">Discount Percentage (%)</Label>
+                  <Label htmlFor="discount-percentage">Persentase Diskon (%)</Label>
                   <Input
                     id="discount-percentage"
                     type="number"
@@ -273,7 +273,7 @@ export function SubscriptionPeriods() {
                   checked={editingPeriod.isDefault}
                   onCheckedChange={(checked) => setEditingPeriod({ ...editingPeriod, isDefault: checked })}
                 />
-                <Label htmlFor="period-default">Set as Default Period</Label>
+                <Label htmlFor="period-default">Jadikan Periode Default</Label>
               </div>
 
               <div className="flex items-center space-x-2">
@@ -283,16 +283,16 @@ export function SubscriptionPeriods() {
                   onCheckedChange={(checked) => setEditingPeriod({ ...editingPeriod, isActive: checked })}
                   disabled={editingPeriod.isDefault}
                 />
-                <Label htmlFor="period-active">Active</Label>
+                <Label htmlFor="period-active">Aktif</Label>
               </div>
             </div>
           )}
 
           <DialogFooter>
             <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
-              Cancel
+              Batal
             </Button>
-            <Button onClick={handleSavePeriod}>Save Changes</Button>
+            <Button onClick={handleSavePeriod}>Simpan Perubahan</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
