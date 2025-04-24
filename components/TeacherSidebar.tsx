@@ -44,7 +44,7 @@ export function TeacherSidebar() {
   // Define all possible navigation items with their associated features
   const allNavigationItems: NavigationItem[] = [
     {
-      title: "Dashboard",
+      title: "Beranda",
       href: "/teacher",
       icon: <LayoutDashboard className="mr-2 h-4 w-4" />
     },

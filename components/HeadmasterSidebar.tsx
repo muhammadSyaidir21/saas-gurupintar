@@ -59,7 +59,7 @@ import {
 // Navigation items for the headmaster role
 const navigationItems = [
   {
-    title: "Dashboard",
+    title: "Beranda",
     href: "/dashboard/headmaster",
     icon: <HomeIcon className="h-5 w-5" />,
   },
@@ -69,47 +69,47 @@ const navigationItems = [
     icon: <Building2 className="h-5 w-5" />,
   },
   {
-    title: "Teachers",
+    title: "Guru",
     href: "/dashboard/headmaster/teachers",
     icon: <UsersIcon className="h-5 w-5" />,
   },
   {
-    title: "Students",
+    title: "Siswa",
     href: "/dashboard/headmaster/students",
     icon: <GraduationCapIcon className="h-5 w-5" />,
   },
   {
-    title: "Curriculum",
+    title: "Kurikulum",
     href: "/dashboard/headmaster/curriculum",
     icon: <BookOpenIcon className="h-5 w-5" />,
   },
   {
-    title: "Calendar",
+    title: "Kalender",
     href: "/dashboard/headmaster/calendar",
     icon: <CalendarIcon className="h-5 w-5" />,
   },
   {
-    title: "Achievements",
+    title: "Prestasi",
     href: "/dashboard/headmaster/achievements",
     icon: <TrophyIcon className="h-5 w-5" />,
   },
   {
-    title: "Analytics",
+    title: "Analitik",
     href: "/dashboard/headmaster/analytics",
     icon: <BarChartIcon className="h-5 w-5" />,
   },
   {
-    title: "Reports",
+    title: "Laporan",
     href: "/dashboard/headmaster/reports",
     icon: <ClipboardIcon className="h-5 w-5" />,
   },
   {
-    title: "Operators",
+    title: "Operator",
     href: "/dashboard/headmaster/operators",
     icon: <UserCogIcon className="h-5 w-5" />,
   },
   {
-    title: "Settings",
+    title: "Pengaturan",
     href: "/dashboard/headmaster/settings",
     icon: <SettingsIcon className="h-5 w-5" />,
   },
