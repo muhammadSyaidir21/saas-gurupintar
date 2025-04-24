@@ -10,9 +10,9 @@ import { Badge } from "@/components/ui/badge"
 
 // Mock data - in a real application, this would come from an API
 const initialTransactions = [
-  { id: 1, teacherId: "T001", teacherName: "Alice Johnson", amount: 50, date: "2023-07-01", status: "Completed" },
-  { id: 2, teacherId: "T002", teacherName: "Bob Smith", amount: 50, date: "2023-07-02", status: "Pending" },
-  { id: 3, teacherId: "T003", teacherName: "Carol Williams", amount: 50, date: "2023-07-03", status: "Failed" },
+  { id: 1, teacherId: "T001", teacherName: "Alice Johnson", amount: 50, date: "2023-07-01", status: "Selesai" },
+  { id: 2, teacherId: "T002", teacherName: "Bob Smith", amount: 50, date: "2023-07-02", status: "Tertunda" },
+  { id: 3, teacherId: "T003", teacherName: "Carol Williams", amount: 50, date: "2023-07-03", status: "Gagal" },
 ]
 
 export default function TransactionsPage() {
@@ -28,15 +28,15 @@ export default function TransactionsPage() {
 
   const handleExportData = () => {
     // Implement export functionality here
-    console.log("Exporting transaction data...")
+    console.log("Mengekspor data transaksi...")
   }
 
   return (
     <div className="w-full h-full p-6">
-      <h1 className="text-3xl font-bold mb-8">Transaction Monitor</h1>
+      <h1 className="text-3xl font-bold mb-8">Monitor Transaksi</h1>
       <Card className="shadow-sm border-none h-full">
         <CardHeader>
-          <CardTitle>Teacher Payment Transactions</CardTitle>
+          <CardTitle>Transaksi Pembayaran Guru</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex justify-between mb-4">
@@ -44,7 +44,7 @@ export default function TransactionsPage() {
               <Search className="text-muted-foreground" />
               <Input
                 type="text"
-                placeholder="Search transactions..."
+                placeholder="Cari transaksi..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="max-w-sm"
@@ -52,16 +52,16 @@ export default function TransactionsPage() {
             </div>
             <Button onClick={handleExportData}>
               <Download className="mr-2 h-4 w-4" />
-              Export Data
+              Ekspor Data
             </Button>
           </div>
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Teacher ID</TableHead>
-                <TableHead>Teacher Name</TableHead>
-                <TableHead>Amount</TableHead>
-                <TableHead>Date</TableHead>
+                <TableHead>ID Guru</TableHead>
+                <TableHead>Nama Guru</TableHead>
+                <TableHead>Jumlah</TableHead>
+                <TableHead>Tanggal</TableHead>
                 <TableHead>Status</TableHead>
               </TableRow>
             </TableHeader>
@@ -75,9 +75,9 @@ export default function TransactionsPage() {
                   <TableCell>
                     <Badge
                       variant={
-                        transaction.status === "Completed"
+                        transaction.status === "Selesai"
                           ? "default"
-                          : transaction.status === "Pending"
+                          : transaction.status === "Tertunda"
                             ? "secondary"
                             : "destructive"
                       }
