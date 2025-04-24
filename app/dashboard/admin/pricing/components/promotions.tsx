@@ -26,9 +26,9 @@ import { Textarea } from "@/components/ui/textarea"
 const initialPromotions = [
   {
     id: "summer-sale",
-    name: "Summer Sale",
+    name: "Diskon Musim Panas",
     code: "SUMMER2023",
-    description: "Special discount for summer 2023",
+    description: "Diskon khusus untuk musim panas 2023",
     type: "percentage",
     value: 20,
     startDate: new Date("2023-06-01"),
@@ -40,9 +40,9 @@ const initialPromotions = [
   },
   {
     id: "new-school",
-    name: "New School Discount",
+    name: "Diskon Sekolah Baru",
     code: "NEWSCHOOL",
-    description: "Special offer for new schools joining the platform",
+    description: "Penawaran khusus untuk sekolah baru yang bergabung dengan platform",
     type: "percentage",
     value: 30,
     startDate: new Date("2023-01-01"),
@@ -54,9 +54,9 @@ const initialPromotions = [
   },
   {
     id: "teacher-appreciation",
-    name: "Teacher Appreciation",
+    name: "Apresiasi Guru",
     code: "TEACHERS2023",
-    description: "Special discount for Teacher Appreciation Week",
+    description: "Diskon khusus untuk Pekan Apresiasi Guru",
     type: "fixed",
     value: 50,
     startDate: new Date("2023-05-01"),
@@ -68,9 +68,9 @@ const initialPromotions = [
   },
   {
     id: "back-to-school",
-    name: "Back to School",
+    name: "Kembali ke Sekolah",
     code: "BACK2SCHOOL",
-    description: "Special discount for the new school year",
+    description: "Diskon khusus untuk tahun ajaran baru",
     type: "percentage",
     value: 15,
     startDate: new Date("2023-08-15"),
@@ -82,9 +82,9 @@ const initialPromotions = [
   },
   {
     id: "free-trial",
-    name: "30-Day Free Trial",
+    name: "Uji Coba Gratis 30 Hari",
     code: "FREETRIAL",
-    description: "Try our platform for 30 days at no cost",
+    description: "Coba platform kami selama 30 hari tanpa biaya",
     type: "trial",
     value: 30,
     startDate: new Date("2023-01-01"),
@@ -196,9 +196,9 @@ export function Promotions() {
   return (
     <>
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold">Promotions & Discounts</h2>
+        <h2 className="text-2xl font-bold">Promosi & Diskon</h2>
         <Button onClick={handleAddNewPromotion}>
-          <Plus className="mr-2 h-4 w-4" /> Add New Promotion
+          <Plus className="mr-2 h-4 w-4" /> Tambah Promosi Baru
         </Button>
       </div>
 
@@ -227,50 +227,50 @@ export function Promotions() {
             <CardContent>
               <div className="space-y-4">
                 <div className="flex justify-between">
-                  <span className="text-sm text-muted-foreground">Code:</span>
+                  <span className="text-sm text-muted-foreground">Kode:</span>
                   <span className="font-medium">{promotion.code}</span>
                 </div>
 
                 <div className="flex justify-between">
-                  <span className="text-sm text-muted-foreground">Discount:</span>
+                  <span className="text-sm text-muted-foreground">Diskon:</span>
                   <span className="font-medium">
                     {promotion.type === "percentage" && `${promotion.value}%`}
-                    {promotion.type === "fixed" && `$${promotion.value}`}
-                    {promotion.type === "trial" && `${promotion.value} days free`}
+                    {promotion.type === "fixed" && `Rp${promotion.value}`}
+                    {promotion.type === "trial" && `${promotion.value} hari gratis`}
                   </span>
                 </div>
 
                 <div className="flex justify-between">
-                  <span className="text-sm text-muted-foreground">Valid Period:</span>
+                  <span className="text-sm text-muted-foreground">Periode Berlaku:</span>
                   <span className="font-medium">
                     {format(promotion.startDate, "MMM d, yyyy")} - {format(promotion.endDate, "MMM d, yyyy")}
                   </span>
                 </div>
 
                 <div className="flex justify-between">
-                  <span className="text-sm text-muted-foreground">Usage:</span>
+                  <span className="text-sm text-muted-foreground">Penggunaan:</span>
                   <span className="font-medium">
                     {promotion.usageCount} / {promotion.usageLimit}
                   </span>
                 </div>
 
                 <div>
-                  <span className="text-sm text-muted-foreground">Applicable to:</span>
+                  <span className="text-sm text-muted-foreground">Berlaku untuk:</span>
                   <div className="flex flex-wrap gap-2 mt-1">
                     {promotion.applicableTo.includes("all") ? (
                       <span className="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">
-                        All School Levels
+                        Semua Tingkat Sekolah
                       </span>
                     ) : (
                       <>
                         {promotion.applicableTo.includes("elementary") && (
-                          <span className="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">Elementary</span>
+                          <span className="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">SD</span>
                         )}
                         {promotion.applicableTo.includes("middle") && (
-                          <span className="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">Middle</span>
+                          <span className="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">SMP</span>
                         )}
                         {promotion.applicableTo.includes("high") && (
-                          <span className="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">High</span>
+                          <span className="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">SMA</span>
                         )}
                       </>
                     )}
@@ -300,9 +300,9 @@ export function Promotions() {
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent className="max-w-2xl">
           <DialogHeader>
-            <DialogTitle>{editingPromotion?.id.includes("new") ? "Add New Promotion" : "Edit Promotion"}</DialogTitle>
+            <DialogTitle>{editingPromotion?.id.includes("new") ? "Tambah Promosi Baru" : "Edit Promosi"}</DialogTitle>
             <DialogDescription>
-              Configure the details for this promotion. Changes will be applied across the platform.
+              Konfigurasi detail untuk promosi ini. Perubahan akan diterapkan di seluruh platform.
             </DialogDescription>
           </DialogHeader>
 
@@ -310,7 +310,7 @@ export function Promotions() {
             <div className="grid gap-4 py-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="promotion-name">Promotion Name</Label>
+                  <Label htmlFor="promotion-name">Nama Promosi</Label>
                   <Input
                     id="promotion-name"
                     value={editingPromotion.name}
@@ -318,7 +318,7 @@ export function Promotions() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="promotion-code">Promotion Code</Label>
+                  <Label htmlFor="promotion-code">Kode Promosi</Label>
                   <Input
                     id="promotion-code"
                     value={editingPromotion.code}
@@ -328,7 +328,7 @@ export function Promotions() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="promotion-description">Description</Label>
+                <Label htmlFor="promotion-description">Deskripsi</Label>
                 <Textarea
                   id="promotion-description"
                   value={editingPromotion.description}
@@ -338,26 +338,26 @@ export function Promotions() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="promotion-type">Discount Type</Label>
+                  <Label htmlFor="promotion-type">Jenis Diskon</Label>
                   <Select
                     value={editingPromotion.type}
                     onValueChange={(value) => setEditingPromotion({ ...editingPromotion, type: value })}
                   >
                     <SelectTrigger id="promotion-type">
-                      <SelectValue placeholder="Select discount type" />
+                      <SelectValue placeholder="Pilih jenis diskon" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="percentage">Percentage Discount</SelectItem>
-                      <SelectItem value="fixed">Fixed Amount Discount</SelectItem>
-                      <SelectItem value="trial">Free Trial Period</SelectItem>
+                      <SelectItem value="percentage">Diskon Persentase</SelectItem>
+                      <SelectItem value="fixed">Diskon Jumlah Tetap</SelectItem>
+                      <SelectItem value="trial">Periode Uji Coba Gratis</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="promotion-value">
-                    {editingPromotion.type === "percentage" && "Discount Percentage (%)"}
-                    {editingPromotion.type === "fixed" && "Discount Amount ($)"}
-                    {editingPromotion.type === "trial" && "Trial Period (days)"}
+                    {editingPromotion.type === "percentage" && "Persentase Diskon (%)"}
+                    {editingPromotion.type === "fixed" && "Jumlah Diskon (Rp)"}
+                    {editingPromotion.type === "trial" && "Periode Uji Coba (hari)"}
                   </Label>
                   <Input
                     id="promotion-value"
@@ -373,12 +373,12 @@ export function Promotions() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="start-date">Start Date</Label>
+                  <Label htmlFor="start-date">Tanggal Mulai</Label>
                   <Popover>
                     <PopoverTrigger asChild>
                       <Button variant="outline" className="w-full justify-start text-left font-normal">
                         <CalendarIcon className="mr-2 h-4 w-4" />
-                        {editingPromotion.startDate ? format(editingPromotion.startDate, "PPP") : "Select date"}
+                        {editingPromotion.startDate ? format(editingPromotion.startDate, "PPP") : "Pilih tanggal"}
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0">
@@ -392,12 +392,12 @@ export function Promotions() {
                   </Popover>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="end-date">End Date</Label>
+                  <Label htmlFor="end-date">Tanggal Berakhir</Label>
                   <Popover>
                     <PopoverTrigger asChild>
                       <Button variant="outline" className="w-full justify-start text-left font-normal">
                         <CalendarIcon className="mr-2 h-4 w-4" />
-                        {editingPromotion.endDate ? format(editingPromotion.endDate, "PPP") : "Select date"}
+                        {editingPromotion.endDate ? format(editingPromotion.endDate, "PPP") : "Pilih tanggal"}
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0">
@@ -413,7 +413,7 @@ export function Promotions() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="usage-limit">Usage Limit</Label>
+                <Label htmlFor="usage-limit">Batas Penggunaan</Label>
                 <Input
                   id="usage-limit"
                   type="number"
@@ -426,7 +426,7 @@ export function Promotions() {
               </div>
 
               <div className="space-y-2">
-                <Label>Applicable to School Levels</Label>
+                <Label>Berlaku untuk Tingkat Sekolah</Label>
                 <div className="flex flex-wrap gap-4 pt-2">
                   <div className="flex items-center space-x-2">
                     <Switch
@@ -434,7 +434,7 @@ export function Promotions() {
                       checked={editingPromotion.applicableTo.includes("all")}
                       onCheckedChange={() => toggleSchoolLevel("all")}
                     />
-                    <Label htmlFor="all-levels">All School Levels</Label>
+                    <Label htmlFor="all-levels">Semua Tingkat Sekolah</Label>
                   </div>
 
                   {!editingPromotion.applicableTo.includes("all") && (
@@ -445,7 +445,7 @@ export function Promotions() {
                           checked={editingPromotion.applicableTo.includes("elementary")}
                           onCheckedChange={() => toggleSchoolLevel("elementary")}
                         />
-                        <Label htmlFor="elementary-applicable">Elementary School</Label>
+                        <Label htmlFor="elementary-applicable">Sekolah Dasar</Label>
                       </div>
                       <div className="flex items-center space-x-2">
                         <Switch
@@ -453,7 +453,7 @@ export function Promotions() {
                           checked={editingPromotion.applicableTo.includes("middle")}
                           onCheckedChange={() => toggleSchoolLevel("middle")}
                         />
-                        <Label htmlFor="middle-applicable">Middle School</Label>
+                        <Label htmlFor="middle-applicable">Sekolah Menengah Pertama</Label>
                       </div>
                       <div className="flex items-center space-x-2">
                         <Switch
@@ -461,7 +461,7 @@ export function Promotions() {
                           checked={editingPromotion.applicableTo.includes("high")}
                           onCheckedChange={() => toggleSchoolLevel("high")}
                         />
-                        <Label htmlFor="high-applicable">High School</Label>
+                        <Label htmlFor="high-applicable">Sekolah Menengah Atas</Label>
                       </div>
                     </>
                   )}
@@ -474,16 +474,16 @@ export function Promotions() {
                   checked={editingPromotion.isActive}
                   onCheckedChange={(checked) => setEditingPromotion({ ...editingPromotion, isActive: checked })}
                 />
-                <Label htmlFor="promotion-active">Active</Label>
+                <Label htmlFor="promotion-active">Aktif</Label>
               </div>
             </div>
           )}
 
           <DialogFooter>
             <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
-              Cancel
+              Batal
             </Button>
-            <Button onClick={handleSavePromotion}>Save Changes</Button>
+            <Button onClick={handleSavePromotion}>Simpan Perubahan</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
