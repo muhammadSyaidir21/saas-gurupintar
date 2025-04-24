@@ -9,9 +9,9 @@ import { Search, FileText, Download } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
 const reports = [
-  { id: 1, name: "Monthly Performance Report", date: "2023-06-01", type: "Performance" },
-  { id: 2, name: "Quarterly Financial Report", date: "2023-07-01", type: "Financial" },
-  { id: 3, name: "Annual School Statistics", date: "2023-05-15", type: "Statistics" },
+  { id: 1, name: "Laporan Kinerja Bulanan", date: "2023-06-01", type: "Kinerja" },
+  { id: 2, name: "Laporan Keuangan Triwulan", date: "2023-07-01", type: "Keuangan" },
+  { id: 3, name: "Statistik Sekolah Tahunan", date: "2023-05-15", type: "Statistik" },
 ]
 
 export default function ReportsPage() {
@@ -26,11 +26,11 @@ export default function ReportsPage() {
   return (
     <div className="w-full h-full p-6">
       <h1 className="text-3xl font-bold mb-8 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
-        Reports
+        Laporan
       </h1>
       <Card className="shadow-md border-none rounded-2xl overflow-hidden">
         <CardHeader>
-          <CardTitle className="text-xl font-bold">Report List</CardTitle>
+          <CardTitle className="text-xl font-bold">Daftar Laporan</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex justify-between mb-4">
@@ -38,7 +38,7 @@ export default function ReportsPage() {
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
                 type="text"
-                placeholder="Search reports..."
+                placeholder="Cari laporan..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="pl-9 rounded-full"
@@ -46,17 +46,17 @@ export default function ReportsPage() {
             </div>
             <Button className="rounded-full bg-gradient-to-r from-primary to-primary-light hover:opacity-90 transition-opacity">
               <FileText className="mr-2 h-4 w-4" />
-              Generate New Report
+              Buat Laporan Baru
             </Button>
           </div>
           <div className="rounded-xl border overflow-hidden">
             <Table>
               <TableHeader>
                 <TableRow className="bg-muted/50 hover:bg-muted/50">
-                  <TableHead>Report Name</TableHead>
-                  <TableHead>Date</TableHead>
-                  <TableHead>Type</TableHead>
-                  <TableHead>Actions</TableHead>
+                  <TableHead>Nama Laporan</TableHead>
+                  <TableHead>Tanggal</TableHead>
+                  <TableHead>Jenis</TableHead>
+                  <TableHead>Aksi</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -74,7 +74,7 @@ export default function ReportsPage() {
                         className="rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
                       >
                         <Download className="mr-2 h-4 w-4" />
-                        Download
+                        Unduh
                       </Button>
                     </TableCell>
                   </TableRow>
