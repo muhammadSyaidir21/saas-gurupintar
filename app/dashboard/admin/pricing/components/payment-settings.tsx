@@ -25,7 +25,7 @@ const initialPaymentGateways = [
   {
     id: "stripe",
     name: "Stripe",
-    description: "Terima pembayaran kartu kredit melalui Stripe",
+    description: "Accept credit card payments via Stripe",
     isConfigured: true,
     isActive: true,
     supportedCountries: ["global"],
@@ -38,7 +38,7 @@ const initialPaymentGateways = [
   {
     id: "paypal",
     name: "PayPal",
-    description: "Terima pembayaran melalui PayPal",
+    description: "Accept payments via PayPal",
     isConfigured: true,
     isActive: true,
     supportedCountries: ["global"],
@@ -49,14 +49,14 @@ const initialPaymentGateways = [
   },
   {
     id: "bank-transfer",
-    name: "Transfer Bank",
-    description: "Terima pembayaran melalui transfer bank",
+    name: "Bank Transfer",
+    description: "Accept payments via bank transfer",
     isConfigured: true,
     isActive: true,
     supportedCountries: ["global"],
     supportedCurrencies: ["USD", "EUR", "GBP", "CAD", "AUD"],
     processingFee: "0%",
-    accountDetails: "Bank: Contoh Bank\nNomor Rekening: 1234567890\nKode Bank: 123456789",
+    accountDetails: "Bank: Example Bank\nAccount Number: 1234567890\nRouting Number: 123456789",
   },
 ]
 
@@ -200,26 +200,26 @@ export function PaymentSettings() {
   return (
     <>
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold">Pengaturan Pembayaran</h2>
+        <h2 className="text-2xl font-bold">Payment Settings</h2>
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4">
         <TabsList>
           <TabsTrigger value="gateways" className="flex items-center gap-2">
             <CreditCard className="h-4 w-4" />
-            <span>Gateway Pembayaran</span>
+            <span>Payment Gateways</span>
           </TabsTrigger>
           <TabsTrigger value="taxes" className="flex items-center gap-2">
             <Globe className="h-4 w-4" />
-            <span>Pengaturan Pajak</span>
+            <span>Tax Settings</span>
           </TabsTrigger>
         </TabsList>
 
         <TabsContent value="gateways" className="space-y-4">
           <div className="flex justify-between items-center">
-            <h3 className="text-lg font-medium">Gateway Pembayaran</h3>
+            <h3 className="text-lg font-medium">Payment Gateways</h3>
             <Button onClick={handleAddNewGateway}>
-              <Plus className="mr-2 h-4 w-4" /> Tambah Gateway Baru
+              <Plus className="mr-2 h-4 w-4" /> Add New Gateway
             </Button>
           </div>
 
@@ -242,17 +242,17 @@ export function PaymentSettings() {
                     <div className="flex justify-between">
                       <span className="text-sm text-muted-foreground">Status:</span>
                       <span className={`font-medium ${gateway.isConfigured ? "text-green-600" : "text-amber-600"}`}>
-                        {gateway.isConfigured ? "Terkonfigurasi" : "Belum Dikonfigurasi"}
+                        {gateway.isConfigured ? "Configured" : "Not Configured"}
                       </span>
                     </div>
 
                     <div className="flex justify-between">
-                      <span className="text-sm text-muted-foreground">Biaya Pemrosesan:</span>
+                      <span className="text-sm text-muted-foreground">Processing Fee:</span>
                       <span className="font-medium">{gateway.processingFee}</span>
                     </div>
 
                     <div className="flex justify-between">
-                      <span className="text-sm text-muted-foreground">Mata Uang yang Didukung:</span>
+                      <span className="text-sm text-muted-foreground">Supported Currencies:</span>
                       <span className="font-medium">{gateway.supportedCurrencies.join(", ")}</span>
                     </div>
                   </div>
@@ -270,10 +270,10 @@ export function PaymentSettings() {
                       }}
                       disabled={!gateway.isConfigured}
                     />
-                    <Label htmlFor={`active-${gateway.id}`}>Aktif</Label>
+                    <Label htmlFor={`active-${gateway.id}`}>Active</Label>
                   </div>
                   <Button variant="outline" size="sm" onClick={() => handleEditGateway(gateway)}>
-                    Konfigurasi
+                    Configure
                   </Button>
                 </CardFooter>
               </Card>
@@ -283,9 +283,9 @@ export function PaymentSettings() {
 
         <TabsContent value="taxes" className="space-y-4">
           <div className="flex justify-between items-center">
-            <h3 className="text-lg font-medium">Pengaturan Pajak</h3>
+            <h3 className="text-lg font-medium">Tax Settings</h3>
             <Button onClick={handleAddNewTax}>
-              <Plus className="mr-2 h-4 w-4" /> Tambah Pajak Baru
+              <Plus className="mr-2 h-4 w-4" /> Add New Tax
             </Button>
           </div>
 
@@ -294,12 +294,12 @@ export function PaymentSettings() {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Negara/Wilayah</TableHead>
-                    <TableHead>Provinsi/State</TableHead>
-                    <TableHead>Nama Pajak</TableHead>
-                    <TableHead>Tarif</TableHead>
+                    <TableHead>Country/Region</TableHead>
+                    <TableHead>State/Province</TableHead>
+                    <TableHead>Tax Name</TableHead>
+                    <TableHead>Rate</TableHead>
                     <TableHead>Status</TableHead>
-                    <TableHead className="text-right">Aksi</TableHead>
+                    <TableHead className="text-right">Actions</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -322,7 +322,7 @@ export function PaymentSettings() {
                             }}
                           />
                           <Label htmlFor={`tax-active-${tax.id}`} className="sr-only">
-                            Aktif
+                            Active
                           </Label>
                         </div>
                       </TableCell>
@@ -349,10 +349,10 @@ export function PaymentSettings() {
         <DialogContent className="max-w-2xl">
           <DialogHeader>
             <DialogTitle>
-              {editingGateway?.id.includes("new") ? "Tambah Gateway Pembayaran Baru" : `Konfigurasi ${editingGateway?.name}`}
+              {editingGateway?.id.includes("new") ? "Add New Payment Gateway" : `Configure ${editingGateway?.name}`}
             </DialogTitle>
             <DialogDescription>
-              Konfigurasi pengaturan gateway pembayaran. Kredensial ini akan digunakan untuk memproses pembayaran.
+              Configure the payment gateway settings. These credentials will be used to process payments.
             </DialogDescription>
           </DialogHeader>
 
@@ -360,7 +360,7 @@ export function PaymentSettings() {
             <div className="grid gap-4 py-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="gateway-name">Nama Gateway</Label>
+                  <Label htmlFor="gateway-name">Gateway Name</Label>
                   <Input
                     id="gateway-name"
                     value={editingGateway.name}
@@ -368,7 +368,7 @@ export function PaymentSettings() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="processing-fee">Biaya Pemrosesan</Label>
+                  <Label htmlFor="processing-fee">Processing Fee</Label>
                   <Input
                     id="processing-fee"
                     value={editingGateway.processingFee}
@@ -378,7 +378,7 @@ export function PaymentSettings() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="gateway-description">Deskripsi</Label>
+                <Label htmlFor="gateway-description">Description</Label>
                 <Textarea
                   id="gateway-description"
                   value={editingGateway.description}
@@ -444,7 +444,7 @@ export function PaymentSettings() {
 
               {editingGateway.id === "bank-transfer" && (
                 <div className="space-y-2">
-                  <Label htmlFor="bank-account-details">Detail Rekening</Label>
+                  <Label htmlFor="bank-account-details">Account Details</Label>
                   <Textarea
                     id="bank-account-details"
                     value={editingGateway.accountDetails}
@@ -455,7 +455,7 @@ export function PaymentSettings() {
               )}
 
               <div className="space-y-2">
-                <Label>Mata Uang yang Didukung</Label>
+                <Label>Supported Currencies</Label>
                 <div className="grid grid-cols-3 gap-2">
                   {["USD", "EUR", "GBP", "CAD", "AUD"].map((currency) => (
                     <div key={currency} className="flex items-center space-x-2">
@@ -487,24 +487,25 @@ export function PaymentSettings() {
                   checked={editingGateway.isActive}
                   onCheckedChange={(checked) => setEditingGateway({ ...editingGateway, isActive: checked })}
                 />
-                <Label htmlFor="gateway-active">Aktif</Label>
+                <Label htmlFor="gateway-active">Active</Label>
               </div>
             </div>
           )}
 
           <DialogFooter>
             <Button variant="outline" onClick={() => setIsGatewayDialogOpen(false)}>
-              Batal
+              Cancel
             </Button>
             <Button
               onClick={() => {
+                // Mark as configured if it's a new gateway or being edited
                 if (editingGateway) {
                   setEditingGateway({ ...editingGateway, isConfigured: true })
                 }
                 handleSaveGateway()
               }}
             >
-              Simpan Perubahan
+              Save Changes
             </Button>
           </DialogFooter>
         </DialogContent>
@@ -513,46 +514,47 @@ export function PaymentSettings() {
       <Dialog open={isTaxDialogOpen} onOpenChange={setIsTaxDialogOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>{editingTax?.id.includes("new") ? "Tambah Pengaturan Pajak Baru" : "Edit Pengaturan Pajak"}</DialogTitle>
+            <DialogTitle>{editingTax?.id.includes("new") ? "Add New Tax Setting" : "Edit Tax Setting"}</DialogTitle>
             <DialogDescription>
-              Konfigurasi pengaturan pajak untuk berbagai wilayah. Pengaturan ini akan diterapkan pada pembelian dari wilayah yang ditentukan.
+              Configure tax settings for different regions. These settings will be applied to purchases from the
+              specified regions.
             </DialogDescription>
           </DialogHeader>
 
           {editingTax && (
             <div className="grid gap-4 py-4">
               <div className="space-y-2">
-                <Label htmlFor="tax-country">Negara/Wilayah</Label>
+                <Label htmlFor="tax-country">Country/Region</Label>
                 <Input
                   id="tax-country"
                   value={editingTax.country}
                   onChange={(e) => setEditingTax({ ...editingTax, country: e.target.value })}
-                  placeholder="contoh: Amerika Serikat, Uni Eropa"
+                  placeholder="e.g., United States, European Union"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="tax-state">Provinsi/State</Label>
+                <Label htmlFor="tax-state">State/Province</Label>
                 <Input
                   id="tax-state"
                   value={editingTax.state}
                   onChange={(e) => setEditingTax({ ...editingTax, state: e.target.value })}
-                  placeholder="contoh: California, Semua"
+                  placeholder="e.g., California, All"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="tax-name">Nama Pajak</Label>
+                <Label htmlFor="tax-name">Tax Name</Label>
                 <Input
                   id="tax-name"
                   value={editingTax.taxName}
                   onChange={(e) => setEditingTax({ ...editingTax, taxName: e.target.value })}
-                  placeholder="contoh: Pajak Penjualan, PPN, Pajak Pertambahan Nilai"
+                  placeholder="e.g., Sales Tax, VAT, GST"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="tax-rate">Tarif Pajak (%)</Label>
+                <Label htmlFor="tax-rate">Tax Rate (%)</Label>
                 <Input
                   id="tax-rate"
                   type="number"
@@ -570,16 +572,16 @@ export function PaymentSettings() {
                   checked={editingTax.isActive}
                   onCheckedChange={(checked) => setEditingTax({ ...editingTax, isActive: checked })}
                 />
-                <Label htmlFor="tax-active">Aktif</Label>
+                <Label htmlFor="tax-active">Active</Label>
               </div>
             </div>
           )}
 
           <DialogFooter>
             <Button variant="outline" onClick={() => setIsTaxDialogOpen(false)}>
-              Batal
+              Cancel
             </Button>
-            <Button onClick={handleSaveTax}>Simpan Perubahan</Button>
+            <Button onClick={handleSaveTax}>Save Changes</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

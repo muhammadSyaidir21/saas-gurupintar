@@ -15,8 +15,8 @@ const initialBillingSettings = {
     defaultCurrency: "USD",
     allowedCurrencies: ["USD", "EUR", "GBP", "CAD", "AUD"],
     invoicePrefix: "INV-",
-    invoiceFooter: "Thank you for your business!",
-    termsAndConditions: "Standard terms and conditions apply.",
+    invoiceFooter: "Terima kasih atas bisnis Anda!",
+    termsAndConditions: "Syarat dan ketentuan standar berlaku.",
     showTaxOnInvoice: true,
     allowPartialPayments: false,
   },
@@ -27,7 +27,7 @@ const initialBillingSettings = {
     finalReminderDays: 1,
     autoRenewSubscriptions: true,
     renewalEmailTemplate:
-      "Your subscription will renew on {{renewal_date}}. Please update your payment information if needed.",
+      "Langganan Anda akan diperbarui pada {{renewal_date}}. Silakan perbarui informasi pembayaran Anda jika diperlukan.",
     gracePeriodDays: 7,
   },
   notifications: {
@@ -36,9 +36,9 @@ const initialBillingSettings = {
     sendSubscriptionActivationNotices: true,
     sendSubscriptionCancellationNotices: true,
     adminEmailForNotifications: "admin@example.com",
-    paymentReceiptTemplate: "Thank you for your payment of {{amount}} for {{service}}.",
+    paymentReceiptTemplate: "Terima kasih atas pembayaran sebesar {{amount}} untuk {{service}}.",
     paymentFailureTemplate:
-      "Your payment of {{amount}} for {{service}} has failed. Please update your payment information.",
+      "Pembayaran sebesar {{amount}} untuk {{service}} gagal. Silakan perbarui informasi pembayaran Anda.",
   },
 }
 
@@ -92,24 +92,24 @@ export function BillingSettings() {
   return (
     <>
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold">Billing Settings</h2>
+        <h2 className="text-2xl font-bold">Pengaturan Penagihan</h2>
       </div>
       <Tabs defaultValue={activeTab} onValueChange={setActiveTab}>
         <TabsList className="grid w-full grid-cols-3 mb-6">
-          <TabsTrigger value="general">General</TabsTrigger>
-          <TabsTrigger value="renewals">Renewals</TabsTrigger>
-          <TabsTrigger value="notifications">Notifications</TabsTrigger>
+          <TabsTrigger value="general">Umum</TabsTrigger>
+          <TabsTrigger value="renewals">Pembaruan</TabsTrigger>
+          <TabsTrigger value="notifications">Notifikasi</TabsTrigger>
         </TabsList>
         
         <TabsContent value="general">
           <Card>
             <CardHeader>
-              <CardTitle>General Billing Settings</CardTitle>
-              <CardDescription>Configure your general billing preferences</CardDescription>
+              <CardTitle>Pengaturan Penagihan Umum</CardTitle>
+              <CardDescription>Konfigurasi preferensi penagihan umum Anda</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="defaultCurrency">Default Currency</Label>
+                <Label htmlFor="defaultCurrency">Mata Uang Default</Label>
                 <Input 
                   id="defaultCurrency" 
                   value={billingSettings.general.defaultCurrency}
@@ -118,7 +118,7 @@ export function BillingSettings() {
               </div>
               
               <div className="space-y-2">
-                <Label>Allowed Currencies</Label>
+                <Label>Mata Uang yang Diizinkan</Label>
                 <div className="flex flex-wrap gap-2">
                   {["USD", "EUR", "GBP", "CAD", "AUD"].map((currency) => (
                     <Button 
@@ -134,7 +134,7 @@ export function BillingSettings() {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="invoicePrefix">Invoice Prefix</Label>
+                <Label htmlFor="invoicePrefix">Awalan Faktur</Label>
                 <Input 
                   id="invoicePrefix" 
                   value={billingSettings.general.invoicePrefix}
@@ -143,7 +143,7 @@ export function BillingSettings() {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="invoiceFooter">Invoice Footer</Label>
+                <Label htmlFor="invoiceFooter">Catatan Kaki Faktur</Label>
                 <Textarea 
                   id="invoiceFooter" 
                   value={billingSettings.general.invoiceFooter}
@@ -152,7 +152,7 @@ export function BillingSettings() {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="termsAndConditions">Terms and Conditions</Label>
+                <Label htmlFor="termsAndConditions">Syarat dan Ketentuan</Label>
                 <Textarea 
                   id="termsAndConditions" 
                   value={billingSettings.general.termsAndConditions}
@@ -161,7 +161,7 @@ export function BillingSettings() {
               </div>
               
               <div className="flex items-center justify-between">
-                <Label htmlFor="showTaxOnInvoice">Show Tax on Invoice</Label>
+                <Label htmlFor="showTaxOnInvoice">Tampilkan Pajak pada Faktur</Label>
                 <Switch 
                   id="showTaxOnInvoice" 
                   checked={billingSettings.general.showTaxOnInvoice}
@@ -170,7 +170,7 @@ export function BillingSettings() {
               </div>
               
               <div className="flex items-center justify-between">
-                <Label htmlFor="allowPartialPayments">Allow Partial Payments</Label>
+                <Label htmlFor="allowPartialPayments">Izinkan Pembayaran Sebagian</Label>
                 <Switch 
                   id="allowPartialPayments" 
                   checked={billingSettings.general.allowPartialPayments}
@@ -184,12 +184,12 @@ export function BillingSettings() {
         <TabsContent value="renewals">
           <Card>
             <CardHeader>
-              <CardTitle>Renewal Settings</CardTitle>
-              <CardDescription>Configure how subscriptions are renewed and managed</CardDescription>
+              <CardTitle>Pengaturan Pembaruan</CardTitle>
+              <CardDescription>Konfigurasi cara langganan diperbarui dan dikelola</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
-                <Label htmlFor="sendRenewalReminders">Send Renewal Reminders</Label>
+                <Label htmlFor="sendRenewalReminders">Kirim Pengingat Pembaruan</Label>
                 <Switch 
                   id="sendRenewalReminders" 
                   checked={billingSettings.renewals.sendRenewalReminders}
@@ -198,7 +198,7 @@ export function BillingSettings() {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="firstReminderDays">First Reminder (days before)</Label>
+                <Label htmlFor="firstReminderDays">Pengingat Pertama (hari sebelumnya)</Label>
                 <Input 
                   id="firstReminderDays" 
                   type="number"
@@ -208,7 +208,7 @@ export function BillingSettings() {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="secondReminderDays">Second Reminder (days before)</Label>
+                <Label htmlFor="secondReminderDays">Pengingat Kedua (hari sebelumnya)</Label>
                 <Input 
                   id="secondReminderDays" 
                   type="number"
@@ -218,7 +218,7 @@ export function BillingSettings() {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="finalReminderDays">Final Reminder (days before)</Label>
+                <Label htmlFor="finalReminderDays">Pengingat Terakhir (hari sebelumnya)</Label>
                 <Input 
                   id="finalReminderDays" 
                   type="number"
@@ -228,7 +228,7 @@ export function BillingSettings() {
               </div>
               
               <div className="flex items-center justify-between">
-                <Label htmlFor="autoRenewSubscriptions">Auto-Renew Subscriptions</Label>
+                <Label htmlFor="autoRenewSubscriptions">Pembaruan Otomatis Langganan</Label>
                 <Switch 
                   id="autoRenewSubscriptions" 
                   checked={billingSettings.renewals.autoRenewSubscriptions}
@@ -237,7 +237,7 @@ export function BillingSettings() {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="renewalEmailTemplate">Renewal Email Template</Label>
+                <Label htmlFor="renewalEmailTemplate">Template Email Pembaruan</Label>
                 <Textarea 
                   id="renewalEmailTemplate" 
                   value={billingSettings.renewals.renewalEmailTemplate}
@@ -246,7 +246,7 @@ export function BillingSettings() {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="gracePeriodDays">Grace Period (days)</Label>
+                <Label htmlFor="gracePeriodDays">Masa Tenggang (hari)</Label>
                 <Input 
                   id="gracePeriodDays" 
                   type="number"
@@ -261,12 +261,12 @@ export function BillingSettings() {
         <TabsContent value="notifications">
           <Card>
             <CardHeader>
-              <CardTitle>Notification Settings</CardTitle>
-              <CardDescription>Configure email notifications for billing events</CardDescription>
+              <CardTitle>Pengaturan Notifikasi</CardTitle>
+              <CardDescription>Konfigurasi notifikasi email untuk peristiwa penagihan</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
-                <Label htmlFor="sendPaymentReceipts">Send Payment Receipts</Label>
+                <Label htmlFor="sendPaymentReceipts">Kirim Tanda Terima Pembayaran</Label>
                 <Switch 
                   id="sendPaymentReceipts" 
                   checked={billingSettings.notifications.sendPaymentReceipts}
@@ -275,7 +275,7 @@ export function BillingSettings() {
               </div>
               
               <div className="flex items-center justify-between">
-                <Label htmlFor="sendPaymentFailureNotices">Send Payment Failure Notices</Label>
+                <Label htmlFor="sendPaymentFailureNotices">Kirim Pemberitahuan Kegagalan Pembayaran</Label>
                 <Switch 
                   id="sendPaymentFailureNotices" 
                   checked={billingSettings.notifications.sendPaymentFailureNotices}
@@ -284,7 +284,7 @@ export function BillingSettings() {
               </div>
               
               <div className="flex items-center justify-between">
-                <Label htmlFor="sendSubscriptionActivationNotices">Send Subscription Activation Notices</Label>
+                <Label htmlFor="sendSubscriptionActivationNotices">Kirim Pemberitahuan Aktivasi Langganan</Label>
                 <Switch 
                   id="sendSubscriptionActivationNotices" 
                   checked={billingSettings.notifications.sendSubscriptionActivationNotices}
@@ -293,7 +293,7 @@ export function BillingSettings() {
               </div>
               
               <div className="flex items-center justify-between">
-                <Label htmlFor="sendSubscriptionCancellationNotices">Send Subscription Cancellation Notices</Label>
+                <Label htmlFor="sendSubscriptionCancellationNotices">Kirim Pemberitahuan Pembatalan Langganan</Label>
                 <Switch 
                   id="sendSubscriptionCancellationNotices" 
                   checked={billingSettings.notifications.sendSubscriptionCancellationNotices}
@@ -302,7 +302,7 @@ export function BillingSettings() {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="adminEmailForNotifications">Admin Email for Notifications</Label>
+                <Label htmlFor="adminEmailForNotifications">Email Admin untuk Notifikasi</Label>
                 <Input 
                   id="adminEmailForNotifications" 
                   type="email"
@@ -312,7 +312,7 @@ export function BillingSettings() {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="paymentReceiptTemplate">Payment Receipt Template</Label>
+                <Label htmlFor="paymentReceiptTemplate">Template Tanda Terima Pembayaran</Label>
                 <Textarea 
                   id="paymentReceiptTemplate" 
                   value={billingSettings.notifications.paymentReceiptTemplate}
@@ -321,7 +321,7 @@ export function BillingSettings() {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="paymentFailureTemplate">Payment Failure Template</Label>
+                <Label htmlFor="paymentFailureTemplate">Template Kegagalan Pembayaran</Label>
                 <Textarea 
                   id="paymentFailureTemplate" 
                   value={billingSettings.notifications.paymentFailureTemplate}
