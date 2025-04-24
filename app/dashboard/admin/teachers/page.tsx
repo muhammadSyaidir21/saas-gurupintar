@@ -597,13 +597,13 @@ export default function TeachersPage() {
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">Teachers</h1>
-          <p className="text-muted-foreground">Manage teacher accounts and monitor their activities</p>
+          <h1 className="text-2xl font-bold tracking-tight">Guru</h1>
+          <p className="text-muted-foreground">Kelola akun guru dan pantau aktivitas mereka</p>
         </div>
         <div className="flex items-center gap-2">
           <Button onClick={() => router.push("/dashboard/admin/teachers/create")} className="w-full md:w-auto">
             <UserPlus className="mr-2 h-4 w-4" />
-            Add Teacher
+            Tambah Guru
           </Button>
           <Button onClick={handleRefresh} variant="outline" size="icon" className="hidden md:flex">
             <RefreshCw className="h-4 w-4" />
@@ -617,7 +617,7 @@ export default function TeachersPage() {
             <div className="flex w-full md:w-96 items-center space-x-2 relative">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder="Search teachers..."
+                placeholder="Cari guru..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="flex-1 pl-8"
@@ -630,17 +630,17 @@ export default function TeachersPage() {
                 <SelectTrigger className="w-full md:w-40">
                   <div className="flex items-center gap-2">
                     <Filter className="h-4 w-4 text-muted-foreground" />
-                    <span>Subject</span>
+                    <span>Mata Pelajaran</span>
                   </div>
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">All Subjects</SelectItem>
-                  <SelectItem value="Mathematics">Mathematics</SelectItem>
-                  <SelectItem value="Science">Science</SelectItem>
-                  <SelectItem value="English">English</SelectItem>
-                  <SelectItem value="History">History</SelectItem>
-                  <SelectItem value="Physics">Physics</SelectItem>
-                  <SelectItem value="Chemistry">Chemistry</SelectItem>
+                  <SelectItem value="all">Semua Mata Pelajaran</SelectItem>
+                  <SelectItem value="Mathematics">Matematika</SelectItem>
+                  <SelectItem value="Science">Sains</SelectItem>
+                  <SelectItem value="English">Bahasa Inggris</SelectItem>
+                  <SelectItem value="History">Sejarah</SelectItem>
+                  <SelectItem value="Physics">Fisika</SelectItem>
+                  <SelectItem value="Chemistry">Kimia</SelectItem>
                 </SelectContent>
               </Select>
 
@@ -652,22 +652,22 @@ export default function TeachersPage() {
                   </div>
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">All Status</SelectItem>
-                  <SelectItem value="Active">Active</SelectItem>
-                  <SelectItem value="Inactive">Inactive</SelectItem>
-                  <SelectItem value="Pending Payment">Pending Payment</SelectItem>
-                  <SelectItem value="Pending Approval">Pending Approval</SelectItem>
+                  <SelectItem value="all">Semua Status</SelectItem>
+                  <SelectItem value="Active">Aktif</SelectItem>
+                  <SelectItem value="Inactive">Tidak Aktif</SelectItem>
+                  <SelectItem value="Pending Payment">Menunggu Pembayaran</SelectItem>
+                  <SelectItem value="Pending Approval">Menunggu Persetujuan</SelectItem>
                 </SelectContent>
               </Select>
 
               <Button variant="outline" className="h-10 px-4 py-2" onClick={resetFilters}>
                 <X className="h-4 w-4 mr-2" />
-                Reset Filters
+                Atur Ulang Filter
               </Button>
 
               <Button variant="outline" className="h-10 px-4 py-2 md:hidden" onClick={handleRefresh}>
                 <RefreshCw className="h-4 w-4 mr-2" />
-                Refresh
+                Segarkan
               </Button>
             </div>
           </div>
@@ -675,10 +675,10 @@ export default function TeachersPage() {
           <Tabs defaultValue="all" className="w-full">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-4">
               <TabsList>
-                <TabsTrigger value="all">All Teachers</TabsTrigger>
-                <TabsTrigger value="active">Active</TabsTrigger>
-                <TabsTrigger value="pending">Pending</TabsTrigger>
-                <TabsTrigger value="inactive">Inactive</TabsTrigger>
+                <TabsTrigger value="all">Semua Guru</TabsTrigger>
+                <TabsTrigger value="active">Aktif</TabsTrigger>
+                <TabsTrigger value="pending">Menunggu</TabsTrigger>
+                <TabsTrigger value="inactive">Tidak Aktif</TabsTrigger>
               </TabsList>
 
               <div className="flex items-center gap-2">
@@ -690,7 +690,7 @@ export default function TeachersPage() {
                       </Button>
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p>Refresh data</p>
+                      <p>Segarkan data</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -703,7 +703,7 @@ export default function TeachersPage() {
                       </Button>
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p>Export data</p>
+                      <p>Ekspor data</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -714,7 +714,7 @@ export default function TeachersPage() {
 
                 <Button onClick={() => router.push("/dashboard/admin/teachers/create")}>
                   <UserPlus className="mr-2 h-4 w-4" />
-                  Add Teacher
+                  Tambah Guru
                 </Button>
               </div>
             </div>
@@ -725,14 +725,14 @@ export default function TeachersPage() {
                   <div className="flex flex-col md:flex-row gap-4 items-end">
                     <div className="flex-1 space-y-2">
                       <label htmlFor="search" className="text-sm font-medium">
-                        Search
+                        Cari
                       </label>
                       <div className="relative">
                         <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                         <Input
                           id="search"
                           type="text"
-                          placeholder="Search by name, email, school..."
+                          placeholder="Cari berdasarkan nama, email, sekolah..."
                           value={searchTerm}
                           onChange={(e) => setSearchTerm(e.target.value)}
                           className="pl-8"
@@ -746,28 +746,28 @@ export default function TeachersPage() {
                       </label>
                       <Select value={statusFilter} onValueChange={setStatusFilter}>
                         <SelectTrigger id="status-filter">
-                          <SelectValue placeholder="Filter by status" />
+                          <SelectValue placeholder="Filter berdasarkan status" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="all">All Statuses</SelectItem>
-                          <SelectItem value="Active">Active</SelectItem>
-                          <SelectItem value="Pending Payment">Pending Payment</SelectItem>
-                          <SelectItem value="Pending Approval">Pending Approval</SelectItem>
-                          <SelectItem value="Inactive">Inactive</SelectItem>
+                          <SelectItem value="all">Semua Status</SelectItem>
+                          <SelectItem value="Active">Aktif</SelectItem>
+                          <SelectItem value="Pending Payment">Menunggu Pembayaran</SelectItem>
+                          <SelectItem value="Pending Approval">Menunggu Persetujuan</SelectItem>
+                          <SelectItem value="Inactive">Tidak Aktif</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
 
                     <div className="w-full md:w-[180px] space-y-2">
                       <label htmlFor="subject-filter" className="text-sm font-medium">
-                        Subject
+                        Mata Pelajaran
                       </label>
                       <Select value={roleFilter} onValueChange={setRoleFilter}>
                         <SelectTrigger id="subject-filter">
-                          <SelectValue placeholder="Filter by subject" />
+                          <SelectValue placeholder="Filter berdasarkan mata pelajaran" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="all">All Subjects</SelectItem>
+                          <SelectItem value="all">Semua Mata Pelajaran</SelectItem>
                           {subjects.map((subject) => (
                             <SelectItem key={subject} value={subject}>
                               {subject}
@@ -779,7 +779,7 @@ export default function TeachersPage() {
 
                     <Button variant="outline" onClick={resetFilters} className="flex gap-2">
                       <X className="h-4 w-4" />
-                      Reset
+                      Atur Ulang
                     </Button>
                   </div>
                 </CardContent>
@@ -795,7 +795,7 @@ export default function TeachersPage() {
                         <TableRow>
                           <TableHead className="w-[250px]">
                             <div className="flex items-center cursor-pointer" onClick={() => requestSort("name")}>
-                              Teacher
+                              Guru
                               {sortConfig.key === "name" &&
                                 (sortConfig.direction === "ascending" ? (
                                   <ChevronUp className="ml-1 h-4 w-4" />
@@ -806,7 +806,7 @@ export default function TeachersPage() {
                           </TableHead>
                           <TableHead>
                             <div className="flex items-center cursor-pointer" onClick={() => requestSort("subject")}>
-                              Subject
+                              Mata Pelajaran
                               {sortConfig.key === "subject" &&
                                 (sortConfig.direction === "ascending" ? (
                                   <ChevronUp className="ml-1 h-4 w-4" />
@@ -815,10 +815,10 @@ export default function TeachersPage() {
                                 ))}
                             </div>
                           </TableHead>
-                          <TableHead className="hidden md:table-cell">School</TableHead>
+                          <TableHead className="hidden md:table-cell">Sekolah</TableHead>
                           <TableHead className="hidden lg:table-cell">
                             <div className="flex items-center cursor-pointer" onClick={() => requestSort("students")}>
-                              Students
+                              Siswa
                               {sortConfig.key === "students" &&
                                 (sortConfig.direction === "ascending" ? (
                                   <ChevronUp className="ml-1 h-4 w-4" />
@@ -828,8 +828,8 @@ export default function TeachersPage() {
                             </div>
                           </TableHead>
                           <TableHead>Status</TableHead>
-                          <TableHead className="hidden lg:table-cell">Last Active</TableHead>
-                          <TableHead className="text-right">Actions</TableHead>
+                          <TableHead className="hidden lg:table-cell">Terakhir Aktif</TableHead>
+                          <TableHead className="text-right">Aksi</TableHead>
                         </TableRow>
                       </TableHeader>
                       <TableBody>
@@ -907,10 +907,10 @@ export default function TeachersPage() {
                                     </Button>
                                   </DropdownMenuTrigger>
                                   <DropdownMenuContent align="end">
-                                    <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                                    <DropdownMenuLabel>Aksi</DropdownMenuLabel>
                                     <DropdownMenuItem onClick={() => openTeacherDetails(teacher)}>
                                       <Eye className="mr-2 h-4 w-4" />
-                                      View details
+                                      Lihat detail
                                     </DropdownMenuItem>
                                     <DropdownMenuItem
                                       onClick={() => {
@@ -919,25 +919,25 @@ export default function TeachersPage() {
                                       }}
                                     >
                                       <Edit className="mr-2 h-4 w-4" />
-                                      Edit details
+                                      Edit detail
                                     </DropdownMenuItem>
                                     <DropdownMenuSeparator />
                                     {teacher.status === "Pending Payment" || teacher.status === "Pending Approval" ? (
                                       <DropdownMenuItem onClick={() => handleActivateTeacher(teacher.id)}>
                                         <CheckCircle2 className="mr-2 h-4 w-4" />
-                                        Activate account
+                                        Aktifkan akun
                                       </DropdownMenuItem>
                                     ) : null}
                                     {teacher.status === "Active" ? (
                                       <DropdownMenuItem className="text-destructive">
                                         <AlertCircle className="mr-2 h-4 w-4" />
-                                        Suspend account
+                                        Nonaktifkan akun
                                       </DropdownMenuItem>
                                     ) : null}
                                     {teacher.status === "Inactive" ? (
                                       <DropdownMenuItem>
                                         <RefreshCw className="mr-2 h-4 w-4" />
-                                        Reactivate account
+                                        Aktifkan kembali
                                       </DropdownMenuItem>
                                     ) : null}
                                   </DropdownMenuContent>
@@ -1000,7 +1000,7 @@ export default function TeachersPage() {
                 <>
                   <DialogHeader>
                     <div className="flex items-center justify-between">
-                      <DialogTitle className="text-xl">{isEditMode ? "Edit Teacher" : "Teacher Details"}</DialogTitle>
+                      <DialogTitle className="text-xl">{isEditMode ? "Edit Guru" : "Detail Guru"}</DialogTitle>
                       <div className="flex gap-2">
                         {!isEditMode ? (
                           <Button variant="outline" size="sm" onClick={toggleEditMode}>
@@ -1010,13 +1010,13 @@ export default function TeachersPage() {
                         ) : (
                           <Button variant="outline" size="sm" onClick={() => setIsEditMode(false)}>
                             <X className="mr-2 h-4 w-4" />
-                            Cancel
+                            Batal
                           </Button>
                         )}
                       </div>
                     </div>
                     <DialogDescription>
-                      {isEditMode ? "Update the teacher's information below." : `Viewing details for ${selectedTeacher.name}`}
+                      {isEditMode ? "Perbarui informasi guru di bawah ini." : `Melihat detail untuk ${selectedTeacher.name}`}
                     </DialogDescription>
                   </DialogHeader>
 
