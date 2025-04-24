@@ -84,138 +84,138 @@ const initialTeachers: Teacher[] = [
     id: 1,
     name: "Alice Johnson",
     email: "alice@example.com",
-    subject: "Mathematics",
-    status: "Active",
+    subject: "Matematika",
+    status: "Aktif",
     school: "SMA Negeri 1 Jakarta",
-    lastActive: "2 hours ago",
+    lastActive: "2 jam yang lalu",
     students: 42,
     completedLessons: 156,
-    joinDate: "Jan 15, 2023",
+    joinDate: "15 Jan 2023",
     avatar: "/placeholder.svg?height=40&width=40",
     phone: "123-456-7890",
     address: "123 Main St",
-    bio: "A dedicated math teacher with 10 years of experience.",
+    bio: "Guru matematika yang berdedikasi dengan pengalaman 10 tahun.",
   },
   {
     id: 2,
     name: "Bob Smith",
     email: "bob@example.com",
-    subject: "Science",
-    status: "Pending Payment",
+    subject: "Sains",
+    status: "Menunggu Pembayaran",
     school: "SMA Negeri 3 Bandung",
-    lastActive: "5 days ago",
+    lastActive: "5 hari yang lalu",
     students: 28,
     completedLessons: 89,
-    joinDate: "Mar 22, 2023",
+    joinDate: "22 Mar 2023",
     avatar: "/placeholder.svg?height=40&width=40",
     phone: "987-654-3210",
     address: "456 Oak Ave",
-    bio: "Passionate about science and making it accessible to all students.",
+    bio: "Bersemangat tentang sains dan membuatnya dapat diakses oleh semua siswa.",
   },
   {
     id: 3,
     name: "Carol Williams",
     email: "carol@example.com",
-    subject: "English",
-    status: "Active",
+    subject: "Bahasa Inggris",
+    status: "Aktif",
     school: "SMA Santo Aloysius",
-    lastActive: "Just now",
+    lastActive: "Baru saja",
     students: 35,
     completedLessons: 210,
-    joinDate: "Nov 5, 2022",
+    joinDate: "5 Nov 2022",
     avatar: "/placeholder.svg?height=40&width=40",
     phone: "555-123-4567",
     address: "789 Pine Ln",
-    bio: "An enthusiastic English teacher who loves literature and writing.",
+    bio: "Guru bahasa Inggris yang antusias yang mencintai sastra dan menulis.",
   },
   {
     id: 4,
     name: "David Lee",
     email: "david@example.com",
-    subject: "History",
-    status: "Inactive",
+    subject: "Sejarah",
+    status: "Tidak Aktif",
     school: "SMA Negeri 2 Surabaya",
-    lastActive: "2 weeks ago",
+    lastActive: "2 minggu yang lalu",
     students: 18,
     completedLessons: 45,
-    joinDate: "Apr 10, 2023",
+    joinDate: "10 Apr 2023",
     avatar: "/placeholder.svg?height=40&width=40",
     phone: "111-222-3333",
     address: "101 Elm Rd",
-    bio: "A history buff dedicated to bringing the past to life for students.",
+    bio: "Pecinta sejarah yang berdedikasi untuk menghidupkan masa lalu bagi siswa.",
   },
   {
     id: 5,
     name: "Eva Chen",
     email: "eva@example.com",
-    subject: "Physics",
-    status: "Active",
+    subject: "Fisika",
+    status: "Aktif",
     school: "SMA Negeri 1 Yogyakarta",
-    lastActive: "3 hours ago",
+    lastActive: "3 jam yang lalu",
     students: 31,
     completedLessons: 178,
-    joinDate: "Feb 8, 2023",
+    joinDate: "8 Feb 2023",
     avatar: "/placeholder.svg?height=40&width=40",
     phone: "444-555-6666",
     address: "222 Maple Dr",
-    bio: "A physics enthusiast who believes in hands-on learning.",
+    bio: "Pecinta fisika yang percaya pada pembelajaran langsung.",
   },
   {
     id: 6,
     name: "Frank Miller",
     email: "frank@example.com",
-    subject: "Chemistry",
-    status: "Pending Approval",
+    subject: "Kimia",
+    status: "Menunggu Persetujuan",
     school: "SMA Negeri 5 Jakarta",
-    lastActive: "1 day ago",
+    lastActive: "1 hari yang lalu",
     students: 0,
     completedLessons: 0,
-    joinDate: "Jun 30, 2023",
+    joinDate: "30 Jun 2023",
     avatar: "/placeholder.svg?height=40&width=40",
     phone: "777-888-9999",
     address: "333 Birch Ct",
-    bio: "A chemistry expert focused on making science fun and engaging.",
+    bio: "Ahli kimia yang fokus pada membuat sains menyenangkan dan menarik.",
   },
 ]
 
 const teacherFormSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  subject: z.string().min(1, { message: "Subject is required." }),
-  school: z.string().min(1, { message: "School is required." }),
+  name: z.string().min(2, { message: "Nama harus minimal 2 karakter." }),
+  email: z.string().email({ message: "Masukkan alamat email yang valid." }),
+  subject: z.string().min(1, { message: "Mata pelajaran wajib diisi." }),
+  school: z.string().min(1, { message: "Sekolah wajib diisi." }),
   phone: z.string().optional(),
   address: z.string().optional(),
   bio: z.string().optional(),
 })
 
-const getStatusBadge = (status: "Active" | "Pending Payment" | "Pending Approval" | "Inactive" | string) => {
+const getStatusBadge = (status: "Aktif" | "Menunggu Pembayaran" | "Menunggu Persetujuan" | "Tidak Aktif" | string) => {
   switch (status) {
-    case "Active":
+    case "Aktif":
       return (
         <Badge variant="success" className="flex items-center gap-1">
           <CheckCircle2 className="h-3 w-3" />
-          Active
+          Aktif
         </Badge>
       )
-    case "Pending Payment":
+    case "Menunggu Pembayaran":
       return (
         <Badge variant="warning" className="flex items-center gap-1">
           <Clock className="h-3 w-3" />
-          Pending Payment
+          Menunggu Pembayaran
         </Badge>
       )
-    case "Pending Approval":
+    case "Menunggu Persetujuan":
       return (
         <Badge variant="warning" className="flex items-center gap-1">
           <Clock className="h-3 w-3" />
-          Pending Approval
+          Menunggu Persetujuan
         </Badge>
       )
-    case "Inactive":
+    case "Tidak Aktif":
       return (
         <Badge variant="destructive" className="flex items-center gap-1">
           <AlertCircle className="h-3 w-3" />
-          Inactive
+          Tidak Aktif
         </Badge>
       )
     default:
@@ -244,7 +244,7 @@ function TeacherDetails({ teacher }: { teacher: Teacher }) {
           <h3 className="text-2xl font-bold">{teacher.name}</h3>
           <div className="flex items-center gap-2 text-muted-foreground">
             <BookOpen className="h-4 w-4" />
-            <span>{teacher.subject} Teacher</span>
+            <span>Guru {teacher.subject}</span>
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
             <School className="h-4 w-4" />
@@ -258,7 +258,7 @@ function TeacherDetails({ teacher }: { teacher: Teacher }) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-4">
-          <h4 className="text-sm font-semibold">Contact Information</h4>
+          <h4 className="text-sm font-semibold">Informasi Kontak</h4>
 
           <div className="space-y-2">
             <div className="flex items-center gap-2">
@@ -267,30 +267,30 @@ function TeacherDetails({ teacher }: { teacher: Teacher }) {
             </div>
             <div className="flex items-center gap-2">
               <Phone className="h-4 w-4 text-muted-foreground" />
-              <span>{teacher.phone || "Not provided"}</span>
+              <span>{teacher.phone || "Tidak tersedia"}</span>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="h-4 w-4 text-muted-foreground" />
-              <span>{teacher.address || "Not provided"}</span>
+              <span>{teacher.address || "Tidak tersedia"}</span>
             </div>
           </div>
         </div>
 
         <div className="space-y-4">
-          <h4 className="text-sm font-semibold">Account Information</h4>
+          <h4 className="text-sm font-semibold">Informasi Akun</h4>
 
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <Calendar className="h-4 w-4 text-muted-foreground" />
-              <span>Joined: {teacher.joinDate}</span>
+              <span>Bergabung: {teacher.joinDate}</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="h-4 w-4 text-muted-foreground" />
-              <span>Last active: {teacher.lastActive}</span>
+              <span>Terakhir aktif: {teacher.lastActive}</span>
             </div>
             <div className="flex items-center gap-2">
               <Users className="h-4 w-4 text-muted-foreground" />
-              <span>Students: {teacher.students}</span>
+              <span>Siswa: {teacher.students}</span>
             </div>
           </div>
         </div>
@@ -299,25 +299,25 @@ function TeacherDetails({ teacher }: { teacher: Teacher }) {
       <Separator />
 
       <div className="space-y-4">
-        <h4 className="text-sm font-semibold">Statistics</h4>
+        <h4 className="text-sm font-semibold">Statistik</h4>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <Card>
             <CardContent className="pt-6">
               <div className="text-2xl font-bold">{teacher.students}</div>
-              <p className="text-xs text-muted-foreground">Active Students</p>
+              <p className="text-xs text-muted-foreground">Siswa Aktif</p>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="pt-6">
               <div className="text-2xl font-bold">{teacher.completedLessons}</div>
-              <p className="text-xs text-muted-foreground">Completed Lessons</p>
+              <p className="text-xs text-muted-foreground">Pelajaran Selesai</p>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="pt-6">
               <div className="text-2xl font-bold">{Math.round(teacher.completedLessons / (teacher.students || 1))}</div>
-              <p className="text-xs text-muted-foreground">Avg. Lessons per Student</p>
+              <p className="text-xs text-muted-foreground">Rata-rata Pelajaran per Siswa</p>
             </CardContent>
           </Card>
         </div>
@@ -326,8 +326,8 @@ function TeacherDetails({ teacher }: { teacher: Teacher }) {
       <Separator />
 
       <div className="space-y-4">
-        <h4 className="text-sm font-semibold">Biography</h4>
-        <p className="text-sm text-muted-foreground">{teacher.bio || "No biography provided."}</p>
+        <h4 className="text-sm font-semibold">Biografi</h4>
+        <p className="text-sm text-muted-foreground">{teacher.bio || "Tidak ada biografi yang tersedia."}</p>
       </div>
     </div>
   )
@@ -361,7 +361,7 @@ function TeacherEditForm({ teacher, onSubmit }: { teacher: Teacher; onSubmit: (d
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Full Name</FormLabel>
+                <FormLabel>Nama Lengkap</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -389,7 +389,7 @@ function TeacherEditForm({ teacher, onSubmit }: { teacher: Teacher; onSubmit: (d
             name="subject"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Subject</FormLabel>
+                <FormLabel>Mata Pelajaran</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -403,7 +403,7 @@ function TeacherEditForm({ teacher, onSubmit }: { teacher: Teacher; onSubmit: (d
             name="school"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>School</FormLabel>
+                <FormLabel>Sekolah</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -417,7 +417,7 @@ function TeacherEditForm({ teacher, onSubmit }: { teacher: Teacher; onSubmit: (d
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Phone Number</FormLabel>
+                <FormLabel>Nomor Telepon</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -431,7 +431,7 @@ function TeacherEditForm({ teacher, onSubmit }: { teacher: Teacher; onSubmit: (d
             name="address"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Address</FormLabel>
+                <FormLabel>Alamat</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -446,9 +446,9 @@ function TeacherEditForm({ teacher, onSubmit }: { teacher: Teacher; onSubmit: (d
           name="bio"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Biography</FormLabel>
+              <FormLabel>Biografi</FormLabel>
               <FormControl>
-                <Textarea {...field} placeholder="Enter teacher biography..." className="min-h-[120px]" />
+                <Textarea {...field} placeholder="Masukkan biografi guru..." className="min-h-[120px]" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -458,7 +458,7 @@ function TeacherEditForm({ teacher, onSubmit }: { teacher: Teacher; onSubmit: (d
         <div className="flex justify-end gap-2">
           <Button type="submit">
             <Save className="mr-2 h-4 w-4" />
-            Save Changes
+            Simpan Perubahan
           </Button>
         </div>
       </form>
@@ -545,7 +545,7 @@ export default function TeachersPage() {
   }, [searchTerm, statusFilter, roleFilter, sortConfig])
 
   const handleActivateTeacher = (id: number) => {
-    setTeachers(teachers.map((teacher) => (teacher.id === id ? { ...teacher, status: "Active" } : teacher)))
+    setTeachers(teachers.map((teacher) => (teacher.id === id ? { ...teacher, status: "Aktif" } : teacher)))
   }
 
   const handleRefresh = () => {
@@ -635,12 +635,12 @@ export default function TeachersPage() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">Semua Mata Pelajaran</SelectItem>
-                  <SelectItem value="Mathematics">Matematika</SelectItem>
-                  <SelectItem value="Science">Sains</SelectItem>
-                  <SelectItem value="English">Bahasa Inggris</SelectItem>
-                  <SelectItem value="History">Sejarah</SelectItem>
-                  <SelectItem value="Physics">Fisika</SelectItem>
-                  <SelectItem value="Chemistry">Kimia</SelectItem>
+                  <SelectItem value="Matematika">Matematika</SelectItem>
+                  <SelectItem value="Sains">Sains</SelectItem>
+                  <SelectItem value="Bahasa Inggris">Bahasa Inggris</SelectItem>
+                  <SelectItem value="Sejarah">Sejarah</SelectItem>
+                  <SelectItem value="Fisika">Fisika</SelectItem>
+                  <SelectItem value="Kimia">Kimia</SelectItem>
                 </SelectContent>
               </Select>
 
@@ -653,10 +653,10 @@ export default function TeachersPage() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">Semua Status</SelectItem>
-                  <SelectItem value="Active">Aktif</SelectItem>
-                  <SelectItem value="Inactive">Tidak Aktif</SelectItem>
-                  <SelectItem value="Pending Payment">Menunggu Pembayaran</SelectItem>
-                  <SelectItem value="Pending Approval">Menunggu Persetujuan</SelectItem>
+                  <SelectItem value="Aktif">Aktif</SelectItem>
+                  <SelectItem value="Tidak Aktif">Tidak Aktif</SelectItem>
+                  <SelectItem value="Menunggu Pembayaran">Menunggu Pembayaran</SelectItem>
+                  <SelectItem value="Menunggu Persetujuan">Menunggu Persetujuan</SelectItem>
                 </SelectContent>
               </Select>
 
@@ -750,10 +750,10 @@ export default function TeachersPage() {
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="all">Semua Status</SelectItem>
-                          <SelectItem value="Active">Aktif</SelectItem>
-                          <SelectItem value="Pending Payment">Menunggu Pembayaran</SelectItem>
-                          <SelectItem value="Pending Approval">Menunggu Persetujuan</SelectItem>
-                          <SelectItem value="Inactive">Tidak Aktif</SelectItem>
+                          <SelectItem value="Aktif">Aktif</SelectItem>
+                          <SelectItem value="Menunggu Pembayaran">Menunggu Pembayaran</SelectItem>
+                          <SelectItem value="Menunggu Persetujuan">Menunggu Persetujuan</SelectItem>
+                          <SelectItem value="Tidak Aktif">Tidak Aktif</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -922,19 +922,19 @@ export default function TeachersPage() {
                                       Ubah
                                     </DropdownMenuItem>
                                     <DropdownMenuSeparator />
-                                    {teacher.status === "Pending Payment" || teacher.status === "Pending Approval" ? (
+                                    {teacher.status === "Menunggu Pembayaran" || teacher.status === "Menunggu Persetujuan" ? (
                                       <DropdownMenuItem onClick={() => handleActivateTeacher(teacher.id)}>
                                         <CheckCircle2 className="mr-2 h-4 w-4" />
                                         Aktifkan akun
                                       </DropdownMenuItem>
                                     ) : null}
-                                    {teacher.status === "Active" ? (
+                                    {teacher.status === "Aktif" ? (
                                       <DropdownMenuItem className="text-destructive">
                                         <AlertCircle className="mr-2 h-4 w-4" />
                                         Nonaktifkan akun
                                       </DropdownMenuItem>
                                     ) : null}
-                                    {teacher.status === "Inactive" ? (
+                                    {teacher.status === "Tidak Aktif" ? (
                                       <DropdownMenuItem>
                                         <RefreshCw className="mr-2 h-4 w-4" />
                                         Aktifkan kembali
