@@ -870,7 +870,7 @@ export default function TeachersPage() {
                         ) : teachers.length === 0 ? (
                           <TableRow>
                             <TableCell colSpan={7} className="text-center py-8 text-muted-foreground">
-                              No teachers found matching your filters
+                              Tidak ada guru yang sesuai dengan filter Anda
                             </TableCell>
                           </TableRow>
                         ) : (
@@ -903,7 +903,7 @@ export default function TeachersPage() {
                                   <DropdownMenuTrigger asChild>
                                     <Button variant="ghost" size="icon">
                                       <MoreHorizontal className="h-4 w-4" />
-                                      <span className="sr-only">Open menu</span>
+                                      <span className="sr-only">Buka menu</span>
                                     </Button>
                                   </DropdownMenuTrigger>
                                   <DropdownMenuContent align="end">
@@ -919,7 +919,7 @@ export default function TeachersPage() {
                                       }}
                                     >
                                       <Edit className="mr-2 h-4 w-4" />
-                                      Edit detail
+                                      Ubah
                                     </DropdownMenuItem>
                                     <DropdownMenuSeparator />
                                     {teacher.status === "Pending Payment" || teacher.status === "Pending Approval" ? (
@@ -956,9 +956,8 @@ export default function TeachersPage() {
             <TabsContent value="active" className="m-0">
               <Card className="shadow-sm border-none">
                 <CardContent className="p-0">
-                  {/* Similar table structure as above, but filtered for active teachers */}
                   <div className="p-8 text-center text-muted-foreground">
-                    Active teachers view - Same table structure with pre-filtered data
+                    Tampilan guru aktif - Struktur tabel yang sama dengan data yang sudah difilter
                   </div>
                 </CardContent>
               </Card>
@@ -967,9 +966,8 @@ export default function TeachersPage() {
             <TabsContent value="pending" className="m-0">
               <Card className="shadow-sm border-none">
                 <CardContent className="p-0">
-                  {/* Similar table structure as above, but filtered for pending teachers */}
                   <div className="p-8 text-center text-muted-foreground">
-                    Pending teachers view - Same table structure with pre-filtered data
+                    Tampilan guru menunggu - Struktur tabel yang sama dengan data yang sudah difilter
                   </div>
                 </CardContent>
               </Card>
@@ -978,9 +976,8 @@ export default function TeachersPage() {
             <TabsContent value="inactive" className="m-0">
               <Card className="shadow-sm border-none">
                 <CardContent className="p-0">
-                  {/* Similar table structure as above, but filtered for inactive teachers */}
                   <div className="p-8 text-center text-muted-foreground">
-                    Inactive teachers view - Same table structure with pre-filtered data
+                    Tampilan guru tidak aktif - Struktur tabel yang sama dengan data yang sudah difilter
                   </div>
                 </CardContent>
               </Card>
@@ -1005,7 +1002,7 @@ export default function TeachersPage() {
                         {!isEditMode ? (
                           <Button variant="outline" size="sm" onClick={toggleEditMode}>
                             <Edit className="mr-2 h-4 w-4" />
-                            Edit
+                            Ubah
                           </Button>
                         ) : (
                           <Button variant="outline" size="sm" onClick={() => setIsEditMode(false)}>
