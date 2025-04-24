@@ -160,27 +160,27 @@ export default function AccountsPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Teacher Account Management</h1>
+      <h1 className="text-3xl font-bold mb-8">Manajemen Akun Guru</h1>
 
       <Tabs defaultValue="accounts" className="space-y-6">
         <TabsList className="grid w-full grid-cols-3 max-w-md">
-          <TabsTrigger value="accounts">Accounts</TabsTrigger>
-          <TabsTrigger value="invitations">Invitations</TabsTrigger>
-          <TabsTrigger value="activity">Activity Log</TabsTrigger>
+          <TabsTrigger value="accounts">Akun</TabsTrigger>
+          <TabsTrigger value="invitations">Undangan</TabsTrigger>
+          <TabsTrigger value="activity">Riwayat Aktivitas</TabsTrigger>
         </TabsList>
 
-        {/* Accounts Tab */}
+        {/* Tab Akun */}
         <TabsContent value="accounts">
           <Card>
             <CardHeader>
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                  <CardTitle>Teacher Accounts</CardTitle>
-                  <CardDescription>Manage teacher accounts and permissions</CardDescription>
+                  <CardTitle>Akun Guru</CardTitle>
+                  <CardDescription>Kelola akun dan izin guru</CardDescription>
                 </div>
                 <Button>
                   <UserPlus className="h-4 w-4 mr-2" />
-                  Add New Teacher
+                  Tambah Guru Baru
                 </Button>
               </div>
             </CardHeader>
@@ -190,7 +190,7 @@ export default function AccountsPage() {
                   <Search className="text-muted-foreground" />
                   <Input
                     type="text"
-                    placeholder="Search accounts..."
+                    placeholder="Cari akun..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="max-w-sm"

@@ -601,14 +601,14 @@ export default function UsersPage() {
 
       <div className="flex items-center justify-between">
         <p className="text-sm text-muted-foreground">
-          Menampilkan <strong>{filteredUsers.length}</strong> dari <strong>{users.length}</strong> pengguna
+          Showing <strong>{filteredUsers.length}</strong> of <strong>{users.length}</strong> users
         </p>
         <div className="flex items-center gap-2">
           <Button variant="outline" size="sm" disabled className="rounded-full">
-            Sebelumnya
+            Previous
           </Button>
           <Button variant="outline" size="sm" className="gap-1 rounded-full">
-            Selanjutnya
+            Next
           </Button>
         </div>
       </div>
