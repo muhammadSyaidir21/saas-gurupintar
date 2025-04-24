@@ -617,7 +617,7 @@ export default function TeachersPage() {
             <div className="flex w-full md:w-96 items-center space-x-2 relative">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder="Search teachers..."
+                placeholder="Cari guru..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="flex-1 pl-8"
