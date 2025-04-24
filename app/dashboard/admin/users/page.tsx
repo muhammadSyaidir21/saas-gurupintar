@@ -202,19 +202,19 @@ export default function UsersPage() {
       <>
         {isDrawer ? (
           <DrawerHeader>
-            <DrawerTitle>User Details</DrawerTitle>
-            <DrawerDescription>View and manage user information</DrawerDescription>
+            <DrawerTitle>Detail Pengguna</DrawerTitle>
+            <DrawerDescription>Lihat dan kelola informasi pengguna</DrawerDescription>
           </DrawerHeader>
         ) : (
           <DialogHeader>
-            <DialogTitle>User Details</DialogTitle>
-            <DialogDescription>View and manage user information</DialogDescription>
+            <DialogTitle>Detail Pengguna</DialogTitle>
+            <DialogDescription>Lihat dan kelola informasi pengguna</DialogDescription>
           </DialogHeader>
         )}
 
         <Tabs defaultValue="details" className="w-full mt-4">
           <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="details">Details</TabsTrigger>
+            <TabsTrigger value="details">Detail</TabsTrigger>
             <TabsTrigger value="edit">Edit</TabsTrigger>
             <TabsTrigger value="email">Email</TabsTrigger>
           </TabsList>
@@ -270,7 +270,7 @@ export default function UsersPage() {
               <Separator />
 
               <div className="space-y-2">
-                <p className="text-sm font-medium text-muted-foreground">Permissions</p>
+                <p className="text-sm font-medium text-muted-foreground">Izin</p>
                 <div className="flex flex-wrap gap-2">
                   {user.permissions.map((permission: string) => (
                     <Badge key={permission} variant="outline" className="bg-primary/5">
@@ -281,15 +281,15 @@ export default function UsersPage() {
               </div>
 
               <div className="space-y-2">
-                <p className="text-sm font-medium text-muted-foreground">Activity</p>
-                <p className="text-sm">Last active: {user.lastActive}</p>
+                <p className="text-sm font-medium text-muted-foreground">Aktivitas</p>
+                <p className="text-sm">Terakhir aktif: {user.lastActive}</p>
               </div>
             </TabsContent>
 
             <TabsContent value="edit" className="space-y-4 mt-4 p-1">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="edit-name">Full Name</Label>
+                  <Label htmlFor="edit-name">Nama Lengkap</Label>
                   <Input id="edit-name" defaultValue={user.name} />
                 </div>
                 <div className="space-y-2">
@@ -297,19 +297,19 @@ export default function UsersPage() {
                   <Input id="edit-email" defaultValue={user.email} />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="edit-phone">Phone</Label>
+                  <Label htmlFor="edit-phone">Telepon</Label>
                   <Input id="edit-phone" defaultValue={user.phone} />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="edit-role">Role</Label>
+                  <Label htmlFor="edit-role">Peran</Label>
                   <Select defaultValue={user.role.toLowerCase()}>
                     <SelectTrigger id="edit-role">
-                      <SelectValue placeholder="Select role" />
+                      <SelectValue placeholder="Pilih peran" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="admin">Admin</SelectItem>
                       <SelectItem value="operator">Operator</SelectItem>
-                      <SelectItem value="teacher">Teacher</SelectItem>
+                      <SelectItem value="teacher">Guru</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -321,45 +321,45 @@ export default function UsersPage() {
                   <Label htmlFor="edit-status">Status</Label>
                   <Select defaultValue={user.status.toLowerCase()}>
                     <SelectTrigger id="edit-status">
-                      <SelectValue placeholder="Select status" />
+                      <SelectValue placeholder="Pilih status" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="active">Active</SelectItem>
-                      <SelectItem value="inactive">Inactive</SelectItem>
-                      <SelectItem value="pending">Pending</SelectItem>
+                      <SelectItem value="active">Aktif</SelectItem>
+                      <SelectItem value="inactive">Tidak Aktif</SelectItem>
+                      <SelectItem value="pending">Menunggu</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
               </div>
 
               <div className="flex justify-end gap-2 mt-4">
-                <Button variant="outline">Cancel</Button>
-                <Button>Save Changes</Button>
+                <Button variant="outline">Batal</Button>
+                <Button>Simpan Perubahan</Button>
               </div>
             </TabsContent>
 
             <TabsContent value="email" className="space-y-4 mt-4 p-1">
               <div className="space-y-2">
-                <Label htmlFor="email-to">To</Label>
+                <Label htmlFor="email-to">Kepada</Label>
                 <Input id="email-to" defaultValue={user.email} readOnly />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email-subject">Subject</Label>
-                <Input id="email-subject" placeholder="Enter email subject" />
+                <Label htmlFor="email-subject">Subjek</Label>
+                <Input id="email-subject" placeholder="Masukkan subjek email" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email-message">Message</Label>
+                <Label htmlFor="email-message">Pesan</Label>
                 <Textarea
                   id="email-message"
-                  placeholder="Write your message here..."
+                  placeholder="Tulis pesan Anda di sini..."
                   rows={8}
                   className="resize-none"
                 />
               </div>
 
               <div className="flex justify-end gap-2 mt-4">
-                <Button variant="outline">Cancel</Button>
-                <Button>Send Email</Button>
+                <Button variant="outline">Batal</Button>
+                <Button>Kirim Email</Button>
               </div>
             </TabsContent>
           </ScrollArea>
@@ -522,7 +522,7 @@ export default function UsersPage() {
                                   className="h-8 gap-1 opacity-0 group-hover:opacity-100 transition-opacity rounded-full"
                                 >
                                   <Edit className="h-3.5 w-3.5" />
-                                  <span className="hidden sm:inline">Details</span>
+                                  <span className="hidden sm:inline">Detail</span>
                                 </Button>
                               </UserDetailsDialog>
 
@@ -601,14 +601,14 @@ export default function UsersPage() {
 
       <div className="flex items-center justify-between">
         <p className="text-sm text-muted-foreground">
-          Showing <strong>{filteredUsers.length}</strong> of <strong>{users.length}</strong> users
+          Menampilkan <strong>{filteredUsers.length}</strong> dari <strong>{users.length}</strong> pengguna
         </p>
         <div className="flex items-center gap-2">
           <Button variant="outline" size="sm" disabled className="rounded-full">
-            Previous
+            Sebelumnya
           </Button>
           <Button variant="outline" size="sm" className="gap-1 rounded-full">
-            Next
+            Selanjutnya
           </Button>
         </div>
       </div>
