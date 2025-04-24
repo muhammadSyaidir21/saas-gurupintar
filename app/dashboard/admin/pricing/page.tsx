@@ -38,14 +38,14 @@ export default function PricingManagement() {
   return (
     <div className="flex flex-col min-h-screen">
       <PageHeader
-        heading="Pricing Management"
-        description="Configure and manage all pricing-related settings for the platform"
+        heading="Manajemen Harga"
+        description="Konfigurasikan dan kelola semua pengaturan terkait harga untuk platform"
         actions={
           <div className="flex items-center gap-3">
             <Button variant="outline" onClick={() => router.push("/dashboard/admin")}>
-              Cancel
+              Batal
             </Button>
-            <Button>Save Changes</Button>
+            <Button>Simpan Perubahan</Button>
           </div>
         }
       />
@@ -55,42 +55,42 @@ export default function PricingManagement() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <Card className="shadow-sm hover:shadow transition-shadow">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
+              <CardTitle className="text-sm font-medium">Total Pendapatan</CardTitle>
               <DollarSign className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">$45,231.89</div>
-              <p className="text-xs text-muted-foreground mt-1">+20.1% from last month</p>
+              <p className="text-xs text-muted-foreground mt-1">+20.1% dari bulan lalu</p>
             </CardContent>
           </Card>
           <Card className="shadow-sm hover:shadow transition-shadow">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Active Subscriptions</CardTitle>
+              <CardTitle className="text-sm font-medium">Langganan Aktif</CardTitle>
               <Users className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">2,350</div>
-              <p className="text-xs text-muted-foreground mt-1">+180 new this month</p>
+              <p className="text-xs text-muted-foreground mt-1">+180 baru bulan ini</p>
             </CardContent>
           </Card>
           <Card className="shadow-sm hover:shadow transition-shadow">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Most Popular Plan</CardTitle>
+              <CardTitle className="text-sm font-medium">Paket Terpopuler</CardTitle>
               <Package className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">Premium</div>
-              <p className="text-xs text-muted-foreground mt-1">Middle School Tier</p>
+              <p className="text-xs text-muted-foreground mt-1">Tingkat SMP</p>
             </CardContent>
           </Card>
           <Card className="shadow-sm hover:shadow transition-shadow">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Active Promotions</CardTitle>
+              <CardTitle className="text-sm font-medium">Promosi Aktif</CardTitle>
               <Tag className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">7</div>
-              <p className="text-xs text-muted-foreground mt-1">3 ending this month</p>
+              <p className="text-xs text-muted-foreground mt-1">3 berakhir bulan ini</p>
             </CardContent>
           </Card>
         </div>
@@ -103,48 +103,48 @@ export default function PricingManagement() {
                 <TabsList className="grid grid-cols-3 lg:grid-cols-9 gap-1">
                   <TabsTrigger value="tiers" className="flex items-center gap-2 py-2.5">
                     <Package className="h-4 w-4" />
-                    <span className="hidden md:inline">Pricing Tiers</span>
-                    <span className="inline md:hidden">Tiers</span>
+                    <span className="hidden md:inline">Tingkat Harga</span>
+                    <span className="inline md:hidden">Tingkat</span>
                   </TabsTrigger>
                   <TabsTrigger value="addons" className="flex items-center gap-2 py-2.5">
                     <FileText className="h-4 w-4" />
-                    <span className="hidden md:inline">Add-ons</span>
-                    <span className="inline md:hidden">Add-ons</span>
+                    <span className="hidden md:inline">Tambahan</span>
+                    <span className="inline md:hidden">Tambahan</span>
                   </TabsTrigger>
                   <TabsTrigger value="periods" className="flex items-center gap-2 py-2.5">
                     <Timer className="h-4 w-4" />
-                    <span className="hidden md:inline">Periods</span>
-                    <span className="inline md:hidden">Periods</span>
+                    <span className="hidden md:inline">Periode</span>
+                    <span className="inline md:hidden">Periode</span>
                   </TabsTrigger>
                   <TabsTrigger value="promotions" className="flex items-center gap-2 py-2.5">
                     <Gift className="h-4 w-4" />
-                    <span className="hidden md:inline">Promotions</span>
-                    <span className="inline md:hidden">Promos</span>
+                    <span className="hidden md:inline">Promosi</span>
+                    <span className="inline md:hidden">Promo</span>
                   </TabsTrigger>
                   <TabsTrigger value="payments" className="flex items-center gap-2 py-2.5">
                     <CreditCard className="h-4 w-4" />
-                    <span className="hidden md:inline">Payments</span>
-                    <span className="inline md:hidden">Pay</span>
+                    <span className="hidden md:inline">Pembayaran</span>
+                    <span className="inline md:hidden">Bayar</span>
                   </TabsTrigger>
                   <TabsTrigger value="analytics" className="flex items-center gap-2 py-2.5">
                     <BarChart3 className="h-4 w-4" />
-                    <span className="hidden md:inline">Analytics</span>
-                    <span className="inline md:hidden">Stats</span>
+                    <span className="hidden md:inline">Analitik</span>
+                    <span className="inline md:hidden">Statistik</span>
                   </TabsTrigger>
                   <TabsTrigger value="features" className="flex items-center gap-2 py-2.5">
                     <Settings className="h-4 w-4" />
-                    <span className="hidden md:inline">Features</span>
-                    <span className="inline md:hidden">Features</span>
+                    <span className="hidden md:inline">Fitur</span>
+                    <span className="inline md:hidden">Fitur</span>
                   </TabsTrigger>
                   <TabsTrigger value="usage" className="flex items-center gap-2 py-2.5">
                     <Percent className="h-4 w-4" />
-                    <span className="hidden md:inline">Usage</span>
-                    <span className="inline md:hidden">Usage</span>
+                    <span className="hidden md:inline">Penggunaan</span>
+                    <span className="inline md:hidden">Penggunaan</span>
                   </TabsTrigger>
                   <TabsTrigger value="billing" className="flex items-center gap-2 py-2.5">
                     <Globe className="h-4 w-4" />
-                    <span className="hidden md:inline">Billing</span>
-                    <span className="inline md:hidden">Billing</span>
+                    <span className="hidden md:inline">Penagihan</span>
+                    <span className="inline md:hidden">Tagihan</span>
                   </TabsTrigger>
                 </TabsList>
               </div>

@@ -27,14 +27,14 @@ const initialTiers = {
     {
       id: "elem-basic",
       name: "Basic",
-      description: "Essential lesson planning tools for elementary educators",
+      description: "Alat perencanaan pelajaran esensial untuk pendidik sekolah dasar",
       monthlyPrice: 29.99,
       annualPrice: 299.99,
       features: [
-        "Basic lesson plan templates",
-        "Limited resource library access",
-        "5 lesson plans per month",
-        "Email support",
+        "Template rencana pelajaran dasar",
+        "Akses perpustakaan sumber daya terbatas",
+        "5 rencana pelajaran per bulan",
+        "Dukungan email",
       ],
       isPopular: false,
       isActive: true,
@@ -42,15 +42,15 @@ const initialTiers = {
     {
       id: "elem-standard",
       name: "Standard",
-      description: "Comprehensive tools for elementary classroom management",
+      description: "Alat komprehensif untuk manajemen kelas sekolah dasar",
       monthlyPrice: 49.99,
       annualPrice: 499.99,
       features: [
-        "Advanced lesson plan templates",
-        "Full resource library access",
-        "25 lesson plans per month",
-        "Priority email support",
-        "Basic analytics",
+        "Template rencana pelajaran lanjutan",
+        "Akses perpustakaan sumber daya penuh",
+        "25 rencana pelajaran per bulan",
+        "Dukungan email prioritas",
+        "Analitik dasar",
       ],
       isPopular: true,
       isActive: true,
@@ -58,16 +58,16 @@ const initialTiers = {
     {
       id: "elem-premium",
       name: "Premium",
-      description: "Complete solution for elementary education excellence",
+      description: "Solusi lengkap untuk keunggulan pendidikan sekolah dasar",
       monthlyPrice: 79.99,
       annualPrice: 799.99,
       features: [
-        "All Standard features",
-        "Unlimited lesson plans",
-        "Advanced analytics",
-        "Curriculum mapping tools",
-        "Phone support",
-        "Custom resource creation",
+        "Semua fitur Standard",
+        "Rencana pelajaran tidak terbatas",
+        "Analitik lanjutan",
+        "Alat pemetaan kurikulum",
+        "Dukungan telepon",
+        "Pembuatan sumber daya kustom",
       ],
       isPopular: false,
       isActive: true,
@@ -77,14 +77,14 @@ const initialTiers = {
     {
       id: "mid-basic",
       name: "Basic",
-      description: "Essential tools for middle school educators",
+      description: "Alat esensial untuk pendidik sekolah menengah pertama",
       monthlyPrice: 39.99,
       annualPrice: 399.99,
       features: [
-        "Basic lesson plan templates",
-        "Limited resource library access",
-        "10 lesson plans per month",
-        "Email support",
+        "Template rencana pelajaran dasar",
+        "Akses perpustakaan sumber daya terbatas",
+        "10 rencana pelajaran per bulan",
+        "Dukungan email",
       ],
       isPopular: false,
       isActive: true,
@@ -92,15 +92,15 @@ const initialTiers = {
     {
       id: "mid-standard",
       name: "Standard",
-      description: "Comprehensive tools for middle school classroom management",
+      description: "Alat komprehensif untuk manajemen kelas sekolah menengah pertama",
       monthlyPrice: 59.99,
       annualPrice: 599.99,
       features: [
-        "Advanced lesson plan templates",
-        "Full resource library access",
-        "35 lesson plans per month",
-        "Priority email support",
-        "Basic analytics",
+        "Template rencana pelajaran lanjutan",
+        "Akses perpustakaan sumber daya penuh",
+        "35 rencana pelajaran per bulan",
+        "Dukungan email prioritas",
+        "Analitik dasar",
       ],
       isPopular: true,
       isActive: true,
@@ -108,16 +108,16 @@ const initialTiers = {
     {
       id: "mid-premium",
       name: "Premium",
-      description: "Complete solution for middle school education excellence",
+      description: "Solusi lengkap untuk keunggulan pendidikan sekolah menengah pertama",
       monthlyPrice: 89.99,
       annualPrice: 899.99,
       features: [
-        "All Standard features",
-        "Unlimited lesson plans",
-        "Advanced analytics",
-        "Curriculum mapping tools",
-        "Phone support",
-        "Custom resource creation",
+        "Semua fitur Standard",
+        "Rencana pelajaran tidak terbatas",
+        "Analitik lanjutan",
+        "Alat pemetaan kurikulum",
+        "Dukungan telepon",
+        "Pembuatan sumber daya kustom",
       ],
       isPopular: false,
       isActive: true,
@@ -127,14 +127,14 @@ const initialTiers = {
     {
       id: "high-basic",
       name: "Basic",
-      description: "Essential tools for high school educators",
+      description: "Alat esensial untuk pendidik sekolah menengah atas",
       monthlyPrice: 49.99,
       annualPrice: 499.99,
       features: [
-        "Basic lesson plan templates",
-        "Limited resource library access",
-        "15 lesson plans per month",
-        "Email support",
+        "Template rencana pelajaran dasar",
+        "Akses perpustakaan sumber daya terbatas",
+        "15 rencana pelajaran per bulan",
+        "Dukungan email",
       ],
       isPopular: false,
       isActive: true,
@@ -142,15 +142,15 @@ const initialTiers = {
     {
       id: "high-standard",
       name: "Standard",
-      description: "Comprehensive tools for high school classroom management",
+      description: "Alat komprehensif untuk manajemen kelas sekolah menengah atas",
       monthlyPrice: 79.99,
       annualPrice: 799.99,
       features: [
-        "Advanced lesson plan templates",
-        "Full resource library access",
-        "50 lesson plans per month",
-        "Priority email support",
-        "Basic analytics",
+        "Template rencana pelajaran lanjutan",
+        "Akses perpustakaan sumber daya penuh",
+        "50 rencana pelajaran per bulan",
+        "Dukungan email prioritas",
+        "Analitik dasar",
       ],
       isPopular: true,
       isActive: true,
@@ -158,17 +158,17 @@ const initialTiers = {
     {
       id: "high-premium",
       name: "Premium",
-      description: "Complete solution for high school education excellence",
+      description: "Solusi lengkap untuk keunggulan pendidikan sekolah menengah atas",
       monthlyPrice: 119.99,
       annualPrice: 1199.99,
       features: [
-        "All Standard features",
-        "Unlimited lesson plans",
-        "Advanced analytics",
-        "Curriculum mapping tools",
-        "Phone support",
-        "Custom resource creation",
-        "College prep resources",
+        "Semua fitur Standard",
+        "Rencana pelajaran tidak terbatas",
+        "Analitik lanjutan",
+        "Alat pemetaan kurikulum",
+        "Dukungan telepon",
+        "Pembuatan sumber daya kustom",
+        "Sumber daya persiapan kuliah",
       ],
       isPopular: false,
       isActive: true,
@@ -231,8 +231,8 @@ export function PricingTiers() {
     const newId = `${activeSchoolLevel}-new-${Date.now()}`
     setEditingTier({
       id: newId,
-      name: "New Tier",
-      description: "Description for the new tier",
+      name: "Paket Baru",
+      description: "Deskripsi untuk paket baru",
       monthlyPrice: 0,
       annualPrice: 0,
       features: [],
@@ -246,7 +246,7 @@ export function PricingTiers() {
     const newTier = {
       ...tier,
       id: `${tier.id}-copy-${Date.now()}`,
-      name: `${tier.name} (Copy)`,
+      name: `${tier.name} (Salinan)`,
       isPopular: false,
     }
 
@@ -256,7 +256,7 @@ export function PricingTiers() {
   }
 
   const handleDeleteTier = (tierId) => {
-    if (confirm("Are you sure you want to delete this pricing tier? This action cannot be undone.")) {
+    if (confirm("Apakah Anda yakin ingin menghapus paket harga ini? Tindakan ini tidak dapat dibatalkan.")) {
       const updatedTiers = { ...tiers }
       updatedTiers[activeSchoolLevel] = updatedTiers[activeSchoolLevel].filter((t) => t.id !== tierId)
       setTiers(updatedTiers)
@@ -276,11 +276,11 @@ export function PricingTiers() {
     <>
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
         <div>
-          <h2 className="text-2xl font-bold">Pricing Tiers</h2>
-          <p className="text-muted-foreground mt-1">Manage pricing tiers for different school levels</p>
+          <h2 className="text-2xl font-bold">Paket Harga</h2>
+          <p className="text-muted-foreground mt-1">Kelola paket harga untuk berbagai jenjang sekolah</p>
         </div>
         <Button onClick={handleAddNewTier} className="shrink-0">
-          <Plus className="mr-2 h-4 w-4" /> Add New Tier
+          <Plus className="mr-2 h-4 w-4" /> Tambah Paket Baru
         </Button>
       </div>
 
@@ -288,13 +288,13 @@ export function PricingTiers() {
         <Tabs value={activeSchoolLevel} onValueChange={setActiveSchoolLevel}>
           <TabsList className="grid grid-cols-3 gap-1 w-full">
             <TabsTrigger value="elementary" className="py-2.5">
-              Elementary School
+              Sekolah Dasar
             </TabsTrigger>
             <TabsTrigger value="middle" className="py-2.5">
-              Middle School
+              Sekolah Menengah Pertama
             </TabsTrigger>
             <TabsTrigger value="high" className="py-2.5">
-              High School
+              Sekolah Menengah Atas
             </TabsTrigger>
           </TabsList>
 
@@ -308,7 +308,7 @@ export function PricingTiers() {
                   >
                     {tier.isPopular && (
                       <div className="bg-primary text-primary-foreground text-center py-1.5 text-sm font-medium">
-                        Most Popular
+                        Paling Populer
                       </div>
                     )}
                     <CardHeader className="pb-4">
@@ -344,17 +344,17 @@ export function PricingTiers() {
                       <div className="space-y-4">
                         <div className="flex items-baseline">
                           <div className="text-3xl font-bold">${tier.monthlyPrice}</div>
-                          <span className="text-sm font-normal text-muted-foreground ml-1">/month</span>
+                          <span className="text-sm font-normal text-muted-foreground ml-1">/bulan</span>
                         </div>
                         <div className="text-sm text-muted-foreground">
-                          ${tier.annualPrice}/year
+                          ${tier.annualPrice}/tahun
                           <Badge variant="outline" className="ml-2 font-normal">
-                            Save {Math.round(100 - (tier.annualPrice / (tier.monthlyPrice * 12)) * 100)}%
+                            Hemat {Math.round(100 - (tier.annualPrice / (tier.monthlyPrice * 12)) * 100)}%
                           </Badge>
                         </div>
 
                         <div className="pt-4 border-t mt-4">
-                          <h4 className="text-sm font-medium mb-3">Features:</h4>
+                          <h4 className="text-sm font-medium mb-3">Fitur:</h4>
                           <ul className="space-y-2.5">
                             {tier.features.map((feature, index) => (
                               <li key={index} className="text-sm flex items-start">
@@ -378,11 +378,11 @@ export function PricingTiers() {
                             setTiers(updatedTiers)
                           }}
                         />
-                        <Label htmlFor={`active-${tier.id}`}>Active</Label>
+                        <Label htmlFor={`active-${tier.id}`}>Aktif</Label>
                       </div>
                       {!tier.isPopular && (
                         <Button variant="outline" size="sm" onClick={() => handleSetPopular(tier.id)}>
-                          Set as Popular
+                          Jadikan Populer
                         </Button>
                       )}
                     </CardFooter>
@@ -397,9 +397,9 @@ export function PricingTiers() {
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent className="max-w-2xl">
           <DialogHeader>
-            <DialogTitle>{editingTier?.id.includes("new") ? "Add New Pricing Tier" : "Edit Pricing Tier"}</DialogTitle>
+            <DialogTitle>{editingTier?.id.includes("new") ? "Tambah Paket Harga Baru" : "Edit Paket Harga"}</DialogTitle>
             <DialogDescription>
-              Configure the details for this pricing tier. Changes will be applied across the platform.
+              Konfigurasikan detail untuk paket harga ini. Perubahan akan diterapkan di seluruh platform.
             </DialogDescription>
           </DialogHeader>
 
@@ -407,7 +407,7 @@ export function PricingTiers() {
             <div className="grid gap-6 py-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="tier-name">Tier Name</Label>
+                  <Label htmlFor="tier-name">Nama Paket</Label>
                   <Input
                     id="tier-name"
                     value={editingTier.name}
@@ -415,13 +415,13 @@ export function PricingTiers() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="tier-id">Tier ID</Label>
+                  <Label htmlFor="tier-id">ID Paket</Label>
                   <Input id="tier-id" value={editingTier.id} disabled />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="tier-description">Description</Label>
+                <Label htmlFor="tier-description">Deskripsi</Label>
                 <Textarea
                   id="tier-description"
                   value={editingTier.description}
@@ -431,7 +431,7 @@ export function PricingTiers() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="monthly-price">Monthly Price ($)</Label>
+                  <Label htmlFor="monthly-price">Harga Bulanan ($)</Label>
                   <Input
                     id="monthly-price"
                     type="number"
@@ -443,7 +443,7 @@ export function PricingTiers() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="annual-price">Annual Price ($)</Label>
+                  <Label htmlFor="annual-price">Harga Tahunan ($)</Label>
                   <Input
                     id="annual-price"
                     type="number"
@@ -455,12 +455,12 @@ export function PricingTiers() {
               </div>
 
               <div className="space-y-3 border p-4 rounded-md">
-                <Label className="text-base">Features</Label>
+                <Label className="text-base">Fitur</Label>
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead>Feature Description</TableHead>
-                      <TableHead className="w-[100px]">Actions</TableHead>
+                      <TableHead>Deskripsi Fitur</TableHead>
+                      <TableHead className="w-[100px]">Tindakan</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -477,7 +477,7 @@ export function PricingTiers() {
                     <TableRow>
                       <TableCell>
                         <Input
-                          placeholder="Add new feature..."
+                          placeholder="Tambah fitur baru..."
                           value={newFeature}
                           onChange={(e) => setNewFeature(e.target.value)}
                           onKeyDown={(e) => {
@@ -490,7 +490,7 @@ export function PricingTiers() {
                       </TableCell>
                       <TableCell>
                         <Button variant="outline" size="sm" onClick={handleAddFeature}>
-                          Add
+                          Tambah
                         </Button>
                       </TableCell>
                     </TableRow>
@@ -505,7 +505,7 @@ export function PricingTiers() {
                     checked={editingTier.isActive}
                     onCheckedChange={(checked) => setEditingTier({ ...editingTier, isActive: checked })}
                   />
-                  <Label htmlFor="tier-active">Active</Label>
+                  <Label htmlFor="tier-active">Aktif</Label>
                 </div>
 
                 <div className="flex items-center space-x-2">
@@ -514,7 +514,7 @@ export function PricingTiers() {
                     checked={editingTier.isPopular}
                     onCheckedChange={(checked) => setEditingTier({ ...editingTier, isPopular: checked })}
                   />
-                  <Label htmlFor="tier-popular">Mark as Popular</Label>
+                  <Label htmlFor="tier-popular">Tandai sebagai Populer</Label>
                 </div>
               </div>
             </div>
@@ -522,9 +522,9 @@ export function PricingTiers() {
 
           <DialogFooter className="mt-6">
             <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
-              Cancel
+              Batal
             </Button>
-            <Button onClick={handleSaveTier}>Save Changes</Button>
+            <Button onClick={handleSaveTier}>Simpan Perubahan</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

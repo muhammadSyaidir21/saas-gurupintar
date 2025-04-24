@@ -197,11 +197,11 @@ export function AddOns() {
     <>
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
         <div>
-          <h2 className="text-2xl font-bold">Add-on Modules</h2>
-          <p className="text-muted-foreground mt-1">Manage optional add-on modules for your pricing packages</p>
+          <h2 className="text-2xl font-bold">Modul Tambahan</h2>
+          <p className="text-muted-foreground mt-1">Kelola modul tambahan opsional untuk paket harga Anda</p>
         </div>
         <Button onClick={handleAddNewAddOn} className="shrink-0">
-          <Plus className="mr-2 h-4 w-4" /> Add New Module
+          <Plus className="mr-2 h-4 w-4" /> Tambah Modul Baru
         </Button>
       </div>
 
@@ -230,10 +230,10 @@ export function AddOns() {
                   <div className="text-2xl font-bold">${addOn.monthlyPrice}</div>
                   <span className="text-sm font-normal text-muted-foreground ml-1">/month</span>
                 </div>
-                <div className="text-sm text-muted-foreground">${addOn.annualPrice}/year</div>
+                <div className="text-sm text-muted-foreground">${addOn.annualPrice}/tahun</div>
 
                 <div className="pt-4 border-t mt-4">
-                  <h4 className="text-sm font-medium mb-3">Features:</h4>
+                  <h4 className="text-sm font-medium mb-3">Fitur:</h4>
                   <ul className="space-y-2.5">
                     {addOn.features.map((feature, index) => (
                       <li key={index} className="text-sm flex items-start">
@@ -245,21 +245,21 @@ export function AddOns() {
                 </div>
 
                 <div className="pt-4 mt-4 border-t">
-                  <h4 className="text-sm font-medium mb-3">Compatible with:</h4>
+                  <h4 className="text-sm font-medium mb-3">Kompatibel dengan:</h4>
                   <div className="flex flex-wrap gap-2">
                     {addOn.compatibleWith.includes("elementary") && (
                       <Badge variant="secondary" className="bg-primary/10 hover:bg-primary/20">
-                        Elementary School
+                        Sekolah Dasar
                       </Badge>
                     )}
                     {addOn.compatibleWith.includes("middle") && (
                       <Badge variant="secondary" className="bg-primary/10 hover:bg-primary/20">
-                        Middle School
+                        Sekolah Menengah Pertama
                       </Badge>
                     )}
                     {addOn.compatibleWith.includes("high") && (
                       <Badge variant="secondary" className="bg-primary/10 hover:bg-primary/20">
-                        High School
+                        Sekolah Menengah Atas
                       </Badge>
                     )}
                   </div>
@@ -278,7 +278,7 @@ export function AddOns() {
                     setAddOns(updatedAddOns)
                   }}
                 />
-                <Label htmlFor={`active-${addOn.id}`}>Active</Label>
+                <Label htmlFor={`active-${addOn.id}`}>Aktif</Label>
               </div>
             </CardFooter>
           </Card>
@@ -289,10 +289,10 @@ export function AddOns() {
         <DialogContent className="max-w-2xl">
           <DialogHeader>
             <DialogTitle>
-              {editingAddOn?.id.includes("new") ? "Add New Add-on Module" : "Edit Add-on Module"}
+              {editingAddOn?.id.includes("new") ? "Tambah Modul Tambahan Baru" : "Edit Modul Tambahan"}
             </DialogTitle>
             <DialogDescription>
-              Configure the details for this add-on module. Changes will be applied across the platform.
+              Konfigurasi detail untuk modul tambahan ini. Perubahan akan diterapkan di seluruh platform.
             </DialogDescription>
           </DialogHeader>
 
@@ -300,7 +300,7 @@ export function AddOns() {
             <div className="grid gap-6 py-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="addon-name">Module Name</Label>
+                  <Label htmlFor="addon-name">Nama Modul</Label>
                   <Input
                     id="addon-name"
                     value={editingAddOn.name}
@@ -308,13 +308,13 @@ export function AddOns() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="addon-id">Module ID</Label>
+                  <Label htmlFor="addon-id">ID Modul</Label>
                   <Input id="addon-id" value={editingAddOn.id} disabled />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="addon-description">Description</Label>
+                <Label htmlFor="addon-description">Deskripsi</Label>
                 <Textarea
                   id="addon-description"
                   value={editingAddOn.description}
@@ -324,7 +324,7 @@ export function AddOns() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="monthly-price">Monthly Price ($)</Label>
+                  <Label htmlFor="monthly-price">Harga Bulanan ($)</Label>
                   <Input
                     id="monthly-price"
                     type="number"
@@ -336,7 +336,7 @@ export function AddOns() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="annual-price">Annual Price ($)</Label>
+                  <Label htmlFor="annual-price">Harga Tahunan ($)</Label>
                   <Input
                     id="annual-price"
                     type="number"
@@ -350,12 +350,12 @@ export function AddOns() {
               </div>
 
               <div className="space-y-3 border p-4 rounded-md">
-                <Label className="text-base">Features</Label>
+                <Label className="text-base">Fitur</Label>
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead>Feature Description</TableHead>
-                      <TableHead className="w-[100px]">Actions</TableHead>
+                      <TableHead>Deskripsi Fitur</TableHead>
+                      <TableHead className="w-[100px]">Aksi</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -372,7 +372,7 @@ export function AddOns() {
                     <TableRow>
                       <TableCell>
                         <Input
-                          placeholder="Add new feature..."
+                          placeholder="Tambahkan fitur baru..."
                           value={newFeature}
                           onChange={(e) => setNewFeature(e.target.value)}
                           onKeyDown={(e) => {
@@ -394,7 +394,7 @@ export function AddOns() {
               </div>
 
               <div className="space-y-3 border p-4 rounded-md">
-                <Label className="text-base">Compatible with School Levels</Label>
+                <Label className="text-base">Kompatibel dengan Tingkat Sekolah</Label>
                 <div className="flex flex-wrap gap-4 pt-2">
                   <div className="flex items-center space-x-2">
                     <Switch
@@ -402,7 +402,7 @@ export function AddOns() {
                       checked={editingAddOn.compatibleWith.includes("elementary")}
                       onCheckedChange={() => toggleSchoolLevel("elementary")}
                     />
-                    <Label htmlFor="elementary-compatible">Elementary School</Label>
+                    <Label htmlFor="elementary-compatible">Sekolah Dasar</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Switch
@@ -410,7 +410,7 @@ export function AddOns() {
                       checked={editingAddOn.compatibleWith.includes("middle")}
                       onCheckedChange={() => toggleSchoolLevel("middle")}
                     />
-                    <Label htmlFor="middle-compatible">Middle School</Label>
+                    <Label htmlFor="middle-compatible">Sekolah Menengah Pertama</Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Switch
@@ -418,7 +418,7 @@ export function AddOns() {
                       checked={editingAddOn.compatibleWith.includes("high")}
                       onCheckedChange={() => toggleSchoolLevel("high")}
                     />
-                    <Label htmlFor="high-compatible">High School</Label>
+                    <Label htmlFor="high-compatible">Sekolah Menengah Atas</Label>
                   </div>
                 </div>
               </div>
@@ -429,16 +429,16 @@ export function AddOns() {
                   checked={editingAddOn.isActive}
                   onCheckedChange={(checked) => setEditingAddOn({ ...editingAddOn, isActive: checked })}
                 />
-                <Label htmlFor="addon-active">Active</Label>
+                <Label htmlFor="addon-active">Aktif</Label>
               </div>
             </div>
           )}
 
           <DialogFooter className="mt-6">
             <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
-              Cancel
+              Batal
             </Button>
-            <Button onClick={handleSaveAddOn}>Save Changes</Button>
+            <Button onClick={handleSaveAddOn}>Simpan Perubahan</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
