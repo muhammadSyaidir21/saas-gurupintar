@@ -28,219 +28,219 @@ const initialFeatureMatrix = {
   elementary: [
     {
       id: "elem-feature-1",
-      name: "Lesson Plan Creation",
-      description: "Create and customize lesson plans",
+      name: "Pembuatan Rencana Pembelajaran",
+      description: "Buat dan sesuaikan rencana pembelajaran",
       basic: true,
       standard: true,
       premium: true,
-      category: "Core Features",
+      category: "Fitur Inti",
     },
     {
       id: "elem-feature-2",
-      name: "Resource Library Access",
-      description: "Access to educational resources",
-      basic: "Limited",
+      name: "Akses Perpustakaan Sumber Daya",
+      description: "Akses ke sumber daya pendidikan",
+      basic: "Terbatas",
       standard: true,
       premium: true,
-      category: "Content",
+      category: "Konten",
     },
     {
       id: "elem-feature-3",
-      name: "Monthly Lesson Plans",
-      description: "Number of lesson plans per month",
+      name: "Rencana Pembelajaran Bulanan",
+      description: "Jumlah rencana pembelajaran per bulan",
       basic: "5",
       standard: "25",
-      premium: "Unlimited",
-      category: "Usage Limits",
+      premium: "Tidak Terbatas",
+      category: "Batas Penggunaan",
     },
     {
       id: "elem-feature-4",
-      name: "Support",
-      description: "Customer support options",
+      name: "Dukungan",
+      description: "Opsi dukungan pelanggan",
       basic: "Email",
-      standard: "Priority Email",
-      premium: "Phone & Email",
-      category: "Support",
+      standard: "Email Prioritas",
+      premium: "Telepon & Email",
+      category: "Dukungan",
     },
     {
       id: "elem-feature-5",
-      name: "Analytics",
-      description: "Usage and performance analytics",
+      name: "Analitik",
+      description: "Analitik penggunaan dan kinerja",
       basic: false,
-      standard: "Basic",
-      premium: "Advanced",
-      category: "Reporting",
+      standard: "Dasar",
+      premium: "Lanjutan",
+      category: "Pelaporan",
     },
     {
       id: "elem-feature-6",
-      name: "Curriculum Mapping",
-      description: "Map curriculum across grades and subjects",
+      name: "Pemetaan Kurikulum",
+      description: "Pemetaan kurikulum antar kelas dan mata pelajaran",
       basic: false,
       standard: false,
       premium: true,
-      category: "Planning",
+      category: "Perencanaan",
     },
     {
       id: "elem-feature-7",
-      name: "Custom Resource Creation",
-      description: "Create custom educational resources",
+      name: "Pembuatan Sumber Daya Kustom",
+      description: "Buat sumber daya pendidikan kustom",
       basic: false,
       standard: false,
       premium: true,
-      category: "Content",
+      category: "Konten",
     },
   ],
   middle: [
     {
       id: "mid-feature-1",
-      name: "Lesson Plan Creation",
-      description: "Create and customize lesson plans",
+      name: "Pembuatan Rencana Pembelajaran",
+      description: "Buat dan sesuaikan rencana pembelajaran",
       basic: true,
       standard: true,
       premium: true,
-      category: "Core Features",
+      category: "Fitur Inti",
     },
     {
       id: "mid-feature-2",
-      name: "Resource Library Access",
-      description: "Access to educational resources",
-      basic: "Limited",
+      name: "Akses Perpustakaan Sumber Daya",
+      description: "Akses ke sumber daya pendidikan",
+      basic: "Terbatas",
       standard: true,
       premium: true,
-      category: "Content",
+      category: "Konten",
     },
     {
       id: "mid-feature-3",
-      name: "Monthly Lesson Plans",
-      description: "Number of lesson plans per month",
+      name: "Rencana Pembelajaran Bulanan",
+      description: "Jumlah rencana pembelajaran per bulan",
       basic: "10",
       standard: "35",
-      premium: "Unlimited",
-      category: "Usage Limits",
+      premium: "Tidak Terbatas",
+      category: "Batas Penggunaan",
     },
     {
       id: "mid-feature-4",
-      name: "Support",
-      description: "Customer support options",
+      name: "Dukungan",
+      description: "Opsi dukungan pelanggan",
       basic: "Email",
-      standard: "Priority Email",
-      premium: "Phone & Email",
-      category: "Support",
+      standard: "Email Prioritas",
+      premium: "Telepon & Email",
+      category: "Dukungan",
     },
     {
       id: "mid-feature-5",
-      name: "Analytics",
-      description: "Usage and performance analytics",
+      name: "Analitik",
+      description: "Analitik penggunaan dan kinerja",
       basic: false,
-      standard: "Basic",
-      premium: "Advanced",
-      category: "Reporting",
+      standard: "Dasar",
+      premium: "Lanjutan",
+      category: "Pelaporan",
     },
     {
       id: "mid-feature-6",
-      name: "Curriculum Mapping",
-      description: "Map curriculum across grades and subjects",
+      name: "Pemetaan Kurikulum",
+      description: "Pemetaan kurikulum antar kelas dan mata pelajaran",
       basic: false,
       standard: false,
       premium: true,
-      category: "Planning",
+      category: "Perencanaan",
     },
     {
       id: "mid-feature-7",
-      name: "Custom Resource Creation",
-      description: "Create custom educational resources",
+      name: "Pembuatan Sumber Daya Kustom",
+      description: "Buat sumber daya pendidikan kustom",
       basic: false,
       standard: false,
       premium: true,
-      category: "Content",
+      category: "Konten",
     },
   ],
   high: [
     {
       id: "high-feature-1",
-      name: "Lesson Plan Creation",
-      description: "Create and customize lesson plans",
+      name: "Pembuatan Rencana Pembelajaran",
+      description: "Buat dan sesuaikan rencana pembelajaran",
       basic: true,
       standard: true,
       premium: true,
-      category: "Core Features",
+      category: "Fitur Inti",
     },
     {
       id: "high-feature-2",
-      name: "Resource Library Access",
-      description: "Access to educational resources",
-      basic: "Limited",
+      name: "Akses Perpustakaan Sumber Daya",
+      description: "Akses ke sumber daya pendidikan",
+      basic: "Terbatas",
       standard: true,
       premium: true,
-      category: "Content",
+      category: "Konten",
     },
     {
       id: "high-feature-3",
-      name: "Monthly Lesson Plans",
-      description: "Number of lesson plans per month",
+      name: "Rencana Pembelajaran Bulanan",
+      description: "Jumlah rencana pembelajaran per bulan",
       basic: "15",
       standard: "50",
-      premium: "Unlimited",
-      category: "Usage Limits",
+      premium: "Tidak Terbatas",
+      category: "Batas Penggunaan",
     },
     {
       id: "high-feature-4",
-      name: "Support",
-      description: "Customer support options",
+      name: "Dukungan",
+      description: "Opsi dukungan pelanggan",
       basic: "Email",
-      standard: "Priority Email",
-      premium: "Phone & Email",
-      category: "Support",
+      standard: "Email Prioritas",
+      premium: "Telepon & Email",
+      category: "Dukungan",
     },
     {
       id: "high-feature-5",
-      name: "Analytics",
-      description: "Usage and performance analytics",
+      name: "Analitik",
+      description: "Analitik penggunaan dan kinerja",
       basic: false,
-      standard: "Basic",
-      premium: "Advanced",
-      category: "Reporting",
+      standard: "Dasar",
+      premium: "Lanjutan",
+      category: "Pelaporan",
     },
     {
       id: "high-feature-6",
-      name: "Curriculum Mapping",
-      description: "Map curriculum across grades and subjects",
+      name: "Pemetaan Kurikulum",
+      description: "Pemetaan kurikulum antar kelas dan mata pelajaran",
       basic: false,
       standard: false,
       premium: true,
-      category: "Planning",
+      category: "Perencanaan",
     },
     {
       id: "high-feature-7",
-      name: "Custom Resource Creation",
-      description: "Create custom educational resources",
+      name: "Pembuatan Sumber Daya Kustom",
+      description: "Buat sumber daya pendidikan kustom",
       basic: false,
       standard: false,
       premium: true,
-      category: "Content",
+      category: "Konten",
     },
     {
       id: "high-feature-8",
-      name: "College Prep Resources",
-      description: "Resources for college preparation",
+      name: "Sumber Daya Persiapan Kuliah",
+      description: "Sumber daya untuk persiapan kuliah",
       basic: false,
       standard: false,
       premium: true,
-      category: "Content",
+      category: "Konten",
     },
   ],
 }
 
 // Feature categories
 const featureCategories = [
-  "Core Features",
-  "Content",
-  "Usage Limits",
-  "Support",
-  "Reporting",
-  "Planning",
-  "Integration",
-  "Other",
+  "Fitur Inti",
+  "Konten",
+  "Batas Penggunaan",
+  "Dukungan",
+  "Pelaporan",
+  "Perencanaan",
+  "Integrasi",
+  "Lainnya",
 ]
 
 export function FeatureMatrix() {
@@ -349,38 +349,37 @@ export function FeatureMatrix() {
   return (
     <>
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold">Feature Comparison Matrix</h2>
+        <h2 className="text-2xl font-bold">Matriks Perbandingan Fitur</h2>
         <Button onClick={handleAddNewFeature}>
-          <Plus className="mr-2 h-4 w-4" /> Add New Feature
+          <Plus className="mr-2 h-4 w-4" /> Tambah Fitur Baru
         </Button>
       </div>
 
       <Tabs value={activeSchoolLevel} onValueChange={setActiveSchoolLevel}>
         <TabsList className="mb-4">
-          <TabsTrigger value="elementary">Elementary School</TabsTrigger>
-          <TabsTrigger value="middle">Middle School</TabsTrigger>
-          <TabsTrigger value="high">High School</TabsTrigger>
+          <TabsTrigger value="elementary">Sekolah Dasar</TabsTrigger>
+          <TabsTrigger value="middle">Sekolah Menengah Pertama</TabsTrigger>
+          <TabsTrigger value="high">Sekolah Menengah Atas</TabsTrigger>
         </TabsList>
 
         {["elementary", "middle", "high"].map((level) => (
           <TabsContent key={level} value={level}>
             <Card>
               <CardHeader>
-                <CardTitle>Feature Comparison</CardTitle>
+                <CardTitle>Perbandingan Fitur</CardTitle>
                 <CardDescription>
-                  Compare features across different pricing tiers for {level.charAt(0).toUpperCase() + level.slice(1)}{" "}
-                  School
+                  Bandingkan fitur di berbagai tingkatan harga untuk {level === "elementary" ? "Sekolah Dasar" : level === "middle" ? "Sekolah Menengah Pertama" : "Sekolah Menengah Atas"}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead className="w-[300px]">Feature</TableHead>
-                      <TableHead className="text-center">Basic</TableHead>
-                      <TableHead className="text-center">Standard</TableHead>
+                      <TableHead className="w-[300px]">Fitur</TableHead>
+                      <TableHead className="text-center">Dasar</TableHead>
+                      <TableHead className="text-center">Standar</TableHead>
                       <TableHead className="text-center">Premium</TableHead>
-                      <TableHead className="text-right">Actions</TableHead>
+                      <TableHead className="text-right">Aksi</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -428,14 +427,14 @@ export function FeatureMatrix() {
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>{editingFeature?.id.includes("new") ? "Add New Feature" : "Edit Feature"}</DialogTitle>
-            <DialogDescription>Configure the feature details and availability across pricing tiers.</DialogDescription>
+            <DialogTitle>{editingFeature?.id.includes("new") ? "Tambah Fitur Baru" : "Edit Fitur"}</DialogTitle>
+            <DialogDescription>Konfigurasi detail fitur dan ketersediaan di berbagai tingkatan harga.</DialogDescription>
           </DialogHeader>
 
           {editingFeature && (
             <div className="grid gap-4 py-4">
               <div className="space-y-2">
-                <Label htmlFor="feature-name">Feature Name</Label>
+                <Label htmlFor="feature-name">Nama Fitur</Label>
                 <Input
                   id="feature-name"
                   value={editingFeature.name}
@@ -444,7 +443,7 @@ export function FeatureMatrix() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="feature-description">Description</Label>
+                <Label htmlFor="feature-description">Deskripsi</Label>
                 <Textarea
                   id="feature-description"
                   value={editingFeature.description}
@@ -453,13 +452,13 @@ export function FeatureMatrix() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="feature-category">Category</Label>
+                <Label htmlFor="feature-category">Kategori</Label>
                 <Select
                   value={editingFeature.category}
                   onValueChange={(value) => setEditingFeature({ ...editingFeature, category: value })}
                 >
                   <SelectTrigger id="feature-category">
-                    <SelectValue placeholder="Select category" />
+                    <SelectValue placeholder="Pilih kategori" />
                   </SelectTrigger>
                   <SelectContent>
                     {featureCategories.map((category) => (
@@ -472,11 +471,11 @@ export function FeatureMatrix() {
               </div>
 
               <div className="space-y-4">
-                <Label>Availability in Pricing Tiers</Label>
+                <Label>Ketersediaan di Tingkatan Harga</Label>
 
                 <div className="grid grid-cols-3 gap-4">
                   <div className="space-y-2 border rounded-md p-4">
-                    <div className="font-medium">Basic</div>
+                    <div className="font-medium">Dasar</div>
                     <div className="space-y-2">
                       <div className="flex items-center space-x-2">
                         <Switch
@@ -490,12 +489,12 @@ export function FeatureMatrix() {
                             }
                           }}
                         />
-                        <Label htmlFor="basic-included">Included</Label>
+                        <Label htmlFor="basic-included">Termasuk</Label>
                       </div>
 
                       {editingFeature.basic !== false && (
                         <div className="pt-2">
-                          <Label htmlFor="basic-value">Value (optional)</Label>
+                          <Label htmlFor="basic-value">Nilai (opsional)</Label>
                           <Input
                             id="basic-value"
                             value={editingFeature.basic === true ? "" : editingFeature.basic}
@@ -506,7 +505,7 @@ export function FeatureMatrix() {
                                 basic: value === "" ? true : value,
                               })
                             }}
-                            placeholder="e.g., Limited, 5, etc."
+                            placeholder="contoh: Terbatas, 5, dll."
                           />
                         </div>
                       )}
@@ -514,7 +513,7 @@ export function FeatureMatrix() {
                   </div>
 
                   <div className="space-y-2 border rounded-md p-4">
-                    <div className="font-medium">Standard</div>
+                    <div className="font-medium">Standar</div>
                     <div className="space-y-2">
                       <div className="flex items-center space-x-2">
                         <Switch
@@ -528,12 +527,12 @@ export function FeatureMatrix() {
                             }
                           }}
                         />
-                        <Label htmlFor="standard-included">Included</Label>
+                        <Label htmlFor="standard-included">Termasuk</Label>
                       </div>
 
                       {editingFeature.standard !== false && (
                         <div className="pt-2">
-                          <Label htmlFor="standard-value">Value (optional)</Label>
+                          <Label htmlFor="standard-value">Nilai (opsional)</Label>
                           <Input
                             id="standard-value"
                             value={editingFeature.standard === true ? "" : editingFeature.standard}
@@ -544,7 +543,7 @@ export function FeatureMatrix() {
                                 standard: value === "" ? true : value,
                               })
                             }}
-                            placeholder="e.g., Basic, 25, etc."
+                            placeholder="contoh: Dasar, 25, dll."
                           />
                         </div>
                       )}
@@ -566,12 +565,12 @@ export function FeatureMatrix() {
                             }
                           }}
                         />
-                        <Label htmlFor="premium-included">Included</Label>
+                        <Label htmlFor="premium-included">Termasuk</Label>
                       </div>
 
                       {editingFeature.premium !== false && (
                         <div className="pt-2">
-                          <Label htmlFor="premium-value">Value (optional)</Label>
+                          <Label htmlFor="premium-value">Nilai (opsional)</Label>
                           <Input
                             id="premium-value"
                             value={editingFeature.premium === true ? "" : editingFeature.premium}
@@ -582,7 +581,7 @@ export function FeatureMatrix() {
                                 premium: value === "" ? true : value,
                               })
                             }}
-                            placeholder="e.g., Advanced, Unlimited, etc."
+                            placeholder="contoh: Lanjutan, Tidak Terbatas, dll."
                           />
                         </div>
                       )}
@@ -595,9 +594,9 @@ export function FeatureMatrix() {
 
           <DialogFooter>
             <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
-              Cancel
+              Batal
             </Button>
-            <Button onClick={handleSaveFeature}>Save Changes</Button>
+            <Button onClick={handleSaveFeature}>Simpan Perubahan</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
