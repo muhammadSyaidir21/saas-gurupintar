@@ -193,7 +193,7 @@ export function AppSidebar({ role, ...props }: AppSidebarProps) {
           <div className="relative group">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground transition-colors group-focus-within:text-primary" />
             <Input
-              placeholder="Search..."
+              placeholder="Cari..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-9 border-border/20 rounded-xl h-10 focus-visible:ring-primary/20 bg-muted/30 transition-all focus-visible:bg-white dark:focus-visible:bg-gray-800"
@@ -207,7 +207,7 @@ export function AppSidebar({ role, ...props }: AppSidebarProps) {
               <div>
                 <div className="px-4 py-2">
                   <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/70">
-                    Navigation
+                    Navigasi
                   </h3>
                 </div>
                 <SidebarMenu>
@@ -259,7 +259,7 @@ export function AppSidebar({ role, ...props }: AppSidebarProps) {
                 <div>
                   <div className="px-4 py-2">
                     <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/70">
-                      Recent Projects
+                      Proyek Terbaru
                     </h3>
                   </div>
                   <SidebarMenu>
@@ -316,7 +316,7 @@ export function AppSidebar({ role, ...props }: AppSidebarProps) {
             onClick={handleLogout}
           >
             <LogOut className="h-4 w-4" />
-            <span>Log out</span>
+            <span>Keluar</span>
           </Button>
 
           <div className="flex justify-between mt-2">
@@ -330,7 +330,7 @@ export function AppSidebar({ role, ...props }: AppSidebarProps) {
                   <Bell className="h-4 w-4 text-muted-foreground hover:text-primary transition-colors duration-300" />
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>Notifications</TooltipContent>
+              <TooltipContent>Notifikasi</TooltipContent>
             </Tooltip>
 
             <Tooltip>
@@ -343,7 +343,7 @@ export function AppSidebar({ role, ...props }: AppSidebarProps) {
                   <HelpCircle className="h-4 w-4 text-muted-foreground hover:text-primary transition-colors duration-300" />
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>Help</TooltipContent>
+              <TooltipContent>Bantuan</TooltipContent>
             </Tooltip>
 
             <Tooltip>
@@ -356,7 +356,7 @@ export function AppSidebar({ role, ...props }: AppSidebarProps) {
                   <Settings2 className="h-4 w-4 text-muted-foreground hover:text-primary transition-colors duration-300" />
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>Settings</TooltipContent>
+              <TooltipContent>Pengaturan</TooltipContent>
             </Tooltip>
           </div>
         </SidebarFooter>
@@ -368,15 +368,15 @@ export function AppSidebar({ role, ...props }: AppSidebarProps) {
       <AlertDialog open={logoutDialogOpen} onOpenChange={setLogoutDialogOpen}>
         <AlertDialogContent className="max-w-md rounded-xl">
           <AlertDialogHeader>
-            <AlertDialogTitle>Logout Confirmation</AlertDialogTitle>
+            <AlertDialogTitle>Konfirmasi Keluar</AlertDialogTitle>
             <AlertDialogDescription>
-              Are you sure you want to log out? You will need to log in again to access your account.
+              Apakah Anda yakin ingin keluar? Anda perlu masuk kembali untuk mengakses akun Anda.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter className="mt-4">
-            <AlertDialogCancel className="rounded-lg">Cancel</AlertDialogCancel>
+            <AlertDialogCancel className="rounded-lg">Batal</AlertDialogCancel>
             <AlertDialogAction onClick={confirmLogout} className="bg-destructive hover:bg-destructive/90 rounded-lg">
-              Logout
+              Keluar
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
