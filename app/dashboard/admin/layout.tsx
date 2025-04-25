@@ -25,7 +25,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                 <Input
-                  placeholder="Cari apapun..."
+                  placeholder="Search anything..."
                   className="pl-9 border-none bg-muted/30 focus-visible:ring-primary/20 rounded-full h-9"
                 />
               </div>
