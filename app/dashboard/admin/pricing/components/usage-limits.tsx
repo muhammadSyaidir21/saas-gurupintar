@@ -25,28 +25,28 @@ const initialUsageLimits = {
   elementary: [
     {
       id: "elem-limit-1",
-      name: "Lesson Plans",
-      description: "Maximum number of lesson plans that can be generated per month",
+      name: "Rencana Pembelajaran",
+      description: "Jumlah maksimum rencana pembelajaran yang dapat dibuat per bulan",
       basic: 5,
       standard: 25,
-      premium: "Unlimited",
-      unit: "plans/month",
+      premium: "Tidak Terbatas",
+      unit: "rencana/bulan",
       isActive: true,
     },
     {
       id: "elem-limit-2",
-      name: "Resource Downloads",
-      description: "Maximum number of resources that can be downloaded per month",
+      name: "Unduhan Sumber Daya",
+      description: "Jumlah maksimum sumber daya yang dapat diunduh per bulan",
       basic: 20,
       standard: 100,
       premium: 500,
-      unit: "downloads/month",
+      unit: "unduhan/bulan",
       isActive: true,
     },
     {
       id: "elem-limit-3",
-      name: "Storage Space",
-      description: "Maximum storage space for uploaded files and resources",
+      name: "Ruang Penyimpanan",
+      description: "Ruang penyimpanan maksimum untuk file dan sumber daya yang diunggah",
       basic: 1,
       standard: 5,
       premium: 20,
@@ -55,50 +55,50 @@ const initialUsageLimits = {
     },
     {
       id: "elem-limit-4",
-      name: "Custom Templates",
-      description: "Maximum number of custom templates that can be created",
+      name: "Template Kustom",
+      description: "Jumlah maksimum template kustom yang dapat dibuat",
       basic: 2,
       standard: 10,
       premium: 50,
-      unit: "templates",
+      unit: "template",
       isActive: true,
     },
     {
       id: "elem-limit-5",
-      name: "API Requests",
-      description: "Maximum number of API requests per day",
+      name: "Permintaan API",
+      description: "Jumlah maksimum permintaan API per hari",
       basic: 100,
       standard: 1000,
       premium: 10000,
-      unit: "requests/day",
+      unit: "permintaan/hari",
       isActive: true,
     },
   ],
   middle: [
     {
       id: "mid-limit-1",
-      name: "Lesson Plans",
-      description: "Maximum number of lesson plans that can be generated per month",
+      name: "Rencana Pembelajaran",
+      description: "Jumlah maksimum rencana pembelajaran yang dapat dibuat per bulan",
       basic: 10,
       standard: 35,
-      premium: "Unlimited",
-      unit: "plans/month",
+      premium: "Tidak Terbatas",
+      unit: "rencana/bulan",
       isActive: true,
     },
     {
       id: "mid-limit-2",
-      name: "Resource Downloads",
-      description: "Maximum number of resources that can be downloaded per month",
+      name: "Unduhan Sumber Daya",
+      description: "Jumlah maksimum sumber daya yang dapat diunduh per bulan",
       basic: 30,
       standard: 150,
       premium: 750,
-      unit: "downloads/month",
+      unit: "unduhan/bulan",
       isActive: true,
     },
     {
       id: "mid-limit-3",
-      name: "Storage Space",
-      description: "Maximum storage space for uploaded files and resources",
+      name: "Ruang Penyimpanan",
+      description: "Ruang penyimpanan maksimum untuk file dan sumber daya yang diunggah",
       basic: 2,
       standard: 10,
       premium: 30,
@@ -107,50 +107,50 @@ const initialUsageLimits = {
     },
     {
       id: "mid-limit-4",
-      name: "Custom Templates",
-      description: "Maximum number of custom templates that can be created",
+      name: "Template Kustom",
+      description: "Jumlah maksimum template kustom yang dapat dibuat",
       basic: 3,
       standard: 15,
       premium: 75,
-      unit: "templates",
+      unit: "template",
       isActive: true,
     },
     {
       id: "mid-limit-5",
-      name: "API Requests",
-      description: "Maximum number of API requests per day",
+      name: "Permintaan API",
+      description: "Jumlah maksimum permintaan API per hari",
       basic: 200,
       standard: 2000,
       premium: 20000,
-      unit: "requests/day",
+      unit: "permintaan/hari",
       isActive: true,
     },
   ],
   high: [
     {
       id: "high-limit-1",
-      name: "Lesson Plans",
-      description: "Maximum number of lesson plans that can be generated per month",
+      name: "Rencana Pembelajaran",
+      description: "Jumlah maksimum rencana pembelajaran yang dapat dibuat per bulan",
       basic: 15,
       standard: 50,
-      premium: "Unlimited",
-      unit: "plans/month",
+      premium: "Tidak Terbatas",
+      unit: "rencana/bulan",
       isActive: true,
     },
     {
       id: "high-limit-2",
-      name: "Resource Downloads",
-      description: "Maximum number of resources that can be downloaded per month",
+      name: "Unduhan Sumber Daya",
+      description: "Jumlah maksimum sumber daya yang dapat diunduh per bulan",
       basic: 50,
       standard: 250,
       premium: 1000,
-      unit: "downloads/month",
+      unit: "unduhan/bulan",
       isActive: true,
     },
     {
       id: "high-limit-3",
-      name: "Storage Space",
-      description: "Maximum storage space for uploaded files and resources",
+      name: "Ruang Penyimpanan",
+      description: "Ruang penyimpanan maksimum untuk file dan sumber daya yang diunggah",
       basic: 3,
       standard: 15,
       premium: 50,
@@ -159,22 +159,22 @@ const initialUsageLimits = {
     },
     {
       id: "high-limit-4",
-      name: "Custom Templates",
-      description: "Maximum number of custom templates that can be created",
+      name: "Template Kustom",
+      description: "Jumlah maksimum template kustom yang dapat dibuat",
       basic: 5,
       standard: 25,
       premium: 100,
-      unit: "templates",
+      unit: "template",
       isActive: true,
     },
     {
       id: "high-limit-5",
-      name: "API Requests",
-      description: "Maximum number of API requests per day",
+      name: "Permintaan API",
+      description: "Jumlah maksimum permintaan API per hari",
       basic: 300,
       standard: 3000,
       premium: 30000,
-      unit: "requests/day",
+      unit: "permintaan/hari",
       isActive: true,
     },
   ],
@@ -262,40 +262,40 @@ export function UsageLimits() {
   return (
     <>
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold">Usage Limits</h2>
+        <h2 className="text-2xl font-bold">Batas Penggunaan</h2>
         <Button onClick={handleAddNewLimit}>
-          <Plus className="mr-2 h-4 w-4" /> Add New Limit
+          <Plus className="mr-2 h-4 w-4" /> Tambah Batas Baru
         </Button>
       </div>
 
       <Tabs value={activeSchoolLevel} onValueChange={setActiveSchoolLevel}>
         <TabsList className="mb-4">
-          <TabsTrigger value="elementary">Elementary School</TabsTrigger>
-          <TabsTrigger value="middle">Middle School</TabsTrigger>
-          <TabsTrigger value="high">High School</TabsTrigger>
+          <TabsTrigger value="elementary">Sekolah Dasar</TabsTrigger>
+          <TabsTrigger value="middle">Sekolah Menengah Pertama</TabsTrigger>
+          <TabsTrigger value="high">Sekolah Menengah Atas</TabsTrigger>
         </TabsList>
 
         {["elementary", "middle", "high"].map((level) => (
           <TabsContent key={level} value={level}>
             <Card>
               <CardHeader>
-                <CardTitle>Usage Limits</CardTitle>
+                <CardTitle>Batas Penggunaan</CardTitle>
                 <CardDescription>
-                  Configure usage limits for different pricing tiers for{" "}
-                  {level.charAt(0).toUpperCase() + level.slice(1)} School
+                  Konfigurasi batas penggunaan untuk berbagai tingkatan harga untuk{" "}
+                  {level === "elementary" ? "Sekolah Dasar" : level === "middle" ? "Sekolah Menengah Pertama" : "Sekolah Menengah Atas"}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead className="w-[300px]">Limit</TableHead>
-                      <TableHead className="text-center">Basic</TableHead>
-                      <TableHead className="text-center">Standard</TableHead>
+                      <TableHead className="w-[300px]">Batas</TableHead>
+                      <TableHead className="text-center">Dasar</TableHead>
+                      <TableHead className="text-center">Standar</TableHead>
                       <TableHead className="text-center">Premium</TableHead>
-                      <TableHead className="text-center">Unit</TableHead>
+                      <TableHead className="text-center">Satuan</TableHead>
                       <TableHead className="text-center">Status</TableHead>
-                      <TableHead className="text-right">Actions</TableHead>
+                      <TableHead className="text-right">Aksi</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -347,14 +347,14 @@ export function UsageLimits() {
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>{editingLimit?.id.includes("new") ? "Add New Usage Limit" : "Edit Usage Limit"}</DialogTitle>
-            <DialogDescription>Configure the usage limit details for different pricing tiers.</DialogDescription>
+            <DialogTitle>{editingLimit?.id.includes("new") ? "Tambah Batas Penggunaan Baru" : "Edit Batas Penggunaan"}</DialogTitle>
+            <DialogDescription>Konfigurasi detail batas penggunaan untuk berbagai tingkatan harga.</DialogDescription>
           </DialogHeader>
 
           {editingLimit && (
             <div className="grid gap-4 py-4">
               <div className="space-y-2">
-                <Label htmlFor="limit-name">Limit Name</Label>
+                <Label htmlFor="limit-name">Nama Batas</Label>
                 <Input
                   id="limit-name"
                   value={editingLimit.name}
@@ -363,7 +363,7 @@ export function UsageLimits() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="limit-description">Description</Label>
+                <Label htmlFor="limit-description">Deskripsi</Label>
                 <Textarea
                   id="limit-description"
                   value={editingLimit.description}
@@ -373,12 +373,12 @@ export function UsageLimits() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="limit-unit">Unit</Label>
+                  <Label htmlFor="limit-unit">Satuan</Label>
                   <Input
                     id="limit-unit"
                     value={editingLimit.unit}
                     onChange={(e) => setEditingLimit({ ...editingLimit, unit: e.target.value })}
-                    placeholder="e.g., GB, requests/day, etc."
+                    placeholder="contoh: GB, permintaan/hari, dll."
                   />
                 </div>
 
@@ -390,17 +390,17 @@ export function UsageLimits() {
                       checked={editingLimit.isActive}
                       onCheckedChange={(checked) => setEditingLimit({ ...editingLimit, isActive: checked })}
                     />
-                    <Label htmlFor="limit-active">Active</Label>
+                    <Label htmlFor="limit-active">Aktif</Label>
                   </div>
                 </div>
               </div>
 
               <div className="space-y-4">
-                <Label>Limits for Pricing Tiers</Label>
+                <Label>Batas untuk Tingkatan Harga</Label>
 
                 <div className="grid grid-cols-3 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="basic-limit">Basic</Label>
+                    <Label htmlFor="basic-limit">Dasar</Label>
                     <Input
                       id="basic-limit"
                       value={editingLimit.basic}
@@ -409,7 +409,7 @@ export function UsageLimits() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="standard-limit">Standard</Label>
+                    <Label htmlFor="standard-limit">Standar</Label>
                     <Input
                       id="standard-limit"
                       value={editingLimit.standard}
@@ -432,9 +432,9 @@ export function UsageLimits() {
 
           <DialogFooter>
             <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
-              Cancel
+              Batal
             </Button>
-            <Button onClick={handleSaveLimit}>Save Changes</Button>
+            <Button onClick={handleSaveLimit}>Simpan Perubahan</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
