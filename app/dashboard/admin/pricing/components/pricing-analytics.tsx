@@ -12,45 +12,45 @@ const revenueData = [
   { month: "Feb", revenue: 15000 },
   { month: "Mar", revenue: 18000 },
   { month: "Apr", revenue: 22000 },
-  { month: "May", revenue: 25000 },
+  { month: "Mei", revenue: 25000 },
   { month: "Jun", revenue: 28000 },
   { month: "Jul", revenue: 32000 },
-  { month: "Aug", revenue: 35000 },
+  { month: "Agu", revenue: 35000 },
   { month: "Sep", revenue: 38000 },
-  { month: "Oct", revenue: 42000 },
+  { month: "Okt", revenue: 42000 },
   { month: "Nov", revenue: 45000 },
-  { month: "Dec", revenue: 48000 },
+  { month: "Des", revenue: 48000 },
 ]
 
 // Mock data for package popularity
 const packagePopularityData = [
-  { name: "Basic (Elementary)", count: 450 },
-  { name: "Standard (Elementary)", count: 850 },
-  { name: "Premium (Elementary)", count: 350 },
-  { name: "Basic (Middle)", count: 300 },
-  { name: "Standard (Middle)", count: 750 },
-  { name: "Premium (Middle)", count: 250 },
-  { name: "Basic (High)", count: 200 },
-  { name: "Standard (High)", count: 650 },
-  { name: "Premium (High)", count: 150 },
+  { name: "Dasar (SD)", count: 450 },
+  { name: "Standar (SD)", count: 850 },
+  { name: "Premium (SD)", count: 350 },
+  { name: "Dasar (SMP)", count: 300 },
+  { name: "Standar (SMP)", count: 750 },
+  { name: "Premium (SMP)", count: 250 },
+  { name: "Dasar (SMA)", count: 200 },
+  { name: "Standar (SMA)", count: 650 },
+  { name: "Premium (SMA)", count: 150 },
 ]
 
 // Mock data for add-on popularity
 const addonPopularityData = [
-  { name: "Attendance Tracking", count: 1200 },
-  { name: "Advanced Gradebook", count: 950 },
-  { name: "Parent Communication", count: 1500 },
-  { name: "Assessment Builder", count: 850 },
-  { name: "Curriculum Mapping", count: 650 },
+  { name: "Pelacakan Kehadiran", count: 1200 },
+  { name: "Buku Nilai Lanjutan", count: 950 },
+  { name: "Komunikasi Orang Tua", count: 1500 },
+  { name: "Pembuat Penilaian", count: 850 },
+  { name: "Pemetaan Kurikulum", count: 650 },
 ]
 
 // Mock data for subscription periods
 const subscriptionPeriodData = [
-  { name: "Monthly", count: 1200 },
-  { name: "Quarterly", count: 450 },
-  { name: "Semi-Annual", count: 350 },
-  { name: "Annual", count: 850 },
-  { name: "Biennial", count: 150 },
+  { name: "Bulanan", count: 1200 },
+  { name: "Triwulan", count: 450 },
+  { name: "Semester", count: 350 },
+  { name: "Tahunan", count: 850 },
+  { name: "Dua Tahun", count: 150 },
 ]
 
 export function PricingAnalytics() {
@@ -117,17 +117,17 @@ export function PricingAnalytics() {
   return (
     <>
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold">Pricing Analytics</h2>
+        <h2 className="text-2xl font-bold">Analisis Harga</h2>
         <div className="flex items-center space-x-2">
           <Select value={timeRange} onValueChange={setTimeRange}>
             <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Select time range" />
+              <SelectValue placeholder="Pilih rentang waktu" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="month">Last 30 Days</SelectItem>
-              <SelectItem value="quarter">Last Quarter</SelectItem>
-              <SelectItem value="year">Last Year</SelectItem>
-              <SelectItem value="all">All Time</SelectItem>
+              <SelectItem value="month">30 Hari Terakhir</SelectItem>
+              <SelectItem value="quarter">Triwulan Terakhir</SelectItem>
+              <SelectItem value="year">Tahun Terakhir</SelectItem>
+              <SelectItem value="all">Semua Waktu</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -137,46 +137,46 @@ export function PricingAnalytics() {
         <TabsList className="mb-4">
           <TabsTrigger value="revenue" className="flex items-center gap-2">
             <LineChart className="h-4 w-4" />
-            <span>Revenue</span>
+            <span>Pendapatan</span>
           </TabsTrigger>
           <TabsTrigger value="packages" className="flex items-center gap-2">
             <BarChart className="h-4 w-4" />
-            <span>Package Popularity</span>
+            <span>Popularitas Paket</span>
           </TabsTrigger>
           <TabsTrigger value="addons" className="flex items-center gap-2">
             <BarChart className="h-4 w-4" />
-            <span>Add-on Popularity</span>
+            <span>Popularitas Add-on</span>
           </TabsTrigger>
           <TabsTrigger value="periods" className="flex items-center gap-2">
             <BarChart className="h-4 w-4" />
-            <span>Subscription Periods</span>
+            <span>Periode Langganan</span>
           </TabsTrigger>
         </TabsList>
 
         <TabsContent value="revenue">
           <Card>
             <CardHeader>
-              <CardTitle>Revenue Over Time</CardTitle>
-              <CardDescription>Track revenue trends over the selected time period</CardDescription>
+              <CardTitle>Pendapatan dari Waktu ke Waktu</CardTitle>
+              <CardDescription>Lacak tren pendapatan selama periode yang dipilih</CardDescription>
             </CardHeader>
             <CardContent>
               {renderLineChart(revenueData, "month", "revenue", getMaxValue(revenueData, "revenue"))}
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
                 <div className="space-y-1">
-                  <div className="text-sm text-muted-foreground">Total Revenue</div>
+                  <div className="text-sm text-muted-foreground">Total Pendapatan</div>
                   <div className="text-2xl font-bold">$361,500</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-sm text-muted-foreground">Average Monthly</div>
+                  <div className="text-sm text-muted-foreground">Rata-rata Bulanan</div>
                   <div className="text-2xl font-bold">$30,125</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-sm text-muted-foreground">Growth Rate</div>
+                  <div className="text-sm text-muted-foreground">Tingkat Pertumbuhan</div>
                   <div className="text-2xl font-bold text-green-600">+12.4%</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-sm text-muted-foreground">Projected Annual</div>
+                  <div className="text-sm text-muted-foreground">Proyeksi Tahunan</div>
                   <div className="text-2xl font-bold">$420,000</div>
                 </div>
               </div>
@@ -187,27 +187,27 @@ export function PricingAnalytics() {
         <TabsContent value="packages">
           <Card>
             <CardHeader>
-              <CardTitle>Package Popularity</CardTitle>
-              <CardDescription>Compare the popularity of different pricing packages</CardDescription>
+              <CardTitle>Popularitas Paket</CardTitle>
+              <CardDescription>Bandingkan popularitas paket harga yang berbeda</CardDescription>
             </CardHeader>
             <CardContent>
               {renderBarChart(packagePopularityData, "name", "count", getMaxValue(packagePopularityData, "count"))}
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
                 <div className="space-y-1">
-                  <div className="text-sm text-muted-foreground">Most Popular</div>
-                  <div className="text-xl font-bold">Standard (Elementary)</div>
+                  <div className="text-sm text-muted-foreground">Paling Populer</div>
+                  <div className="text-xl font-bold">Standar (SD)</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-sm text-muted-foreground">Total Subscriptions</div>
+                  <div className="text-sm text-muted-foreground">Total Langganan</div>
                   <div className="text-2xl font-bold">3,950</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-sm text-muted-foreground">Standard Tier %</div>
+                  <div className="text-sm text-muted-foreground">Persentase Tingkat Standar</div>
                   <div className="text-2xl font-bold">56.9%</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-sm text-muted-foreground">Elementary School %</div>
+                  <div className="text-sm text-muted-foreground">Persentase SD</div>
                   <div className="text-2xl font-bold">41.8%</div>
                 </div>
               </div>
@@ -218,27 +218,27 @@ export function PricingAnalytics() {
         <TabsContent value="addons">
           <Card>
             <CardHeader>
-              <CardTitle>Add-on Module Popularity</CardTitle>
-              <CardDescription>Compare the popularity of different add-on modules</CardDescription>
+              <CardTitle>Popularitas Modul Add-on</CardTitle>
+              <CardDescription>Bandingkan popularitas modul add-on yang berbeda</CardDescription>
             </CardHeader>
             <CardContent>
               {renderBarChart(addonPopularityData, "name", "count", getMaxValue(addonPopularityData, "count"))}
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
                 <div className="space-y-1">
-                  <div className="text-sm text-muted-foreground">Most Popular</div>
-                  <div className="text-xl font-bold">Parent Communication</div>
+                  <div className="text-sm text-muted-foreground">Paling Populer</div>
+                  <div className="text-xl font-bold">Komunikasi Orang Tua</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-sm text-muted-foreground">Total Add-ons</div>
+                  <div className="text-sm text-muted-foreground">Total Add-on</div>
                   <div className="text-2xl font-bold">5,150</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-sm text-muted-foreground">Attach Rate</div>
+                  <div className="text-sm text-muted-foreground">Tingkat Keterikatan</div>
                   <div className="text-2xl font-bold">78.3%</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-sm text-muted-foreground">Add-on Revenue</div>
+                  <div className="text-sm text-muted-foreground">Pendapatan Add-on</div>
                   <div className="text-2xl font-bold">$127,500</div>
                 </div>
               </div>
@@ -249,27 +249,27 @@ export function PricingAnalytics() {
         <TabsContent value="periods">
           <Card>
             <CardHeader>
-              <CardTitle>Subscription Period Distribution</CardTitle>
-              <CardDescription>Compare the popularity of different subscription periods</CardDescription>
+              <CardTitle>Distribusi Periode Langganan</CardTitle>
+              <CardDescription>Bandingkan popularitas periode langganan yang berbeda</CardDescription>
             </CardHeader>
             <CardContent>
               {renderBarChart(subscriptionPeriodData, "name", "count", getMaxValue(subscriptionPeriodData, "count"))}
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
                 <div className="space-y-1">
-                  <div className="text-sm text-muted-foreground">Most Popular</div>
-                  <div className="text-xl font-bold">Monthly</div>
+                  <div className="text-sm text-muted-foreground">Paling Populer</div>
+                  <div className="text-xl font-bold">Bulanan</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-sm text-muted-foreground">Annual+ %</div>
+                  <div className="text-sm text-muted-foreground">Persentase Tahunan+</div>
                   <div className="text-2xl font-bold">33.3%</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-sm text-muted-foreground">Avg. Subscription</div>
-                  <div className="text-2xl font-bold">7.2 months</div>
+                  <div className="text-sm text-muted-foreground">Rata-rata Langganan</div>
+                  <div className="text-2xl font-bold">7.2 bulan</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-sm text-muted-foreground">Renewal Rate</div>
+                  <div className="text-sm text-muted-foreground">Tingkat Perpanjangan</div>
                   <div className="text-2xl font-bold">76.5%</div>
                 </div>
               </div>
