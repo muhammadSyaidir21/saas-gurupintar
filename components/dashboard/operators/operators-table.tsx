@@ -30,7 +30,7 @@ export function OperatorsTable({ operators = [] }: OperatorsTableProps) {
   const { deleteOperator } = useOperatorsStore()
 
   const handleDelete = async (id: string) => {
-    if (window.confirm("Are you sure you want to delete this operator?")) {
+    if (window.confirm("Apakah Anda yakin ingin menghapus operator ini?")) {
       await deleteOperator(id)
     }
   }
@@ -59,24 +59,24 @@ export function OperatorsTable({ operators = [] }: OperatorsTableProps) {
             <TableRow>
               <TableHead className="w-[250px]">
                 <div className="flex items-center">
-                  Name
+                  Nama
                   <ArrowUpDown className="ml-2 h-4 w-4" />
                 </div>
               </TableHead>
               <TableHead>Status</TableHead>
-              <TableHead>Role</TableHead>
-              <TableHead>Region</TableHead>
-              <TableHead>Schools</TableHead>
-              <TableHead>Package</TableHead>
-              <TableHead>Last Active</TableHead>
-              <TableHead className="text-right">Actions</TableHead>
+              <TableHead>Peran</TableHead>
+              <TableHead>Wilayah</TableHead>
+              <TableHead>Sekolah</TableHead>
+              <TableHead>Paket</TableHead>
+              <TableHead>Aktif Terakhir</TableHead>
+              <TableHead className="text-right">Aksi</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {safeOperators.length === 0 ? (
               <TableRow>
                 <TableCell colSpan={8} className="h-24 text-center">
-                  No operators found.
+                  Tidak ada operator ditemukan.
                 </TableCell>
               </TableRow>
             ) : (
@@ -100,7 +100,7 @@ export function OperatorsTable({ operators = [] }: OperatorsTableProps) {
                     {operator.packages && operator.packages.length > 0 ? (
                       <PackageBadge tier={operator.packages[0].tier} />
                     ) : (
-                      <span className="text-muted-foreground text-sm">No package</span>
+                      <span className="text-muted-foreground text-sm">Tidak ada paket</span>
                     )}
                   </TableCell>
                   <TableCell>{formatDate(operator.lastActive)}</TableCell>
@@ -113,15 +113,15 @@ export function OperatorsTable({ operators = [] }: OperatorsTableProps) {
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
-                        <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                        <DropdownMenuLabel>Aksi</DropdownMenuLabel>
                         <DropdownMenuItem onClick={() => viewDetails(operator)}>
                           <Eye className="mr-2 h-4 w-4" />
-                          View Details
+                          Lihat Detail
                         </DropdownMenuItem>
                         <DropdownMenuItem asChild>
                           <Link href={`/dashboard/admin/operators/${operator.id}`}>
                             <Eye className="mr-2 h-4 w-4" />
-                            View Full Details
+                            Lihat Detail Lengkap
                           </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
@@ -131,16 +131,16 @@ export function OperatorsTable({ operators = [] }: OperatorsTableProps) {
                         <DropdownMenuSeparator />
                         <DropdownMenuItem>
                           <Shield className="mr-2 h-4 w-4" />
-                          Manage Permissions
+                          Kelola Izin
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                           <Key className="mr-2 h-4 w-4" />
-                          Reset Password
+                          Reset Kata Sandi
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem onClick={() => handleDelete(operator.id)} className="text-destructive">
                           <Trash className="mr-2 h-4 w-4" />
-                          Delete
+                          Hapus
                         </DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
