@@ -168,9 +168,22 @@ export default function AdminDashboardPage() {
                       stroke="var(--primary)"
                       activeDot={{ r: 8 }}
                       strokeWidth={2}
+                      name="Guru"
                     />
-                    <Line type="monotone" dataKey="students" stroke="var(--secondary)" strokeWidth={2} />
-                    <Line type="monotone" dataKey="admins" stroke="var(--accent)" strokeWidth={2} />
+                    <Line 
+                      type="monotone" 
+                      dataKey="students" 
+                      stroke="var(--secondary)" 
+                      strokeWidth={2}
+                      name="Siswa"
+                    />
+                    <Line 
+                      type="monotone" 
+                      dataKey="admins" 
+                      stroke="var(--accent)" 
+                      strokeWidth={2}
+                      name="Admin"
+                    />
                   </LineChart>
                 </ResponsiveContainer>
               </TabsContent>
@@ -188,9 +201,24 @@ export default function AdminDashboardPage() {
                       }}
                     />
                     <Legend />
-                    <Bar dataKey="lesson_plans" fill="var(--primary)" radius={[4, 4, 0, 0]} />
-                    <Bar dataKey="reports" fill="var(--secondary)" radius={[4, 4, 0, 0]} />
-                    <Bar dataKey="assessments" fill="var(--accent)" radius={[4, 4, 0, 0]} />
+                    <Bar 
+                      dataKey="lesson_plans" 
+                      fill="var(--primary)" 
+                      radius={[4, 4, 0, 0]}
+                      name="Rencana Pembelajaran"
+                    />
+                    <Bar 
+                      dataKey="reports" 
+                      fill="var(--secondary)" 
+                      radius={[4, 4, 0, 0]}
+                      name="Laporan"
+                    />
+                    <Bar 
+                      dataKey="assessments" 
+                      fill="var(--accent)" 
+                      radius={[4, 4, 0, 0]}
+                      name="Penilaian"
+                    />
                   </BarChart>
                 </ResponsiveContainer>
               </TabsContent>
@@ -282,7 +310,7 @@ export default function AdminDashboardPage() {
                             size="icon"
                             className="h-8 w-8 p-0 opacity-0 group-hover:opacity-100 transition-opacity rounded-full"
                           >
-                            <span className="sr-only">Open menu</span>
+                            <span className="sr-only">Buka menu</span>
                             <MoreVertical className="h-4 w-4" />
                           </Button>
                         </DropdownMenuTrigger>
