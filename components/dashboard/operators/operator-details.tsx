@@ -41,8 +41,8 @@ export function OperatorDetails({ operator, open, onOpenChange }: OperatorDetail
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Operator Details</DialogTitle>
-          <DialogDescription>View detailed information about this operator</DialogDescription>
+          <DialogTitle>Detail Operator</DialogTitle>
+          <DialogDescription>Lihat informasi detail tentang operator ini</DialogDescription>
         </DialogHeader>
 
         <div className="flex flex-col md:flex-row gap-4 py-4">
@@ -58,7 +58,7 @@ export function OperatorDetails({ operator, open, onOpenChange }: OperatorDetail
               <span className="text-sm text-muted-foreground">{operator.phone}</span>
             </div>
             <div className="mt-2">
-              <span className="text-sm font-medium">Role: </span>
+              <span className="text-sm font-medium">Peran: </span>
               <span className="text-sm">{operator.role}</span>
             </div>
           </div>
@@ -66,36 +66,36 @@ export function OperatorDetails({ operator, open, onOpenChange }: OperatorDetail
 
         <Tabs defaultValue="overview">
           <TabsList className="grid grid-cols-4">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="packages">Packages</TabsTrigger>
-            <TabsTrigger value="quota">Quota</TabsTrigger>
-            <TabsTrigger value="security">Security</TabsTrigger>
+            <TabsTrigger value="overview">Ringkasan</TabsTrigger>
+            <TabsTrigger value="packages">Paket</TabsTrigger>
+            <TabsTrigger value="quota">Kuota</TabsTrigger>
+            <TabsTrigger value="security">Keamanan</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Card>
                 <CardHeader>
-                  <CardTitle>Account Information</CardTitle>
+                  <CardTitle>Informasi Akun</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
                   <div className="grid grid-cols-2 gap-1">
-                    <span className="text-sm font-medium">Account Type:</span>
+                    <span className="text-sm font-medium">Tipe Akun:</span>
                     <span className="text-sm">{operator.accountType}</span>
 
-                    <span className="text-sm font-medium">Region:</span>
+                    <span className="text-sm font-medium">Wilayah:</span>
                     <span className="text-sm">{operator.region}</span>
 
-                    <span className="text-sm font-medium">Joined:</span>
+                    <span className="text-sm font-medium">Bergabung:</span>
                     <span className="text-sm">{formatDate(operator.joinDate)}</span>
 
-                    <span className="text-sm font-medium">Last Active:</span>
+                    <span className="text-sm font-medium">Terakhir Aktif:</span>
                     <span className="text-sm">{getTimeAgo(operator.lastActive)}</span>
 
-                    <span className="text-sm font-medium">Schools:</span>
+                    <span className="text-sm font-medium">Sekolah:</span>
                     <span className="text-sm">{operator.schools}</span>
 
-                    <span className="text-sm font-medium">Active Users:</span>
+                    <span className="text-sm font-medium">Pengguna Aktif:</span>
                     <span className="text-sm">{operator.activeUsers.toLocaleString()}</span>
                   </div>
                 </CardContent>
@@ -103,23 +103,23 @@ export function OperatorDetails({ operator, open, onOpenChange }: OperatorDetail
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Contact Information</CardTitle>
+                  <CardTitle>Informasi Kontak</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
                   <div className="grid grid-cols-2 gap-1">
                     <span className="text-sm font-medium">Email:</span>
                     <span className="text-sm">{operator.email}</span>
 
-                    <span className="text-sm font-medium">Phone:</span>
+                    <span className="text-sm font-medium">Telepon:</span>
                     <span className="text-sm">{operator.phone}</span>
 
-                    <span className="text-sm font-medium">Address:</span>
+                    <span className="text-sm font-medium">Alamat:</span>
                     <span className="text-sm">
                       {operator.address.street}, {operator.address.city}, {operator.address.state}{" "}
                       {operator.address.zipCode}
                     </span>
 
-                    <span className="text-sm font-medium">Country:</span>
+                    <span className="text-sm font-medium">Negara:</span>
                     <span className="text-sm">{operator.address.country}</span>
                   </div>
                 </CardContent>
@@ -127,17 +127,17 @@ export function OperatorDetails({ operator, open, onOpenChange }: OperatorDetail
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Company Information</CardTitle>
+                  <CardTitle>Informasi Perusahaan</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
                   <div className="grid grid-cols-2 gap-1">
-                    <span className="text-sm font-medium">Company:</span>
+                    <span className="text-sm font-medium">Perusahaan:</span>
                     <span className="text-sm">{operator.company.name}</span>
 
-                    <span className="text-sm font-medium">Position:</span>
+                    <span className="text-sm font-medium">Jabatan:</span>
                     <span className="text-sm">{operator.company.position}</span>
 
-                    <span className="text-sm font-medium">Department:</span>
+                    <span className="text-sm font-medium">Departemen:</span>
                     <span className="text-sm">{operator.company.department}</span>
                   </div>
                 </CardContent>
@@ -145,20 +145,20 @@ export function OperatorDetails({ operator, open, onOpenChange }: OperatorDetail
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Settings</CardTitle>
+                  <CardTitle>Pengaturan</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
                   <div className="grid grid-cols-2 gap-1">
-                    <span className="text-sm font-medium">Two-Factor Auth:</span>
-                    <span className="text-sm">{operator.settings.twoFactorEnabled ? "Enabled" : "Disabled"}</span>
+                    <span className="text-sm font-medium">Autentikasi Dua Faktor:</span>
+                    <span className="text-sm">{operator.settings.twoFactorEnabled ? "Diaktifkan" : "Dinonaktifkan"}</span>
 
-                    <span className="text-sm font-medium">Notifications:</span>
-                    <span className="text-sm">{operator.settings.notificationsEnabled ? "Enabled" : "Disabled"}</span>
+                    <span className="text-sm font-medium">Notifikasi:</span>
+                    <span className="text-sm">{operator.settings.notificationsEnabled ? "Diaktifkan" : "Dinonaktifkan"}</span>
 
-                    <span className="text-sm font-medium">Language:</span>
+                    <span className="text-sm font-medium">Bahasa:</span>
                     <span className="text-sm">{operator.settings.language}</span>
 
-                    <span className="text-sm font-medium">Timezone:</span>
+                    <span className="text-sm font-medium">Zona Waktu:</span>
                     <span className="text-sm">{operator.settings.timezone}</span>
                   </div>
                 </CardContent>
@@ -175,15 +175,15 @@ export function OperatorDetails({ operator, open, onOpenChange }: OperatorDetail
                     <PackageBadge tier={pkg.tier} />
                   </div>
                   <CardDescription>
-                    Purchased: {formatDate(pkg.purchaseDate)} | Expires: {formatDate(pkg.expiryDate)}
+                    Dibeli: {formatDate(pkg.purchaseDate)} | Berakhir: {formatDate(pkg.expiryDate)}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="mb-4">
-                    <span className="font-medium">Cost: </span>${pkg.cost}
+                    <span className="font-medium">Biaya: </span>Rp {pkg.cost}
                   </div>
                   <div>
-                    <h4 className="font-medium mb-2">Features:</h4>
+                    <h4 className="font-medium mb-2">Fitur:</h4>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                       {pkg.features.map((feature, index) => (
                         <li key={index} className="text-sm">
@@ -200,8 +200,8 @@ export function OperatorDetails({ operator, open, onOpenChange }: OperatorDetail
           <TabsContent value="quota" className="space-y-4">
             <Card>
               <CardHeader>
-                <CardTitle>Quota Usage</CardTitle>
-                <CardDescription>Last updated: {getTimeAgo(operator.quotaUsage.lastUpdated)}</CardDescription>
+                <CardTitle>Penggunaan Kuota</CardTitle>
+                <CardDescription>Terakhir diperbarui: {getTimeAgo(operator.quotaUsage.lastUpdated)}</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
@@ -217,15 +217,15 @@ export function OperatorDetails({ operator, open, onOpenChange }: OperatorDetail
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="p-4 bg-muted rounded-lg">
-                      <div className="text-sm text-muted-foreground">Total Quota</div>
+                      <div className="text-sm text-muted-foreground">Total Kuota</div>
                       <div className="text-2xl font-bold">{operator.quotaUsage.total.toLocaleString()}</div>
                     </div>
                     <div className="p-4 bg-muted rounded-lg">
-                      <div className="text-sm text-muted-foreground">Used</div>
+                      <div className="text-sm text-muted-foreground">Digunakan</div>
                       <div className="text-2xl font-bold">{operator.quotaUsage.used.toLocaleString()}</div>
                     </div>
                     <div className="p-4 bg-muted rounded-lg">
-                      <div className="text-sm text-muted-foreground">Remaining</div>
+                      <div className="text-sm text-muted-foreground">Tersisa</div>
                       <div className="text-2xl font-bold">{operator.quotaUsage.remaining.toLocaleString()}</div>
                     </div>
                   </div>
@@ -237,45 +237,45 @@ export function OperatorDetails({ operator, open, onOpenChange }: OperatorDetail
           <TabsContent value="security" className="space-y-4">
             <Card>
               <CardHeader>
-                <CardTitle>Security Settings</CardTitle>
+                <CardTitle>Pengaturan Keamanan</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <h4 className="font-medium mb-2">Account Status</h4>
+                    <h4 className="font-medium mb-2">Status Akun</h4>
                     <div className="flex items-center gap-2">
                       <StatusBadge status={operator.status} />
                       <span className="text-sm">
                         {operator.status === "Active"
-                          ? "Account is active and operational"
+                          ? "Akun aktif dan beroperasi"
                           : operator.status === "Inactive"
-                            ? "Account is currently inactive"
+                            ? "Akun saat ini tidak aktif"
                             : operator.status === "Pending"
-                              ? "Account is pending activation"
-                              : "Account has been suspended"}
+                              ? "Akun menunggu aktivasi"
+                              : "Akun telah ditangguhkan"}
                       </span>
                     </div>
                   </div>
 
                   <div>
-                    <h4 className="font-medium mb-2">Two-Factor Authentication</h4>
+                    <h4 className="font-medium mb-2">Autentikasi Dua Faktor</h4>
                     <div className="flex items-center gap-2">
                       <div
                         className={`h-2 w-2 rounded-full ${operator.settings.twoFactorEnabled ? "bg-green-500" : "bg-red-500"}`}
                       ></div>
-                      <span className="text-sm">{operator.settings.twoFactorEnabled ? "Enabled" : "Disabled"}</span>
+                      <span className="text-sm">{operator.settings.twoFactorEnabled ? "Diaktifkan" : "Dinonaktifkan"}</span>
                     </div>
                   </div>
 
                   <div>
-                    <h4 className="font-medium mb-2">Password</h4>
-                    <div className="text-sm">Last changed: {getTimeAgo(operator.lastPasswordChange)}</div>
+                    <h4 className="font-medium mb-2">Kata Sandi</h4>
+                    <div className="text-sm">Terakhir diubah: {getTimeAgo(operator.lastPasswordChange)}</div>
                   </div>
 
                   <div>
-                    <h4 className="font-medium mb-2">Role & Permissions</h4>
-                    <div className="text-sm">Role: {operator.role}</div>
-                    <div className="text-sm">Custom permissions: {operator.customPermissions.length}</div>
+                    <h4 className="font-medium mb-2">Peran & Izin</h4>
+                    <div className="text-sm">Peran: {operator.role}</div>
+                    <div className="text-sm">Izin khusus: {operator.customPermissions.length}</div>
                   </div>
                 </div>
               </CardContent>
