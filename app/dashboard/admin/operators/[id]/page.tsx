@@ -279,15 +279,15 @@ export default function OperatorDetailPage() {
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
-                <BreadcrumbLink href="/dashboard/admin">Dashboard</BreadcrumbLink>
+                <BreadcrumbLink href="/dashboard/admin">Dasbor</BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbLink href="/dashboard/admin/operators">Operators</BreadcrumbLink>
+                <BreadcrumbLink href="/dashboard/admin/operators">Operator</BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbPage>Details</BreadcrumbPage>
+                <BreadcrumbPage>Detail</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -296,13 +296,13 @@ export default function OperatorDetailPage() {
         <Alert variant="destructive">
           <AlertCircle className="h-4 w-4" />
           <AlertTitle>Error</AlertTitle>
-          <AlertDescription>{error || "Failed to load operator details. The operator may not exist."}</AlertDescription>
+          <AlertDescription>{error || "Gagal memuat detail operator. Operator mungkin tidak ada."}</AlertDescription>
         </Alert>
 
         <div className="mt-4">
           <Button variant="outline" onClick={() => router.push("/dashboard/admin/operators")}>
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Operators
+            Kembali ke Operator
           </Button>
         </div>
       </div>
@@ -339,11 +339,11 @@ export default function OperatorDetailPage() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/dashboard/admin">Dashboard</BreadcrumbLink>
+              <BreadcrumbLink href="/dashboard/admin">Dasbor</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/dashboard/admin/operators">Operators</BreadcrumbLink>
+              <BreadcrumbLink href="/dashboard/admin/operators">Operator</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
@@ -380,7 +380,7 @@ export default function OperatorDetailPage() {
             <>
               <Button variant="outline" size="sm" onClick={() => setIsEditing(true)}>
                 <Edit2 className="mr-2 h-4 w-4" />
-                Edit Profile
+                Edit Profil
               </Button>
 
               <DropdownMenu>
@@ -391,23 +391,23 @@ export default function OperatorDetailPage() {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
-                  <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                  <DropdownMenuLabel>Tindakan</DropdownMenuLabel>
                   <DropdownMenuItem onClick={() => setShowResetPasswordDialog(true)}>
                     <Key className="mr-2 h-4 w-4" />
                     Reset Password
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => window.open(`mailto:${operator.email}`)}>
                     <Mail className="mr-2 h-4 w-4" />
-                    Send Email
+                    Kirim Email
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={() => setShowSuspendDialog(true)} className="text-amber-600">
                     <Lock className="mr-2 h-4 w-4" />
-                    {operator.status === "Suspended" ? "Activate Account" : "Suspend Account"}
+                    {operator.status === "Suspended" ? "Aktifkan Akun" : "Tangguhkan Akun"}
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => setShowDeleteDialog(true)} className="text-destructive">
                     <Trash2 className="mr-2 h-4 w-4" />
-                    Delete Account
+                    Hapus Akun
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -416,11 +416,11 @@ export default function OperatorDetailPage() {
             <>
               <Button variant="default" size="sm" onClick={handleSaveChanges}>
                 <Check className="mr-2 h-4 w-4" />
-                Save Changes
+                Simpan Perubahan
               </Button>
               <Button variant="outline" size="sm" onClick={handleCancelEdit}>
                 <X className="mr-2 h-4 w-4" />
-                Cancel
+                Batal
               </Button>
             </>
           )}
@@ -434,13 +434,13 @@ export default function OperatorDetailPage() {
           {/* Profile card */}
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-lg">Profile Information</CardTitle>
+              <CardTitle className="text-lg">Informasi Profil</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               {isEditing ? (
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="name">Full Name</Label>
+                    <Label htmlFor="name">Nama Lengkap</Label>
                     <Input id="name" name="name" value={editedOperator.name || ""} onChange={handleInputChange} />
                   </div>
                   <div>
@@ -454,27 +454,27 @@ export default function OperatorDetailPage() {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="phone">Phone</Label>
+                    <Label htmlFor="phone">Telepon</Label>
                     <Input id="phone" name="phone" value={editedOperator.phone || ""} onChange={handleInputChange} />
                   </div>
                   <div>
-                    <Label htmlFor="role">Role</Label>
+                    <Label htmlFor="role">Peran</Label>
                     <Select
                       value={editedOperator.role || ""}
                       onValueChange={(value) => setEditedOperator({ ...editedOperator, role: value })}
                     >
                       <SelectTrigger>
-                        <SelectValue placeholder="Select role" />
+                        <SelectValue placeholder="Pilih peran" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="Operator">Operator</SelectItem>
-                        <SelectItem value="Senior Operator">Senior Operator</SelectItem>
-                        <SelectItem value="Regional Operator">Regional Operator</SelectItem>
+                        <SelectItem value="Senior Operator">Operator Senior</SelectItem>
+                        <SelectItem value="Regional Operator">Operator Regional</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
                   <div>
-                    <Label htmlFor="region">Region</Label>
+                    <Label htmlFor="region">Wilayah</Label>
                     <Input id="region" name="region" value={editedOperator.region || ""} onChange={handleInputChange} />
                   </div>
                 </div>
@@ -491,7 +491,7 @@ export default function OperatorDetailPage() {
                   <div className="flex items-center gap-2">
                     <Phone className="h-4 w-4 text-muted-foreground" />
                     <div>
-                      <div className="text-sm text-muted-foreground">Phone</div>
+                      <div className="text-sm text-muted-foreground">Telepon</div>
                       <div className="font-medium">{operator.phone || "Not provided"}</div>
                     </div>
                   </div>
@@ -499,7 +499,7 @@ export default function OperatorDetailPage() {
                   <div className="flex items-center gap-2">
                     <User className="h-4 w-4 text-muted-foreground" />
                     <div>
-                      <div className="text-sm text-muted-foreground">Role</div>
+                      <div className="text-sm text-muted-foreground">Peran</div>
                       <div className="font-medium">{operator.role || "Standard Operator"}</div>
                     </div>
                   </div>
@@ -507,7 +507,7 @@ export default function OperatorDetailPage() {
                   <div className="flex items-center gap-2">
                     <MapPin className="h-4 w-4 text-muted-foreground" />
                     <div>
-                      <div className="text-sm text-muted-foreground">Region</div>
+                      <div className="text-sm text-muted-foreground">Wilayah</div>
                       <div className="font-medium">{operator.region || "Not specified"}</div>
                     </div>
                   </div>
@@ -515,7 +515,7 @@ export default function OperatorDetailPage() {
                   <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4 text-muted-foreground" />
                     <div>
-                      <div className="text-sm text-muted-foreground">Join Date</div>
+                      <div className="text-sm text-muted-foreground">Tanggal Bergabung</div>
                       <div className="font-medium">{operator.joinDate ? formatDate(operator.joinDate) : "Unknown"}</div>
                     </div>
                   </div>
@@ -523,7 +523,7 @@ export default function OperatorDetailPage() {
                   <div className="flex items-center gap-2">
                     <Clock className="h-4 w-4 text-muted-foreground" />
                     <div>
-                      <div className="text-sm text-muted-foreground">Last Active</div>
+                      <div className="text-sm text-muted-foreground">Terakhir Aktif</div>
                       <div className="font-medium">
                         {operator.lastActive ? getTimeAgo(operator.lastActive) : "Unknown"}
                       </div>
@@ -537,34 +537,34 @@ export default function OperatorDetailPage() {
           {/* Stats card */}
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-lg">Statistics</CardTitle>
+              <CardTitle className="text-lg">Statistik</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-muted/40 rounded-lg p-3 text-center">
                   <div className="text-3xl font-bold">{formatNumber(operator.schools)}</div>
-                  <div className="text-sm text-muted-foreground">Schools</div>
+                  <div className="text-sm text-muted-foreground">Sekolah</div>
                 </div>
                 <div className="bg-muted/40 rounded-lg p-3 text-center">
                   <div className="text-3xl font-bold">{formatNumber(operator.activeUsers)}</div>
-                  <div className="text-sm text-muted-foreground">Active Users</div>
+                  <div className="text-sm text-muted-foreground">Pengguna Aktif</div>
                 </div>
               </div>
 
               <div>
                 <div className="flex justify-between mb-1">
-                  <div className="text-sm font-medium">Quota Usage</div>
+                  <div className="text-sm font-medium">Penggunaan Kuota</div>
                   <div className="text-sm font-medium">{quotaPercentage}%</div>
                 </div>
                 <Progress value={quotaPercentage} className="h-2" />
                 <div className="flex justify-between text-xs text-muted-foreground mt-1">
-                  <div>{formatNumber(quotaUsed)} used</div>
-                  <div>{formatNumber(quotaRemaining)} remaining</div>
+                  <div>{formatNumber(quotaUsed)} digunakan</div>
+                  <div>{formatNumber(quotaRemaining)} tersisa</div>
                 </div>
               </div>
 
               <div className="pt-2">
-                <div className="text-sm font-medium mb-2">Package Status</div>
+                <div className="text-sm font-medium mb-2">Status Paket</div>
                 {operator.packages && operator.packages.length > 0 ? (
                   <div className="space-y-2">
                     {operator.packages.slice(0, 2).map((pkg) => (
@@ -583,7 +583,7 @@ export default function OperatorDetailPage() {
                     )}
                   </div>
                 ) : (
-                  <div className="text-sm text-muted-foreground">No packages available</div>
+                  <div className="text-sm text-muted-foreground">Tidak ada paket tersedia</div>
                 )}
               </div>
             </CardContent>
@@ -592,13 +592,13 @@ export default function OperatorDetailPage() {
           {/* Address card */}
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-lg">Address</CardTitle>
+              <CardTitle className="text-lg">Alamat</CardTitle>
             </CardHeader>
             <CardContent>
               {isEditing ? (
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="street">Street</Label>
+                    <Label htmlFor="street">Jalan</Label>
                     <Input
                       id="street"
                       value={editedOperator.address?.street || ""}
@@ -607,7 +607,7 @@ export default function OperatorDetailPage() {
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="city">City</Label>
+                      <Label htmlFor="city">Kota</Label>
                       <Input
                         id="city"
                         value={editedOperator.address?.city || ""}
@@ -615,7 +615,7 @@ export default function OperatorDetailPage() {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="state">State</Label>
+                      <Label htmlFor="state">Provinsi</Label>
                       <Input
                         id="state"
                         value={editedOperator.address?.state || ""}
@@ -625,7 +625,7 @@ export default function OperatorDetailPage() {
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="zipCode">Zip Code</Label>
+                      <Label htmlFor="zipCode">Kode Pos</Label>
                       <Input
                         id="zipCode"
                         value={editedOperator.address?.zipCode || ""}
@@ -633,7 +633,7 @@ export default function OperatorDetailPage() {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="country">Country</Label>
+                      <Label htmlFor="country">Negara</Label>
                       <Input
                         id="country"
                         value={editedOperator.address?.country || ""}
@@ -652,7 +652,7 @@ export default function OperatorDetailPage() {
                   <div>{operator.address.country || "No country"}</div>
                 </div>
               ) : (
-                <div className="text-muted-foreground">No address information available</div>
+                <div className="text-muted-foreground">Tidak ada informasi alamat tersedia</div>
               )}
             </CardContent>
           </Card>
@@ -663,19 +663,19 @@ export default function OperatorDetailPage() {
           <Tabs defaultValue="overview" className="w-full">
             <TabsList className="w-full justify-start mb-6 bg-muted/40 p-1">
               <TabsTrigger value="overview" className="flex-1">
-                Overview
+                Ringkasan
               </TabsTrigger>
               <TabsTrigger value="packages" className="flex-1">
-                Packages
+                Paket
               </TabsTrigger>
               <TabsTrigger value="quota" className="flex-1">
-                Quota & Usage
+                Kuota & Penggunaan
               </TabsTrigger>
               <TabsTrigger value="security" className="flex-1">
-                Security
+                Keamanan
               </TabsTrigger>
               <TabsTrigger value="activity" className="flex-1">
-                Activity
+                Aktivitas
               </TabsTrigger>
             </TabsList>
 
@@ -684,13 +684,13 @@ export default function OperatorDetailPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card>
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-lg">Company Information</CardTitle>
+                    <CardTitle className="text-lg">Informasi Perusahaan</CardTitle>
                   </CardHeader>
                   <CardContent>
                     {isEditing ? (
                       <div className="space-y-4">
                         <div>
-                          <Label htmlFor="companyName">Company Name</Label>
+                          <Label htmlFor="companyName">Nama Perusahaan</Label>
                           <Input
                             id="companyName"
                             value={editedOperator.company?.name || ""}
@@ -698,7 +698,7 @@ export default function OperatorDetailPage() {
                           />
                         </div>
                         <div>
-                          <Label htmlFor="position">Position</Label>
+                          <Label htmlFor="position">Jabatan</Label>
                           <Input
                             id="position"
                             value={editedOperator.company?.position || ""}
@@ -706,7 +706,7 @@ export default function OperatorDetailPage() {
                           />
                         </div>
                         <div>
-                          <Label htmlFor="department">Department</Label>
+                          <Label htmlFor="department">Departemen</Label>
                           <Input
                             id="department"
                             value={editedOperator.company?.department || ""}
@@ -714,16 +714,16 @@ export default function OperatorDetailPage() {
                           />
                         </div>
                         <div>
-                          <Label htmlFor="accountType">Account Type</Label>
+                          <Label htmlFor="accountType">Tipe Akun</Label>
                           <Select
                             value={editedOperator.accountType || "Standard"}
                             onValueChange={(value) => setEditedOperator({ ...editedOperator, accountType: value })}
                           >
                             <SelectTrigger id="accountType">
-                              <SelectValue placeholder="Select account type" />
+                              <SelectValue placeholder="Pilih tipe akun" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="Standard">Standard</SelectItem>
+                              <SelectItem value="Standard">Standar</SelectItem>
                               <SelectItem value="Premium">Premium</SelectItem>
                               <SelectItem value="Enterprise">Enterprise</SelectItem>
                             </SelectContent>
@@ -733,43 +733,43 @@ export default function OperatorDetailPage() {
                     ) : operator.company ? (
                       <div className="space-y-4">
                         <div>
-                          <div className="text-sm text-muted-foreground">Company</div>
+                          <div className="text-sm text-muted-foreground">Perusahaan</div>
                           <div className="font-medium">{operator.company.name || "Not specified"}</div>
                         </div>
                         <div>
-                          <div className="text-sm text-muted-foreground">Position</div>
+                          <div className="text-sm text-muted-foreground">Jabatan</div>
                           <div className="font-medium">{operator.company.position || "Not specified"}</div>
                         </div>
                         <div>
-                          <div className="text-sm text-muted-foreground">Department</div>
+                          <div className="text-sm text-muted-foreground">Departemen</div>
                           <div className="font-medium">{operator.company.department || "Not specified"}</div>
                         </div>
                         <div>
-                          <div className="text-sm text-muted-foreground">Account Type</div>
+                          <div className="text-sm text-muted-foreground">Tipe Akun</div>
                           <div className="font-medium">{operator.accountType || "Standard"}</div>
                         </div>
                       </div>
                     ) : (
-                      <div className="text-muted-foreground">No company information available</div>
+                      <div className="text-muted-foreground">Tidak ada informasi perusahaan tersedia</div>
                     )}
                   </CardContent>
                 </Card>
 
                 <Card>
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-lg">Quick Stats</CardTitle>
+                    <CardTitle className="text-lg">Statistik Cepat</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
                       <div className="grid grid-cols-2 gap-4">
                         <div className="bg-muted/40 rounded-lg p-3">
-                          <div className="text-sm text-muted-foreground">Last Login</div>
+                          <div className="text-sm text-muted-foreground">Login Terakhir</div>
                           <div className="font-medium">
                             {operator.lastActive ? getTimeAgo(operator.lastActive) : "Never"}
                           </div>
                         </div>
                         <div className="bg-muted/40 rounded-lg p-3">
-                          <div className="text-sm text-muted-foreground">Account Age</div>
+                          <div className="text-sm text-muted-foreground">Usia Akun</div>
                           <div className="font-medium">
                             {operator.joinDate ? getTimeAgo(operator.joinDate) : "Unknown"}
                           </div>
@@ -778,24 +778,24 @@ export default function OperatorDetailPage() {
 
                       <div className="bg-muted/40 rounded-lg p-3">
                         <div className="flex justify-between items-center mb-1">
-                          <div className="text-sm text-muted-foreground">Quota Usage</div>
+                          <div className="text-sm text-muted-foreground">Penggunaan Kuota</div>
                           <div className="text-sm font-medium">{quotaPercentage}%</div>
                         </div>
                         <Progress value={quotaPercentage} className="h-2" />
                       </div>
 
                       <div className="bg-muted/40 rounded-lg p-3">
-                        <div className="text-sm text-muted-foreground mb-1">Account Status</div>
+                        <div className="text-sm text-muted-foreground mb-1">Status Akun</div>
                         <div className="flex items-center gap-2">
                           <StatusBadge status={operator.status} />
                           <span className="text-sm">
                             {operator.status === "Active"
-                              ? "Account is active and operational"
+                              ? "Akun aktif dan beroperasi"
                               : operator.status === "Inactive"
-                                ? "Account is currently inactive"
+                                ? "Akun saat ini tidak aktif"
                                 : operator.status === "Pending"
-                                  ? "Account is pending activation"
-                                  : "Account has been suspended"}
+                                  ? "Akun menunggu aktivasi"
+                                  : "Akun telah ditangguhkan"}
                           </span>
                         </div>
                       </div>
@@ -806,13 +806,13 @@ export default function OperatorDetailPage() {
 
               <Card>
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-lg">Notes</CardTitle>
-                  <CardDescription>Internal notes about this operator</CardDescription>
+                  <CardTitle className="text-lg">Catatan</CardTitle>
+                  <CardDescription>Catatan internal tentang operator ini</CardDescription>
                 </CardHeader>
                 <CardContent>
                   {isEditing ? (
                     <Textarea
-                      placeholder="Add notes about this operator..."
+                      placeholder="Tambahkan catatan tentang operator ini..."
                       className="min-h-[100px]"
                       value={editedOperator.notes || ""}
                       onChange={(e) => setEditedOperator({ ...editedOperator, notes: e.target.value })}
@@ -822,7 +822,7 @@ export default function OperatorDetailPage() {
                       {operator.notes ? (
                         <p>{operator.notes}</p>
                       ) : (
-                        <p className="text-muted-foreground">No notes available for this operator.</p>
+                        <p className="text-muted-foreground">Tidak ada catatan tersedia untuk operator ini.</p>
                       )}
                     </div>
                   )}
@@ -831,7 +831,7 @@ export default function OperatorDetailPage() {
 
               <Card>
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-lg">Recent Activity</CardTitle>
+                  <CardTitle className="text-lg">Aktivitas Terbaru</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ScrollArea className="h-[200px]">
@@ -844,14 +844,14 @@ export default function OperatorDetailPage() {
                           <div>
                             <div className="font-medium">
                               {index === 0
-                                ? "Logged in to the system"
+                                ? "Login ke sistem"
                                 : index === 1
-                                  ? "Updated school settings"
+                                  ? "Memperbarui pengaturan sekolah"
                                   : index === 2
-                                    ? "Added new teacher account"
+                                    ? "Menambahkan akun guru baru"
                                     : index === 3
-                                      ? "Generated monthly report"
-                                      : "Viewed dashboard analytics"}
+                                      ? "Membuat laporan bulanan"
+                                      : "Melihat analitik dasbor"}
                             </div>
                             <div className="text-sm text-muted-foreground">
                               {activity.date} • {Math.floor(Math.random() * 12) + 1}:
@@ -868,7 +868,7 @@ export default function OperatorDetailPage() {
                 </CardContent>
                 <CardFooter className="border-t pt-4">
                   <Button variant="outline" size="sm" className="w-full">
-                    View All Activity
+                    Lihat Semua Aktivitas
                     <ChevronRight className="ml-2 h-4 w-4" />
                   </Button>
                 </CardFooter>
@@ -879,8 +879,8 @@ export default function OperatorDetailPage() {
             <TabsContent value="packages" className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Subscribed Packages</CardTitle>
-                  <CardDescription>Manage the operator's package subscriptions</CardDescription>
+                  <CardTitle>Paket Berlangganan</CardTitle>
+                  <CardDescription>Kelola langganan paket operator</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   {operator.packages && operator.packages.length > 0 ? (
@@ -902,8 +902,8 @@ export default function OperatorDetailPage() {
                             <div>
                               <div className="font-medium text-lg">{pkg.name}</div>
                               <div className="text-sm text-muted-foreground">
-                                Purchased: {pkg.purchaseDate ? formatDate(pkg.purchaseDate) : "Unknown"} • Expires:{" "}
-                                {pkg.expiryDate ? formatDate(pkg.expiryDate) : "Unknown"}
+                                Dibeli: {pkg.purchaseDate ? formatDate(pkg.purchaseDate) : "Tidak diketahui"} • Berakhir:{" "}
+                                {pkg.expiryDate ? formatDate(pkg.expiryDate) : "Tidak diketahui"}
                               </div>
                             </div>
                           </div>
@@ -912,7 +912,7 @@ export default function OperatorDetailPage() {
                         <div className="p-4">
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                             <div className="bg-muted/40 p-3 rounded-lg">
-                              <div className="text-sm text-muted-foreground">Cost</div>
+                              <div className="text-sm text-muted-foreground">Biaya</div>
                               <div className="text-xl font-bold">${pkg.cost || 0}</div>
                             </div>
                             <div className="bg-muted/40 p-3 rounded-lg">
@@ -923,21 +923,21 @@ export default function OperatorDetailPage() {
                                     new Date(pkg.expiryDate) > new Date() ? "bg-green-500" : "bg-red-500"
                                   }`}
                                 ></div>
-                                <span>{new Date(pkg.expiryDate) > new Date() ? "Active" : "Expired"}</span>
+                                <span>{new Date(pkg.expiryDate) > new Date() ? "Aktif" : "Kadaluarsa"}</span>
                               </div>
                             </div>
                             <div className="bg-muted/40 p-3 rounded-lg">
-                              <div className="text-sm text-muted-foreground">Renewal</div>
+                              <div className="text-sm text-muted-foreground">Pembaruan</div>
                               <div className="font-medium">
                                 {new Date(pkg.expiryDate) > new Date()
-                                  ? `In ${Math.ceil((new Date(pkg.expiryDate).getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24))} days`
-                                  : "Expired"}
+                                  ? `Dalam ${Math.ceil((new Date(pkg.expiryDate).getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24))} hari`
+                                  : "Kadaluarsa"}
                               </div>
                             </div>
                           </div>
 
                           <div>
-                            <h4 className="font-medium mb-2">Features:</h4>
+                            <h4 className="font-medium mb-2">Fitur:</h4>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                               {pkg.features && pkg.features.length > 0 ? (
                                 pkg.features.map((feature, index) => (
@@ -947,7 +947,7 @@ export default function OperatorDetailPage() {
                                   </div>
                                 ))
                               ) : (
-                                <div className="text-sm text-muted-foreground">No features listed</div>
+                                <div className="text-sm text-muted-foreground">Tidak ada fitur yang tercantum</div>
                               )}
                             </div>
                           </div>
@@ -955,11 +955,11 @@ export default function OperatorDetailPage() {
                         <div className="border-t p-4 flex justify-end gap-2">
                           <Button variant="outline" size="sm">
                             <ExternalLink className="mr-2 h-4 w-4" />
-                            View Details
+                            Lihat Detail
                           </Button>
                           <Button variant="outline" size="sm">
                             <Edit2 className="mr-2 h-4 w-4" />
-                            Manage
+                            Kelola
                           </Button>
                         </div>
                       </div>
@@ -969,11 +969,11 @@ export default function OperatorDetailPage() {
                       <div className="mx-auto w-12 h-12 rounded-full bg-muted flex items-center justify-center mb-4">
                         <Package className="h-6 w-6 text-muted-foreground" />
                       </div>
-                      <h3 className="text-lg font-medium mb-2">No Packages</h3>
-                      <p className="text-muted-foreground mb-4">This operator doesn't have any packages yet.</p>
+                      <h3 className="text-lg font-medium mb-2">Tidak Ada Paket</h3>
+                      <p className="text-muted-foreground mb-4">Operator ini belum memiliki paket.</p>
                       <Button>
                         <Plus className="mr-2 h-4 w-4" />
-                        Add Package
+                        Tambah Paket
                       </Button>
                     </div>
                   )}
@@ -982,8 +982,8 @@ export default function OperatorDetailPage() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Available Packages</CardTitle>
-                  <CardDescription>Additional packages that can be assigned to this operator</CardDescription>
+                  <CardTitle>Paket Tersedia</CardTitle>
+                  <CardDescription>Paket tambahan yang dapat ditugaskan ke operator ini</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -993,25 +993,25 @@ export default function OperatorDetailPage() {
                           <CardTitle>{tier} Package</CardTitle>
                           <CardDescription>
                             {tier === "Basic"
-                              ? "Essential features"
+                              ? "Fitur dasar"
                               : tier === "Standard"
-                                ? "Advanced features"
-                                : "Complete solution"}
+                                ? "Fitur lanjutan"
+                                : "Solusi lengkap"}
                           </CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-4">
                           <div className="text-2xl font-bold">
                             ${tier === "Basic" ? "99" : tier === "Standard" ? "199" : "299"}
-                            <span className="text-sm font-normal text-muted-foreground">/month</span>
+                            <span className="text-sm font-normal text-muted-foreground">/bulan</span>
                           </div>
                           <div className="space-y-2">
                             {[
-                              "Core features",
-                              tier !== "Basic" && "Advanced analytics",
-                              tier === "Premium" && "Priority support",
-                              "User management",
-                              tier !== "Basic" && "Custom branding",
-                              tier === "Premium" && "API access",
+                              "Fitur inti",
+                              tier !== "Basic" && "Analitik lanjutan",
+                              tier === "Premium" && "Dukungan prioritas",
+                              "Manajemen pengguna",
+                              tier !== "Basic" && "Merek kustom",
+                              tier === "Premium" && "Akses API",
                             ]
                               .filter(Boolean)
                               .map((feature, index) => (
@@ -1024,7 +1024,7 @@ export default function OperatorDetailPage() {
                         </CardContent>
                         <CardFooter>
                           <Button className="w-full" variant={tier === "Premium" ? "default" : "outline"}>
-                            Assign Package
+                            Tetapkan Paket
                           </Button>
                         </CardFooter>
                       </Card>
@@ -1039,8 +1039,8 @@ export default function OperatorDetailPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Quota Overview</CardTitle>
-                    <CardDescription>Current quota usage and allocation</CardDescription>
+                    <CardTitle>Ringkasan Kuota</CardTitle>
+                    <CardDescription>Penggunaan dan alokasi kuota saat ini</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-6">
                     <div className="flex justify-center">
@@ -1076,19 +1076,19 @@ export default function OperatorDetailPage() {
 
                     <div className="grid grid-cols-2 gap-4">
                       <div className="bg-muted/40 rounded-lg p-3">
-                        <div className="text-sm text-muted-foreground">Total Quota</div>
+                        <div className="text-sm text-muted-foreground">Total Kuota</div>
                         <div className="text-xl font-bold">{formatNumber(quotaTotal)}</div>
                       </div>
                       <div className="bg-muted/40 rounded-lg p-3">
-                        <div className="text-sm text-muted-foreground">Used Quota</div>
+                        <div className="text-sm text-muted-foreground">Kuota Digunakan</div>
                         <div className="text-xl font-bold">{formatNumber(quotaUsed)}</div>
                       </div>
                       <div className="bg-muted/40 rounded-lg p-3">
-                        <div className="text-sm text-muted-foreground">Remaining</div>
+                        <div className="text-sm text-muted-foreground">Tersisa</div>
                         <div className="text-xl font-bold">{formatNumber(quotaRemaining)}</div>
                       </div>
                       <div className="bg-muted/40 rounded-lg p-3">
-                        <div className="text-sm text-muted-foreground">Last Updated</div>
+                        <div className="text-sm text-muted-foreground">Terakhir Diperbarui</div>
                         <div className="font-medium">
                           {operator.quotaUsage?.lastUpdated
                             ? new Date(operator.quotaUsage.lastUpdated).toLocaleString()
@@ -1099,7 +1099,7 @@ export default function OperatorDetailPage() {
 
                     {isEditing && (
                       <div className="pt-2">
-                        <Label htmlFor="quotaTotal">Adjust Total Quota</Label>
+                        <Label htmlFor="quotaTotal">Sesuaikan Total Kuota</Label>
                         <div className="flex gap-2 mt-1">
                           <Input
                             id="quotaTotal"
@@ -1109,7 +1109,7 @@ export default function OperatorDetailPage() {
                               handleNestedInputChange("quotaUsage", "total", Number.parseInt(e.target.value))
                             }
                           />
-                          <Button variant="outline">Apply</Button>
+                          <Button variant="outline">Terapkan</Button>
                         </div>
                       </div>
                     )}
@@ -1118,8 +1118,8 @@ export default function OperatorDetailPage() {
 
                 <Card>
                   <CardHeader>
-                    <CardTitle>Usage Trend</CardTitle>
-                    <CardDescription>Monthly quota consumption pattern</CardDescription>
+                    <CardTitle>Tren Penggunaan</CardTitle>
+                    <CardDescription>Pola konsumsi kuota bulanan</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="h-[300px]">
@@ -1148,8 +1148,8 @@ export default function OperatorDetailPage() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Quota Allocation</CardTitle>
-                  <CardDescription>Manage quota distribution across schools</CardDescription>
+                  <CardTitle>Alokasi Kuota</CardTitle>
+                  <CardDescription>Kelola distribusi kuota antar sekolah</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
@@ -1171,7 +1171,7 @@ export default function OperatorDetailPage() {
 
                     <Button variant="outline" className="w-full">
                       <Plus className="mr-2 h-4 w-4" />
-                      Add School Allocation
+                      Tambah Alokasi Sekolah
                     </Button>
                   </div>
                 </CardContent>
@@ -1182,8 +1182,8 @@ export default function OperatorDetailPage() {
             <TabsContent value="security" className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Account Security</CardTitle>
-                  <CardDescription>Manage security settings and access controls</CardDescription>
+                  <CardTitle>Keamanan Akun</CardTitle>
+                  <CardDescription>Kelola pengaturan keamanan dan kontrol akses</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="flex items-center justify-between p-3 bg-muted/40 rounded-lg">
@@ -1192,9 +1192,9 @@ export default function OperatorDetailPage() {
                         <Lock className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <div className="font-medium">Two-Factor Authentication</div>
+                        <div className="font-medium">Autentikasi Dua Faktor</div>
                         <div className="text-sm text-muted-foreground">
-                          Add an extra layer of security to the account
+                          Tambahkan lapisan keamanan ekstra ke akun
                         </div>
                       </div>
                     </div>
@@ -1207,10 +1207,10 @@ export default function OperatorDetailPage() {
                         <Key className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <div className="font-medium">Password Management</div>
+                        <div className="font-medium">Manajemen Password</div>
                         <div className="text-sm text-muted-foreground">
-                          Last changed:{" "}
-                          {operator.lastPasswordChange ? getTimeAgo(operator.lastPasswordChange) : "Unknown"}
+                          Terakhir diubah:{" "}
+                          {operator.lastPasswordChange ? getTimeAgo(operator.lastPasswordChange) : "Tidak diketahui"}
                         </div>
                       </div>
                     </div>
@@ -1225,7 +1225,7 @@ export default function OperatorDetailPage() {
                         <Shield className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <div className="font-medium">Account Status</div>
+                        <div className="font-medium">Status Akun</div>
                         <div className="text-sm text-muted-foreground">
                           Current status: <StatusBadge status={operator.status} />
                         </div>
@@ -1236,7 +1236,7 @@ export default function OperatorDetailPage() {
                       size="sm"
                       onClick={() => setShowSuspendDialog(true)}
                     >
-                      {operator.status === "Suspended" ? "Activate Account" : "Suspend Account"}
+                      {operator.status === "Suspended" ? "Aktifkan Akun" : "Tangguhkan Akun"}
                     </Button>
                   </div>
 
@@ -1246,12 +1246,12 @@ export default function OperatorDetailPage() {
                         <Trash2 className="h-5 w-5 text-destructive" />
                       </div>
                       <div>
-                        <div className="font-medium">Delete Account</div>
-                        <div className="text-sm text-muted-foreground">Permanently remove this operator account</div>
+                        <div className="font-medium">Hapus Akun</div>
+                        <div className="text-sm text-muted-foreground">Hapus permanen akun operator ini</div>
                       </div>
                     </div>
                     <Button variant="destructive" size="sm" onClick={() => setShowDeleteDialog(true)}>
-                      Delete Account
+                      Hapus Akun
                     </Button>
                   </div>
                 </CardContent>
@@ -1259,17 +1259,17 @@ export default function OperatorDetailPage() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Permissions</CardTitle>
-                  <CardDescription>Manage what this operator can access</CardDescription>
+                  <CardTitle>Izin</CardTitle>
+                  <CardDescription>Kelola apa yang dapat diakses operator ini</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     {[
-                      { name: "Manage Schools", description: "Create, edit and delete schools" },
-                      { name: "Manage Teachers", description: "Add and remove teacher accounts" },
-                      { name: "View Reports", description: "Access analytics and reporting" },
-                      { name: "Manage Billing", description: "Access billing and payment information" },
-                      { name: "API Access", description: "Use API endpoints and generate tokens" },
+                      { name: "Kelola Sekolah", description: "Buat, edit dan hapus sekolah" },
+                      { name: "Kelola Guru", description: "Tambah dan hapus akun guru" },
+                      { name: "Lihat Laporan", description: "Akses analitik dan pelaporan" },
+                      { name: "Kelola Tagihan", description: "Akses informasi tagihan dan pembayaran" },
+                      { name: "Akses API", description: "Gunakan endpoint API dan buat token" },
                     ].map((permission, index) => (
                       <div key={index} className="flex items-center justify-between p-3 bg-muted/40 rounded-lg">
                         <div>
@@ -1285,8 +1285,8 @@ export default function OperatorDetailPage() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Login History</CardTitle>
-                  <CardDescription>Recent account access activity</CardDescription>
+                  <CardTitle>Riwayat Login</CardTitle>
+                  <CardDescription>Aktivitas akses akun terbaru</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ScrollArea className="h-[200px]">
@@ -1331,8 +1331,8 @@ export default function OperatorDetailPage() {
             <TabsContent value="activity" className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Activity Overview</CardTitle>
-                  <CardDescription>Recent account activity and actions</CardDescription>
+                  <CardTitle>Ringkasan Aktivitas</CardTitle>
+                  <CardDescription>Aktivitas dan tindakan akun terbaru</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="h-[300px] mb-6">
@@ -1380,7 +1380,7 @@ export default function OperatorDetailPage() {
                       <div className="text-3xl font-bold">
                         {activityData.reduce((sum, item) => sum + item.logins, 0)}
                       </div>
-                      <div className="text-sm text-muted-foreground">Total Logins</div>
+                      <div className="text-sm text-muted-foreground">Total Login</div>
                     </div>
                     <div className="bg-muted/40 rounded-lg p-3 text-center">
                       <div className="text-3xl font-bold">
@@ -1392,7 +1392,7 @@ export default function OperatorDetailPage() {
                       <div className="text-3xl font-bold">
                         {Math.round(activityData.reduce((sum, item) => sum + item.actions, 0) / activityData.length)}
                       </div>
-                      <div className="text-sm text-muted-foreground">Avg. Daily Actions</div>
+                      <div className="text-sm text-muted-foreground">Rata-rata Tindakan Harian</div>
                     </div>
                   </div>
                 </CardContent>
@@ -1400,8 +1400,8 @@ export default function OperatorDetailPage() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Activity Log</CardTitle>
-                  <CardDescription>Detailed history of operator actions</CardDescription>
+                  <CardTitle>Log Aktivitas</CardTitle>
+                  <CardDescription>Riwayat detail tindakan operator</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ScrollArea className="h-[400px]">
@@ -1476,7 +1476,7 @@ export default function OperatorDetailPage() {
                 </CardContent>
                 <CardFooter className="border-t pt-4">
                   <Button variant="outline" size="sm" className="w-full">
-                    Export Activity Log
+                    Ekspor Log Aktivitas
                     <Download className="ml-2 h-4 w-4" />
                   </Button>
                 </CardFooter>
@@ -1491,7 +1491,7 @@ export default function OperatorDetailPage() {
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Reset Password</DialogTitle>
-            <DialogDescription>This will send a password reset link to the operator's email address.</DialogDescription>
+            <DialogDescription>Ini akan mengirim tautan reset password ke alamat email operator.</DialogDescription>
           </DialogHeader>
           <div className="space-y-4 py-4">
             <div className="flex items-center gap-4">
@@ -1505,22 +1505,22 @@ export default function OperatorDetailPage() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="newPassword">New Password (Optional)</Label>
+              <Label htmlFor="newPassword">Password Baru (Opsional)</Label>
               <Input
                 id="newPassword"
                 type="password"
-                placeholder="Leave blank to send reset link"
+                placeholder="Kosongkan untuk mengirim tautan reset"
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
               />
               <p className="text-xs text-muted-foreground">
-                If you provide a password, it will be set directly instead of sending a reset link.
+                Jika Anda memberikan password, itu akan diatur langsung alih-alih mengirim tautan reset.
               </p>
             </div>
           </div>
           <DialogFooter>
             <Button variant="outline" onClick={() => setShowResetPasswordDialog(false)}>
-              Cancel
+              Batal
             </Button>
             <Button onClick={handleResetPassword}>Reset Password</Button>
           </DialogFooter>
@@ -1531,40 +1531,40 @@ export default function OperatorDetailPage() {
       <Dialog open={showSuspendDialog} onOpenChange={setShowSuspendDialog}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>{operator.status === "Suspended" ? "Activate Account" : "Suspend Account"}</DialogTitle>
+            <DialogTitle>{operator.status === "Suspended" ? "Aktifkan Akun" : "Tangguhkan Akun"}</DialogTitle>
             <DialogDescription>
               {operator.status === "Suspended"
-                ? "This will reactivate the operator account, allowing them to log in and use the system."
-                : "This will temporarily suspend the operator account. They will not be able to log in until the account is reactivated."}
+                ? "Ini akan mengaktifkan kembali akun operator, memungkinkan mereka untuk login dan menggunakan sistem."
+                : "Ini akan menangguhkan sementara akun operator. Mereka tidak akan dapat login sampai akun diaktifkan kembali."}
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-4 py-4">
             <Alert variant={operator.status === "Suspended" ? "default" : "warning"}>
               <AlertCircle className="h-4 w-4" />
-              <AlertTitle>{operator.status === "Suspended" ? "Activation Notice" : "Suspension Warning"}</AlertTitle>
+              <AlertTitle>{operator.status === "Suspended" ? "Pemberitahuan Aktivasi" : "Peringatan Penangguhan"}</AlertTitle>
               <AlertDescription>
                 {operator.status === "Suspended"
-                  ? "The operator will be notified via email when their account is activated."
-                  : "The operator will be immediately logged out of all active sessions."}
+                  ? "Operator akan diberitahu melalui email ketika akun mereka diaktifkan."
+                  : "Operator akan segera keluar dari semua sesi aktif."}
               </AlertDescription>
             </Alert>
 
             {operator.status !== "Suspended" && (
               <div className="space-y-2">
-                <Label htmlFor="suspendReason">Reason (Optional)</Label>
-                <Textarea id="suspendReason" placeholder="Provide a reason for the suspension..." />
+                <Label htmlFor="suspendReason">Alasan (Opsional)</Label>
+                <Textarea id="suspendReason" placeholder="Berikan alasan untuk penangguhan..." />
               </div>
             )}
           </div>
           <DialogFooter>
             <Button variant="outline" onClick={() => setShowSuspendDialog(false)}>
-              Cancel
+              Batal
             </Button>
             <Button
               variant={operator.status === "Suspended" ? "default" : "destructive"}
               onClick={handleSuspendAccount}
             >
-              {operator.status === "Suspended" ? "Activate Account" : "Suspend Account"}
+              {operator.status === "Suspended" ? "Aktifkan Akun" : "Tangguhkan Akun"}
             </Button>
           </DialogFooter>
         </DialogContent>
@@ -1574,38 +1574,37 @@ export default function OperatorDetailPage() {
       <Dialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Delete Account</DialogTitle>
+            <DialogTitle>Hapus Akun</DialogTitle>
             <DialogDescription>
-              This action cannot be undone. This will permanently delete the operator account and remove all associated
-              data.
+              Tindakan ini tidak dapat dibatalkan. Ini akan menghapus permanen akun operator dan menghapus semua data terkait.
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-4 py-4">
             <Alert variant="destructive">
               <AlertCircle className="h-4 w-4" />
-              <AlertTitle>Warning</AlertTitle>
+              <AlertTitle>Peringatan</AlertTitle>
               <AlertDescription>
-                All data associated with this account will be permanently deleted, including:
+                Semua data terkait dengan akun ini akan dihapus permanen, termasuk:
                 <ul className="list-disc pl-5 mt-2 space-y-1">
-                  <li>Personal information</li>
-                  <li>School associations</li>
-                  <li>Activity history</li>
-                  <li>Package subscriptions</li>
+                  <li>Informasi pribadi</li>
+                  <li>Asosiasi sekolah</li>
+                  <li>Riwayat aktivitas</li>
+                  <li>Langganan paket</li>
                 </ul>
               </AlertDescription>
             </Alert>
 
             <div className="space-y-2">
-              <Label htmlFor="confirmDelete">Type "DELETE" to confirm</Label>
-              <Input id="confirmDelete" placeholder="DELETE" />
+              <Label htmlFor="confirmDelete">Ketik "HAPUS" untuk konfirmasi</Label>
+              <Input id="confirmDelete" placeholder="HAPUS" />
             </div>
           </div>
           <DialogFooter>
             <Button variant="outline" onClick={() => setShowDeleteDialog(false)}>
-              Cancel
+              Batal
             </Button>
             <Button variant="destructive" onClick={handleDeleteAccount}>
-              Delete Account
+              Hapus Akun
             </Button>
           </DialogFooter>
         </DialogContent>
