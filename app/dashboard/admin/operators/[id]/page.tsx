@@ -296,7 +296,9 @@ export default function OperatorDetailPage() {
         <Alert variant="destructive">
           <AlertCircle className="h-4 w-4" />
           <AlertTitle>Error</AlertTitle>
-          <AlertDescription>{error || "Gagal memuat detail operator. Operator mungkin tidak ada."}</AlertDescription>
+          <AlertDescription>
+            Gagal memuat detail operator. Operator mungkin tidak ada.
+          </AlertDescription>
         </Alert>
 
         <div className="mt-4">
@@ -434,7 +436,7 @@ export default function OperatorDetailPage() {
           {/* Profile card */}
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-lg">Informasi Profil</CardTitle>
+              <CardTitle>Informasi Profil</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               {isEditing ? (
@@ -537,7 +539,7 @@ export default function OperatorDetailPage() {
           {/* Stats card */}
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-lg">Statistik</CardTitle>
+              <CardTitle>Statistik</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
@@ -592,7 +594,7 @@ export default function OperatorDetailPage() {
           {/* Address card */}
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-lg">Alamat</CardTitle>
+              <CardTitle>Alamat</CardTitle>
             </CardHeader>
             <CardContent>
               {isEditing ? (
@@ -1126,7 +1128,7 @@ export default function OperatorDetailPage() {
                       <ChartContainer
                         config={{
                           usage: {
-                            label: "Quota Usage",
+                            label: "Penggunaan Kuota",
                             color: "hsl(var(--chart-1))",
                           },
                         }}
