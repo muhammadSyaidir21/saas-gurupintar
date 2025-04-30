@@ -180,8 +180,8 @@ export default function OperatorDetailPage() {
       updateOperator(updatedOperator)
       setIsEditing(false)
       toast({
-        title: "Changes saved",
-        description: "Operator information has been updated successfully.",
+        title: "Perubahan tersimpan",
+        description: "Informasi operator telah berhasil diperbarui.",
       })
     }
   }
@@ -394,7 +394,7 @@ export default function OperatorDetailPage() {
                   <DropdownMenuLabel>Tindakan</DropdownMenuLabel>
                   <DropdownMenuItem onClick={() => setShowResetPasswordDialog(true)}>
                     <Key className="mr-2 h-4 w-4" />
-                    Reset Password
+                    Reset Kata Sandi
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => window.open(`mailto:${operator.email}`)}>
                     <Mail className="mr-2 h-4 w-4" />
@@ -1490,8 +1490,10 @@ export default function OperatorDetailPage() {
       <Dialog open={showResetPasswordDialog} onOpenChange={setShowResetPasswordDialog}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Reset Password</DialogTitle>
-            <DialogDescription>Ini akan mengirim tautan reset password ke alamat email operator.</DialogDescription>
+            <DialogTitle>Reset Kata Sandi</DialogTitle>
+            <DialogDescription>
+              Ini akan mengirim tautan reset kata sandi ke alamat email operator.
+            </DialogDescription>
           </DialogHeader>
           <div className="space-y-4 py-4">
             <div className="flex items-center gap-4">
