@@ -179,18 +179,18 @@ export function Promotions() {
     const now = new Date()
 
     if (!promotion.isActive) {
-      return <span className="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded-full">Inactive</span>
+      return <span className="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded-full">Tidak Aktif</span>
     }
 
     if (now < promotion.startDate) {
-      return <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Scheduled</span>
+      return <span className="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Terjadwal</span>
     }
 
     if (now > promotion.endDate) {
-      return <span className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">Expired</span>
+      return <span className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">Kadaluarsa</span>
     }
 
-    return <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Active</span>
+    return <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Aktif</span>
   }
 
   return (
@@ -290,7 +290,7 @@ export function Promotions() {
                     setPromotions(updatedPromotions)
                   }}
                 />
-                <Label htmlFor={`active-${promotion.id}`}>Active</Label>
+                <Label htmlFor={`active-${promotion.id}`}>Aktif</Label>
               </div>
             </CardFooter>
           </Card>
